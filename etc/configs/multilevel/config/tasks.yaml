@@ -1,121 +1,79 @@
-geriatrician_assessment:
+necesidades_evaluator_assessment:
   description: >
-    Realiza una evaluación geriátrica completa del paciente. Deberás
-    1. Analizar su historial médico y condiciones crónicas
-    2. Identificar riesgos de salud específicos para personas mayores
-    3. Proponer pruebas médicas básicas para evaluar su estado general
-    4. Sugerir medidas preventivas para mejorar su calidad de vida
-    5. Proporcionar un plan inicial de manejo médico
-    Tu evaluación debe ser clara, concisa y enfocada en optimizar la salud y funcionalidad del paciente.
+    Realiza una evaluación completa de los perfiles de necesidades educativas especiales presentes en el aula. Deberás:
+    1. Analizar la descripción de la clase proporcionada por el usuario
+    2. Identificar y categorizar los diferentes perfiles de aprendizaje (TDAH, altas capacidades, espectro autista, dislexia, etc.)
+    3. Cuantificar la distribución de necesidades específicas en el aula
+    4. Analizar el impacto potencial de cada necesidad en el proceso de aprendizaje
+    5. Determinar adaptaciones prioritarias para cada perfil identificado
+    6. Generar un mapa estructurado de necesidades del aula como base para las adaptaciones
+    Tu evaluación debe ser detallada, basada en evidencia y enfocada en facilitar el trabajo adaptativo posterior.
     Sigue todas las instrucciones proporcionadas en {case}.
-  agent: geriatrician
-  expected_output: "Evaluación geriátrica del paciente"
-  context:
-    - geriatrician_assessment
+  agent: necesidades_evaluator
+  expected_output: "Mapa de necesidades educativas del aula con perfiles identificados y prioridades de adaptación"
+  context: []  # Primer paso, no requiere contexto previo
 
-physiotherapist_assessment:
+contenido_analyzer_assessment:
   description: >
-    Realiza una evaluación fisioterapéutica del paciente. Deberás
-    1. Analizar su movilidad y funcionalidad actual
-    2. Identificar riesgos de caídas o desequilibrios musculares
-    3. Proponer ejercicios de fortalecimiento y equilibrio
-    4. Sugerir técnicas de prevención de lesiones
-    5. Proporcionar un plan de rehabilitación si es necesario
-    Tu evaluación debe ser detallada y enfocada en mejorar la independencia del paciente.
+    Realiza un análisis detallado del material educativo proporcionado. Deberás:
+    1. Identificar el tipo de material (lección, examen, ejercicio) y su objetivo pedagógico
+    2. Descomponer el contenido según los seis niveles de la taxonomía de Bloom (recordar, comprender, aplicar, analizar, evaluar, crear)
+    3. Identificar conceptos clave, habilidades objetivo y competencias a desarrollar
+    4. Evaluar la complejidad cognitiva de cada actividad o pregunta
+    5. Mapear la progresión de aprendizaje implícita en el material
+    6. Generar un informe estructurado de análisis que servirá como base para las adaptaciones
+    Tu análisis debe ser riguroso, vinculado explícitamente a la taxonomía de Bloom y orientado a mantener los objetivos pedagógicos en las adaptaciones.
     Sigue todas las instrucciones proporcionadas en {case}.
-  agent: physiotherapist
-  expected_output: "Evaluación fisioterapéutica del paciente"
-  context:
-    - physiotherapist_assessment
+  agent: contenido_analyzer
+  expected_output: "Análisis estructurado del material educativo según taxonomía de Bloom"
+  context: []  # Puede realizarse en paralelo a la evaluación de necesidades
 
-social_worker_assessment:
+adaptacion_designer_plan:
   description: >
-    Realiza una evaluación social del paciente. Deberás
-    1. Analizar sus necesidades sociales y emocionales
-    2. Identificar recursos comunitarios disponibles
-    3. Proponer estrategias para mejorar su bienestar social
-    4. Sugerir programas de apoyo y beneficios
-    5. Brindar acompañamiento emocional y familiar
-    Tu evaluación debe ser empática y enfocada en mejorar la calidad de vida del paciente.
+    Desarrolla un plan detallado de adaptaciones curriculares para cada perfil identificado. Deberás:
+    1. Integrar el mapa de necesidades educativas con el análisis del material
+    2. Diseñar adaptaciones específicas para cada perfil manteniendo los objetivos clave
+    3. Aplicar técnicas de diferenciación por proceso, contenido y producto
+    4. Asegurar la progresión adecuada según la taxonomía de Bloom para cada perfil
+    5. Especificar ajustes metodológicos, organizativos y evaluativos para cada adaptación
+    6. Crear una matriz de adaptaciones que vincule cada perfil con los ajustes específicos
+    Tu plan debe ser coherente, mantener el nivel de exigencia ajustando la forma de acceso al conocimiento y basarse en el Diseño Universal de Aprendizaje.
     Sigue todas las instrucciones proporcionadas en {case}.
-  agent: social_worker
-  expected_output: "Evaluación social del paciente"
+  agent: adaptacion_designer
+  expected_output: "Plan de adaptaciones curriculares multinivel con matriz de ajustes por perfil"
   context:
-    - social_worker_assessment
+    - necesidades_evaluator_assessment  # Usa el mapa de necesidades como entrada
+    - contenido_analyzer_assessment  # Usa el análisis de contenido como entrada
 
-nutritionist_assessment:
+material_generator_production:
   description: >
-    Realiza una evaluación nutricional del paciente. Deberás
-    1. Analizar sus hábitos alimenticios actuales
-    2. Identificar deficiencias nutricionales o áreas de mejora
-    3. Proponer un plan de alimentación personalizado
-    4. Sugerir suplementación segura y efectiva, si es necesaria
-    5. Adaptar la dieta a sus condiciones de salud
-    Tu evaluación debe ser práctica y enfocada en mejorar su salud y energía.
+    Produce los materiales educativos adaptados según el plan diseñado. Deberás:
+    1. Generar versiones específicas del material original (lecciones, exámenes, ejercicios) para cada perfil
+    2. Incorporar ajustes visuales, organizativos y procedimentales según las necesidades identificadas
+    3. Desarrollar instrucciones claras y específicas para cada versión adaptada
+    4. Crear instrumentos de evaluación coherentes con las adaptaciones realizadas
+    5. Mantener la alineación con los objetivos originales y la taxonomía de Bloom
+    6. Organizar el material en un formato accesible y práctico para su implementación
+    Tu producción debe ser concreta, lista para usar en el aula y claramente etiquetada para cada perfil de necesidad educativa.
     Sigue todas las instrucciones proporcionadas en {case}.
-  agent: nutritionist
-  expected_output: "Evaluación nutricional del paciente"
+  agent: material_generator
+  expected_output: "Materiales educativos adaptados para cada perfil con instrucciones de aplicación"
   context:
-    - nutritionist_assessment
+    - adaptacion_designer_plan  # Usa el plan de adaptaciones como entrada
 
-psychologist_assessment:
+implementacion_advisor_guidance:
   description: >
-    Realiza una evaluación psicológica del paciente. Deberás
-    1. Analizar su estado emocional y mental
-    2. Identificar signos de depresión, ansiedad o duelo
-    3. Proponer estrategias para mejorar su bienestar emocional
-    4. Sugerir técnicas de manejo del estrés y adaptación a cambios
-    5. Brindar apoyo psicológico personalizado
-    Tu evaluación debe ser empática y enfocada en fortalecer su salud mental.
+    Proporciona orientación práctica para la implementación efectiva de las adaptaciones en el aula. Deberás:
+    1. Desarrollar estrategias específicas para gestionar simultáneamente diferentes niveles en el aula
+    2. Sugerir técnicas de organización temporal y espacial para facilitar el trabajo multinivel
+    3. Recomendar herramientas concretas para el seguimiento del progreso individual
+    4. Anticipar desafíos comunes en la implementación y proponer soluciones prácticas
+    5. Ofrecer consejos para la comunicación con el alumnado y sus familias sobre las adaptaciones
+    6. Proporcionar recursos adicionales y referencias para profundizar en técnicas específicas
+    Tu orientación debe ser práctica, realista y enfocada en la aplicabilidad inmediata en el contexto educativo real.
     Sigue todas las instrucciones proporcionadas en {case}.
-  agent: psychologist
-  expected_output: "Evaluación psicológica del paciente"
+  agent: implementacion_advisor
+  expected_output: "Guía de implementación práctica con estrategias, técnicas y soluciones a desafíos"
   context:
-    - psychologist_assessment
-
-occupational_therapist_assessment:
-  description: >
-    Realiza una evaluación de terapia ocupacional del paciente. Deberás
-    1. Analizar su capacidad para realizar actividades diarias
-    2. Identificar barreras en su entorno
-    3. Proponer adaptaciones del hogar para mayor seguridad
-    4. Sugerir ayudas técnicas (andadores, bastones, etc.)
-    5. Proporcionar un plan para mejorar su independencia
-    Tu evaluación debe ser práctica y enfocada en promover la autonomía del paciente.
-    Sigue todas las instrucciones proporcionadas en {case}.
-  agent: occupational_therapist
-  expected_output: "Evaluación de terapia ocupacional del paciente"
-  context:
-    - occupational_therapist_assessment
-
-pharmacist_assessment:
-  description: >
-    Realiza una revisión farmacológica del paciente. Deberás
-    1. Analizar su medicación actual
-    2. Identificar interacciones farmacológicas o polifarmacia
-    3. Proponer ajustes en la medicación si es necesario
-    4. Sugerir estrategias para mejorar la adherencia terapéutica
-    5. Coordinar con el médico para optimizar el tratamiento
-    Tu evaluación debe ser detallada y enfocada en la seguridad del paciente.
-    Sigue todas las instrucciones proporcionadas en {case}.
-  agent: pharmacist
-  expected_output: "Revisión farmacológica del paciente"
-  context:
-    - pharmacist_assessment
-
-caregiver_support_assessment:
-  description: >
-    Realiza una evaluación de apoyo a cuidadores. Deberás
-    1. Analizar las necesidades del cuidador principal
-    2. Identificar signos de estrés o síndrome del cuidador
-    3. Proponer estrategias de autocuidado y manejo emocional
-    4. Sugerir recursos y grupos de apoyo disponibles
-    5. Brindar formación para el cuidado del paciente
-    Tu evaluación debe ser empática y enfocada en mejorar el bienestar del cuidador.
-    Sigue todas las instrucciones proporcionadas en {case}.
-  agent: caregiver_support
-  expected_output: "Evaluación de apoyo a cuidadores"
-  context:
-    - caregivr_support_assessment
-
-    
+    - material_generator_production  # Usa los materiales generados como entrada
+    - necesidades_evaluator_assessment  # Considera también el mapa de necesidades original
