@@ -8,66 +8,63 @@ Sexo: Masculino
 Ocupación: Ingeniero informático y runner semiprofesional
 Objetivo: Prepararse para el Maratón de Madrid (a realizarse en 8 semanas)
 
-Historia deportiva
+### Historia deportiva
 
-Runner semiprofesional con 8 años de experiencia en competiciones
-Mejor marca personal en maratón: 2h 42min (hace 2 años)
-Entrena habitualmente 70-80 km semanales
-Ha participado en 7 maratones y numerosas carreras de distancias menores
-Objetivo para Madrid: terminar por debajo de 2h 40min
+- Runner semiprofesional con 8 años de experiencia en competiciones
+- Mejor marca personal en maratón: 2h 42min (hace 2 años)
+- Entrena habitualmente 70-80 km semanales
+- Ha participado en 7 maratones y numerosas carreras de distancias menores
+- Objetivo para Madrid: terminar por debajo de 2h 40min
 
-Historia médica relevante
+### Historia médica relevante
 
-Lesiones previas:
+#### Lesiones previas:
 
-Tendinitis de Aquiles bilateral (hace 3 años, recurrente en pie derecho)
-Fascitis plantar (hace 18 meses)
-Síndrome de la cintilla iliotibial (hace 10 meses)
-Esguince de tobillo grado II (hace 5 meses)
+- Tendinitis de Aquiles bilateral (hace 3 años, recurrente en pie derecho)
+- Fascitis plantar (hace 18 meses)
+- Síndrome de la cintilla iliotibial (hace 10 meses)
+- Esguince de tobillo grado II (hace 5 meses)
 
+#### Condiciones actuales:
 
-Condiciones actuales:
+- Dolor persistente en cara externa de rodilla derecha durante carreras >10km
+- Molestias en tendón de Aquiles derecho tras entrenamientos intensos
+- Sensación de entumecimiento en dedos del pie izquierdo después de correr >15km
+- Dolor lumbar ocasional tras series largas de velocidad
 
-Dolor persistente en cara externa de rodilla derecha durante carreras >10km
-Molestias en tendón de Aquiles derecho tras entrenamientos intensos
-Sensación de entumecimiento en dedos del pie izquierdo después de correr >15km
-Dolor lumbar ocasional tras series largas de velocidad
+### Situación actual
 
+- Se encuentra a 8 semanas del Maratón de Madrid
+- Entrenamiento actual: 55-60 km semanales (reducido por molestias)
+- Últimas 3 semanas con dificultad para completar entrenamientos largos
+- Ha reducido las series de velocidad por dolor lumbar
+- Experimenta fatiga inusual y recuperación más lenta tras entrenamientos intensos
 
+### Historial nutricional
 
-Situación actual
+- Dieta variada pero sin planificación específica para rendimiento
+- Hidratación: aproximadamente 2L diarios
+- Suplementación actual: proteína de suero después de entrenamientos
+- No ha realizado periodización nutricional para competiciones previas
 
-Se encuentra a 8 semanas del Maratón de Madrid
-Entrenamiento actual: 55-60 km semanales (reducido por molestias)
-Últimas 3 semanas con dificultad para completar entrenamientos largos
-Ha reducido las series de velocidad por dolor lumbar
-Experimenta fatiga inusual y recuperación más lenta tras entrenamientos intensos
+### Otros datos relevantes
 
-Historial nutricional
+- Calzado: renovado hace 2 meses (350km de uso)
+- Terrenos de entrenamiento: 70% asfalto, 20% tierra, 10% pista
+- Análisis biomecánico realizado hace 1 año identificó ligera pronación
+- Usa plantillas personalizadas desde hace 6 meses
+- Trabajo sedentario (8-10 horas sentado frente a ordenador)
+- Duerme 6-7 horas diarias
+- Niveles de estrés moderados-altos por presión laboral
 
-Dieta variada pero sin planificación específica para rendimiento
-Hidratación: aproximadamente 2L diarios
-Suplementación actual: proteína de suero después de entrenamientos
-No ha realizado periodización nutricional para competiciones previas
+### Preocupaciones del paciente
 
-Otros datos relevantes
-
-Calzado: renovado hace 2 meses (350km de uso)
-Terrenos de entrenamiento: 70% asfalto, 20% tierra, 10% pista
-Análisis biomecánico realizado hace 1 año identificó ligera pronación
-Usa plantillas personalizadas desde hace 6 meses
-Trabajo sedentario (8-10 horas sentado frente a ordenador)
-Duerme 6-7 horas diarias
-Niveles de estrés moderados-altos por presión laboral
-
-Preocupaciones del paciente
-
-Llegar en condiciones óptimas a la competición
-Prevenir recaída de lesiones durante la preparación
-Optimizar la recuperación entre entrenamientos
-Adoptar estrategias nutricionales para mejorar rendimiento
-Conseguir su objetivo de tiempo (<2h 40min)
-Mantener el equilibrio entre entrenamiento y vida profesional
+- Llegar en condiciones óptimas a la competición
+- Prevenir recaída de lesiones durante la preparación
+- Optimizar la recuperación entre entrenamientos
+- Adoptar estrategias nutricionales para mejorar rendimiento
+- Conseguir su objetivo de tiempo (<2h 40min)
+- Mantener el equilibrio entre entrenamiento y vida profesional
 
 **Evaluación Médica Deportiva del Runner - Carlos Martínez**
 
