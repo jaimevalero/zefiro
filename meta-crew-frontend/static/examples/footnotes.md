@@ -66,7 +66,7 @@ Objetivo: Prepararse para el Maratón de Madrid (a realizarse en 8 semanas)
 - Conseguir su objetivo de tiempo (<2h 40min)
 - Mantener el equilibrio entre entrenamiento y vida profesional
 
-**Fin caso ficticio*
+**Fin caso ficticio**
 
 ---
 
