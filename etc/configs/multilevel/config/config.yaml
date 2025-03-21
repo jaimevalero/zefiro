@@ -1,101 +1,112 @@
 frontend:
-  app_name: "Hidalgos"
+  app_name: "Multilevel"
   main_info: >
-    Esta aplicación genera asistencia personalizada para personas de la tercera edad.
-    Los expertos incluyen:
-    - Geriatra  - Nutricionista Geriátrico  - Fisioterapeuta Geriátrico  - Psicólogo Geriátrico - Terapeuta Ocupacional  - Trabajador Social  - Farmacéutico Geriátrico - Especialista en Apoyo a Cuidadores.  
+    Esta aplicación genera adaptaciones curriculares personalizadas para la enseñanza multinivel.
+    El equipo pedagógico incluye:
+    - Evaluador de Necesidades Educativas
+    - Analizador de Contenidos
+    - Diseñador de Adaptaciones
+    - Generador de Materiales
+    - Asesor de Implementación
 
-  download_example_report_link: "https://github.com/jaimevalero/gifted-children-helper/raw/master/examples/example_report.pdf"
-  # Nueva configuración de tema
+  download_example_report_link: "https://github.com/multilevel/adaptaciones-curriculares/raw/master/examples/ejemplo_adaptacion.pdf"
+  # Configuración de tema infantil
   theme:
     dark: false
     colors:
-      primary: "#7E57C2"    # Púrpura suave, simboliza sabiduría y dignidad
-      secondary: "#CDAF95"  # Beige cálido, calidez y acogimiento
-      accent: "#81C784"     # Verde suave, relajante y reconfortante
-      info: "#64B5F6"
-      warning: "#FFB74D"    # Naranja suave, atención sin agresividad
-      error: "#EF5350"      # Rojo suave
-      alert: "#FFE0B2"
-      success: "#81C784"    # Verde pastel
-  # Definición flexible de formularios
+      primary: "#4CAF50"     # Verde brillante, simboliza crecimiento y aprendizaje
+      secondary: "#FFC107"   # Amarillo cálido, creatividad y energía
+      accent: "#2196F3"      # Azul, concentración y calma
+      info: "#03A9F4"        # Azul claro
+      warning: "#FF9800"     # Naranja, atención
+      error: "#F44336"       # Rojo suave
+      alert: "#FFECB3"       # Amarillo pastel
+      success: "#8BC34A"     # Verde limón
+  # Formulario adaptado a necesidades educativas
   form:
-    # Formulario general para evaluación geriátrica
-    title: "Información del Paciente"
-    description: "Por favor complete la información del paciente"
+    title: "Datos para Adaptación Curricular"
+    description: "Complete la información sobre su clase y el material a adaptar"
     fields:
-      - name: "patient_data"
-        label: "Datos del Paciente"
-        description: "Edad, peso, altura, sexo, etc"
+      - name: "classroom_profile"
+        label: "Perfil del Aula"
+        description: "Curso, número total de alumnos, rango de edades, contexto escolar"
         type: "textarea"
         required: true
-        icon: "user"
+        icon: "chalkboard-teacher"
 
-      - name: "health_goals"
-        label: "Objetivos de Salud"
-        description: "Describa los objetivos de salud del paciente"
+      - name: "special_needs"
+        label: "Necesidades Educativas Especiales"
+        description: "Detalle los diferentes perfiles presentes (TDAH, TEA, altas capacidades, dislexia, etc.) e indique número de alumnos por cada necesidad"
+        type: "textarea"
+        required: true
+        icon: "puzzle-piece"
+
+      - name: "material_type"
+        label: "Tipo de Material"
+        description: "Indique si es una lección, examen, ejercicio u otro tipo de contenido"
+        type: "select"
+        options: ["Lección", "Examen", "Ejercicio", "Proyecto", "Otro"]
+        required: true
+        icon: "book"
+
+      - name: "material_content"
+        label: "Contenido a Adaptar"
+        description: "Pegue o describa detalladamente el contenido que desea adaptar (incluya objetivos, actividades, preguntas, criterios de evaluación, etc.)"
+        type: "textarea"
+        required: true
+        icon: "file-alt"
+
+      - name: "subject_area"
+        label: "Área o Asignatura"
+        description: "Indique el área de conocimiento o asignatura"
+        type: "select"
+        options: ["Lengua", "Matemáticas", "Ciencias Naturales", "Ciencias Sociales", "Inglés", "Educación Física", "Arte", "Música", "Otra"]
+        required: true
+        icon: "graduation-cap"
+
+      - name: "learning_objectives"
+        label: "Objetivos de Aprendizaje"
+        description: "Detalle los objetivos específicos que busca alcanzar con este material"
         type: "textarea"
         required: true
         icon: "bullseye"
 
-      - name: "current_health"
-        label: "Condición de Salud Actual"
-        description: "Describa la condición de salud actual del paciente"
-        type: "textarea"
-        required: true
-        icon: "heartbeat"
-
-      - name: "nutrition_plan"
-        label: "Plan de Nutrición"
-        description: "Describa el plan de nutrición actual del paciente"
+      - name: "current_challenges"
+        label: "Dificultades Observadas"
+        description: "Describa las dificultades que ha observado en los diferentes perfiles de alumnos con este tipo de contenido"
         type: "textarea"
         required: false
-        icon: "apple-alt"
+        icon: "exclamation-triangle"
 
-      - name: "injury_history"
-        label: "Historial de Lesiones"
-        description: "Describa cualquier lesión previa del paciente"
+      - name: "previous_adaptations"
+        label: "Adaptaciones Previas"
+        description: "Si ha realizado adaptaciones anteriormente, describa lo que ha funcionado y lo que no"
         type: "textarea"
         required: false
-        icon: "notes-medical"
+        icon: "history"
 
-      - name: "mental_health"
-        label: "Salud Mental"
-        description: "Describa las estrategias de salud mental del paciente"
+      - name: "classroom_resources"
+        label: "Recursos Disponibles"
+        description: "Indique los recursos tecnológicos, humanos y materiales disponibles en su aula"
         type: "textarea"
         required: false
-        icon: "brain"
+        icon: "tools"
 
-      - name: "social_needs"
-        label: "Necesidades Sociales"
-        description: "Describa las necesidades sociales y emocionales del paciente"
+      - name: "additional_notes"
+        label: "Observaciones Adicionales"
+        description: "Cualquier otra información relevante para realizar las adaptaciones"
         type: "textarea"
         required: false
-        icon: "hands-helping"
-
-      - name: "medication"
-        label: "Medicación"
-        description: "Describa la medicación actual del paciente"
-        type: "textarea"
-        required: false
-        icon: "pills"
-
-      - name: "caregiver_support"
-        label: "Apoyo al Cuidador"
-        description: "Describa las necesidades de apoyo del cuidador principal"
-        type: "textarea"
-        required: false
-        icon: "hand-holding-heart"
+        icon: "comment"
 
 backend:
   case:
     prompt: >
-      Eres un equipo de especilistas en cuidado y apoyo a personas de la tercera edad.
+      Eres un equipo de especialistas en educación inclusiva y adaptaciones curriculares multinivel.
+      Tu objetivo es analizar el material educativo proporcionado y adaptarlo a las diferentes necesidades educativas especiales presentes en el aula,
+      utilizando la taxonomía de Bloom para mantener el nivel de exigencia mientras ajustas la forma de acceso al conocimiento.
       <case>{case}</case>
 
   nomination:
     method:
       type: all
-
-
-
