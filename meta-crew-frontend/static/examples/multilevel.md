@@ -21,13 +21,16 @@ Contenido:
    b) 56,8 × 35 = 
 
    c) 125,6 × 59= 
-   
+
    d) 78,25 × 47 = 
 
 2. Resuelve las siguientes divisiones:
    a) 56 ÷ 8 = 
+
    b) 81 ÷ 9 = 
+
    c) 124 ÷ 4 = 
+   
    d) 135 ÷ 5 = 
 
 3. Problemas:
