@@ -3,27 +3,7 @@ Quiero que me ayudes hacer una app de crew.ai de {{ app_name }}
 su cometido es: {{ app_description }}.
 
 En un paso anterior me has ayudado generante los agents.
-{{ agents.yaml}}
+
 <ejemplo_agents.yaml>symptom_evaluator:
-  backstory: "Psicólogo clínico con 8 años de experiencia en diagnóstico temprano de trastornos emocionales. Especializado en análisis de lenguaje natural aplicado a salud mental. Ha desarrollado sistemas de clasificación de síntomas para plataformas digitales de bienestar.\n"
-  context: "Evaluación de descripciones textuales del usuario {user}"
-  goal: "Clasificar síntomas en categorías específicas (ansiedad, estrés, soledad) Identificar patrones de malestar emocional Detectar señales de alerta temprana Priorizar casos que requieren intervención\n"
-  role: Evaluador de Síntomas
-  verbose: true
-
-crisis_filter:
-  backstory: "Psicólogo de emergencias con entrenamiento en protocolos de intervención en crisis digitales. Ha trabajado en líneas de ayuda 24/7 y desarrollado sistemas de triage emocional para chatbots.\n"
-  context: "Monitorización de alertas críticas para {user}"
-  goal: "Detectar lenguaje de riesgo en interacciones Activar protocolos de contención inmediata Derivar a servicios profesionales cuando sea necesario Generar reportes para seguimiento humano\n"
-  role: Filtro de Crisis
-  verbose: true
-
-
-resource_generator:
-  backstory: "Terapeuta cognitivo-conductual con 10 años de experiencia en desarrollo de intervenciones digitales. Certificado en técnicas de tercera generación (ACT, DBT). Ha traducido protocolos clínicos a formatos accesibles para autocuidado.\n"
-  context: "Generación de recursos personalizados para {user}"
-  goal: "Adaptar ejercicios terapéuticos a necesidades específicas Crear rutinas basadas en evidencia científica Proporcionar alternativas para diferentes contextos Actualizar recursos con últimos manuales clínicos\n"
-  role: Generador de Recursos
-  verbose: true
-
+{{ agents.yaml}}
 </ejemplo_agents.yaml>
