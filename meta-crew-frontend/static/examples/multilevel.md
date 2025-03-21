@@ -67,9 +67,11 @@ Recursos Disponibles:
 
 Observaciones Adicionales:
 Necesito mantener el nivel de exigencia para todos, pero adaptando la forma de acceder al conocimiento. Quiero evaluar las mismas competencias en todos los alumnos. Por favor, dame examenes diferentes, adaptados a cada tipo de perfil
+
 ** Fin del Caso Ficticio **
 
 --- 
+
 # 0 Informe: Mapa De Necesidades Educativas Del Aula Con Perfiles Identificados Y Prioridades De Adaptación
 
 **MAPA DE NECESIDADES EDUCATIVAS DEL AULA - 3° PRIMARIA CEIP JOAQUÍN COSTA**  
