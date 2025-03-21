@@ -1,4 +1,4 @@
-# Meta-Crew : Quick automation of a crew for your crew.ai project
+# Meta-Crew : Quick automation of crews
 
 ## Description
 With this project, you can easily create a crew for your crew.ai project. Only create a directory with the name of your crew and three files, and you are ready to go.
