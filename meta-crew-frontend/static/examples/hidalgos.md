@@ -1,4 +1,4 @@
-# Caso hipotético: María Dolores
+# Caso ficticio: María Dolores
 
 María Dolores tiene 87 años, pesa 58 kg, mide 156 cm, sexo femenino. Viuda desde hace 5 años, vive actualmente con su hija menor (62 años) en un segundo piso sin ascensor. Ha sido profesora de educación primaria durante 40 años antes de su jubilación. Diagnosticada con hipertensión arterial desde los 65 años, diabetes tipo 2 desde los 72 años y artrosis degenerativa en rodillas y columna lumbar. Presenta pérdida auditiva moderada para la que utiliza audífonos desde hace 3 años.
 
