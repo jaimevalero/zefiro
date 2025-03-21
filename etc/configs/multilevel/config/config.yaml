@@ -14,14 +14,14 @@ frontend:
   theme:
     dark: false
     colors:
-      primary: "#4CAF50"     # Verde brillante, simboliza crecimiento y aprendizaje
-      secondary: "#FFC107"   # Amarillo cálido, creatividad y energía
-      accent: "#2196F3"      # Azul, concentración y calma
-      info: "#03A9F4"        # Azul claro
-      warning: "#FF9800"     # Naranja, atención
-      error: "#F44336"       # Rojo suave
-      alert: "#FFECB3"       # Amarillo pastel
-      success: "#8BC34A"     # Verde limón
+      primary: "#3F51B5"    # Azul, simboliza confianza y profesionalismo
+      secondary: "#FFC107"  # Naranja, creatividad y entusiasmo
+      accent: "#FF5722"     # Rojo anaranjado, dinamismo
+      info: "#03A9F4"       # Azul claro, información
+      warning: "#FF9800"    # Naranja, advertencia
+      error: "#F44336"      # Rojo, error
+      alert: "#E91E63"      # Rosa, alerta
+      success: "#4CAF50"    # Verde, éxito
   # Formulario adaptado a necesidades educativas
   form:
     title: "Datos para Adaptación Curricular"
