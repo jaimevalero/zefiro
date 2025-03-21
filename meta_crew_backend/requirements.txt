@@ -1,0 +1,23 @@
+crewai 
+crewai-tools 
+loguru
+ollama
+chromadb
+llama-index 
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+llama-index-llms-langchain
+llama-index-llms-openrouter
+markdown2 
+pdfkit
+
+# Front end
+fpdf 
+requests
+streamlit-google-auth
+
+pysqlite3-binary
+psutil
+fastapi
+sendgrid
+

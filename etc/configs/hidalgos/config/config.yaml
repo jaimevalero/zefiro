@@ -1,0 +1,101 @@
+frontend:
+  app_name: "Hidalgos"
+  main_info: >
+    Esta aplicación genera asistencia personalizada para personas de la tercera edad.
+    Los expertos incluyen:
+    - Geriatra  - Nutricionista Geriátrico  - Fisioterapeuta Geriátrico  - Psicólogo Geriátrico - Terapeuta Ocupacional  - Trabajador Social  - Farmacéutico Geriátrico - Especialista en Apoyo a Cuidadores.
+
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/hidalgos.md"
+  # Nueva configuración de tema
+  theme:
+    dark: false
+    colors:
+      primary: "#7E57C2"    # Púrpura suave, simboliza sabiduría y dignidad
+      secondary: "#CDAF95"  # Beige cálido, calidez y acogimiento
+      accent: "#81C784"     # Verde suave, relajante y reconfortante
+      info: "#64B5F6"
+      warning: "#FFB74D"    # Naranja suave, atención sin agresividad
+      error: "#EF5350"      # Rojo suave
+      alert: "#FFE0B2"
+      success: "#81C784"    # Verde pastel
+  # Definición flexible de formularios
+  form:
+    # Formulario general para evaluación geriátrica
+    title: "Información del Paciente"
+    description: "Por favor complete la información del paciente"
+    fields:
+      - name: "patient_data"
+        label: "Datos del Paciente"
+        description: "Edad, peso, altura, sexo, etc"
+        type: "textarea"
+        required: true
+        icon: "user"
+
+      - name: "health_goals"
+        label: "Objetivos de Salud"
+        description: "Describa los objetivos de salud del paciente"
+        type: "textarea"
+        required: true
+        icon: "bullseye"
+
+      - name: "current_health"
+        label: "Condición de Salud Actual"
+        description: "Describa la condición de salud actual del paciente"
+        type: "textarea"
+        required: true
+        icon: "heartbeat"
+
+      - name: "nutrition_plan"
+        label: "Plan de Nutrición"
+        description: "Describa el plan de nutrición actual del paciente"
+        type: "textarea"
+        required: false
+        icon: "apple-alt"
+
+      - name: "injury_history"
+        label: "Historial de Lesiones"
+        description: "Describa cualquier lesión previa del paciente"
+        type: "textarea"
+        required: false
+        icon: "notes-medical"
+
+      - name: "mental_health"
+        label: "Salud Mental"
+        description: "Describa las estrategias de salud mental del paciente"
+        type: "textarea"
+        required: false
+        icon: "brain"
+
+      - name: "social_needs"
+        label: "Necesidades Sociales"
+        description: "Describa las necesidades sociales y emocionales del paciente"
+        type: "textarea"
+        required: false
+        icon: "hands-helping"
+
+      - name: "medication"
+        label: "Medicación"
+        description: "Describa la medicación actual del paciente"
+        type: "textarea"
+        required: false
+        icon: "pills"
+
+      - name: "caregiver_support"
+        label: "Apoyo al Cuidador"
+        description: "Describa las necesidades de apoyo del cuidador principal"
+        type: "textarea"
+        required: false
+        icon: "hand-holding-heart"
+
+backend:
+  case:
+    prompt: >
+      Eres un equipo de especilistas en cuidado y apoyo a personas de la tercera edad.
+      <case>{case}</case>
+
+  nomination:
+    method:
+      type: all
+
+
+

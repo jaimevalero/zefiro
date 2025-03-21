@@ -1,0 +1,112 @@
+frontend:
+  app_name: "Multilevel"
+  main_info: >
+    Esta aplicación genera adaptaciones curriculares personalizadas para la enseñanza multinivel.
+    El equipo pedagógico incluye:
+    - Evaluador de Necesidades Educativas
+    - Analizador de Contenidos
+    - Diseñador de Adaptaciones
+    - Generador de Materiales
+    - Asesor de Implementación
+
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/multilevel.md"
+  # Configuración de tema infantil
+  theme:
+    dark: false
+    colors:
+      primary: "#3F51B5"    # Azul, simboliza confianza y profesionalismo
+      secondary: "#FFC107"  # Naranja, creatividad y entusiasmo
+      accent: "#FF5722"     # Rojo anaranjado, dinamismo
+      info: "#03A9F4"       # Azul claro, información
+      warning: "#FF9800"    # Naranja, advertencia
+      error: "#F44336"      # Rojo, error
+      alert: "#E91E63"      # Rosa, alerta
+      success: "#4CAF50"    # Verde, éxito
+  # Formulario adaptado a necesidades educativas
+  form:
+    title: "Datos para Adaptación Curricular"
+    description: "Complete la información sobre su clase y el material a adaptar"
+    fields:
+      - name: "classroom_profile"
+        label: "Perfil del Aula"
+        description: "Curso, número total de alumnos, rango de edades, contexto escolar"
+        type: "textarea"
+        required: true
+        icon: "chalkboard-teacher"
+
+      - name: "special_needs"
+        label: "Necesidades Educativas Especiales"
+        description: "Detalle los diferentes perfiles presentes (TDAH, TEA, altas capacidades, dislexia, etc.) e indique número de alumnos por cada necesidad"
+        type: "textarea"
+        required: true
+        icon: "puzzle-piece"
+
+      - name: "material_type"
+        label: "Tipo de Material"
+        description: "Indique si es una lección, examen, ejercicio u otro tipo de contenido"
+        type: "select"
+        options: ["Lección", "Examen", "Ejercicio", "Proyecto", "Otro"]
+        required: true
+        icon: "book"
+
+      - name: "material_content"
+        label: "Contenido a Adaptar"
+        description: "Pegue o describa detalladamente el contenido que desea adaptar (incluya objetivos, actividades, preguntas, criterios de evaluación, etc.)"
+        type: "textarea"
+        required: true
+        icon: "file-alt"
+
+      - name: "subject_area"
+        label: "Área o Asignatura"
+        description: "Indique el área de conocimiento o asignatura"
+        type: "select"
+        options: ["Lengua", "Matemáticas", "Ciencias Naturales", "Ciencias Sociales", "Inglés", "Educación Física", "Arte", "Música", "Otra"]
+        required: true
+        icon: "graduation-cap"
+
+      - name: "learning_objectives"
+        label: "Objetivos de Aprendizaje"
+        description: "Detalle los objetivos específicos que busca alcanzar con este material"
+        type: "textarea"
+        required: true
+        icon: "bullseye"
+
+      - name: "current_challenges"
+        label: "Dificultades Observadas"
+        description: "Describa las dificultades que ha observado en los diferentes perfiles de alumnos con este tipo de contenido"
+        type: "textarea"
+        required: false
+        icon: "exclamation-triangle"
+
+      - name: "previous_adaptations"
+        label: "Adaptaciones Previas"
+        description: "Si ha realizado adaptaciones anteriormente, describa lo que ha funcionado y lo que no"
+        type: "textarea"
+        required: false
+        icon: "history"
+
+      - name: "classroom_resources"
+        label: "Recursos Disponibles"
+        description: "Indique los recursos tecnológicos, humanos y materiales disponibles en su aula"
+        type: "textarea"
+        required: false
+        icon: "tools"
+
+      - name: "additional_notes"
+        label: "Observaciones Adicionales"
+        description: "Cualquier otra información relevante para realizar las adaptaciones"
+        type: "textarea"
+        required: false
+        icon: "comment"
+
+backend:
+  case:
+    prompt: >
+      Eres un equipo de especialistas en educación inclusiva y adaptaciones curriculares multinivel.
+      Tu objetivo es analizar el material educativo proporcionado y adaptarlo a las diferentes necesidades educativas especiales presentes en el aula,
+      utilizando la taxonomía de Bloom para mantener el nivel de exigencia mientras ajustas la forma de acceso al conocimiento.
+      <case>{case}</case>
+
+  nomination:
+    method:
+      type: all

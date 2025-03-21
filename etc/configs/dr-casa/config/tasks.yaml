@@ -1,0 +1,525 @@
+general_practitioner_assessment:
+  description: >
+    Realiza una evaluación médica inicial del paciente. Deberás
+    1. Analizar todos los síntomas y signos presentados
+    2. Elaborar un diagnóstico diferencial preliminar
+    3. Proponer pruebas básicas necesarias
+    4. Sugerir qué especialistas deberían intervenir
+    5. Proporcionar un plan inicial de manejo
+    Tu evaluación debe ser clara, concisa y seguir un razonamiento clínico estructurado.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: general_practitioner
+  expected_output: "Evaluación médica inicial del caso"
+  context:
+    - general_practitioner_assessment
+    
+neurologist_assessment:
+  description: >
+    Realiza una evaluación neurológica completa del paciente. Deberás
+    1. Analizar síntomas neurológicos específicos
+    2. Proponer diagnósticos diferenciales neurológicos
+    3. Sugerir pruebas neurológicas específicas
+    4. Recomendar tratamientos para condiciones neurológicas identificadas
+    Tu evaluación debe centrarse en el sistema nervioso central y periférico.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: neurologist
+  expected_output: "Evaluación neurológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+nutritionist_assessment:
+  description: >
+    Realiza una evaluación nutricional completa del paciente. Deberás
+    1. Analizar el estado nutricional actual
+    2. Identificar posibles deficiencias o excesos nutricionales
+    3. Proponer un plan nutricional personalizado
+    4. Recomendar suplementos si es necesario
+    Tu evaluación debe considerar la relación entre la nutrición y los síntomas.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: nutritionist
+  expected_output: "Evaluación nutricional del caso"
+  context:
+    - general_practitioner_assessment
+    
+autoimmune_specialist_assessment:
+  description: >
+    Realiza una evaluación inmunológica del paciente. Deberás
+    1. Analizar posibles condiciones autoinmunes
+    2. Proponer pruebas inmunológicas específicas
+    3. Sugerir diagnósticos autoinmunes diferenciales
+    4. Recomendar tratamientos inmunomoduladores si procede
+    Tu evaluación debe enfocarse en los mecanismos autoinmunes que podrían explicar los síntomas.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: autoimmune_specialist
+  expected_output: "Evaluación autoinmune del caso"
+  context:
+    - general_practitioner_assessment
+    
+endocrinologist_assessment:
+  description: >
+    Realiza una evaluación endocrinológica del paciente. Deberás
+    1. Analizar posibles alteraciones hormonales
+    2. Proponer pruebas endocrinas específicas
+    3. Sugerir diagnósticos endocrinos diferenciales
+    4. Recomendar tratamientos para restablecer el equilibrio hormonal
+    Tu evaluación debe centrarse en el sistema endocrino y metabólico.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: endocrinologist
+  expected_output: "Evaluación endocrinológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+cardiologist_assessment:
+  description: >
+    Realiza una evaluación cardiovascular del paciente. Deberás
+    1. Analizar síntomas cardiovasculares
+    2. Proponer pruebas cardíacas específicas
+    3. Evaluar riesgo cardiovascular
+    4. Recomendar tratamientos para problemas cardíacos y circulatorios
+    Tu evaluación debe enfocarse en el sistema cardiovascular y sus implicaciones.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: cardiologist
+  expected_output: "Evaluación cardiovascular del caso"
+  context:
+    - general_practitioner_assessment
+    
+physiotherapist_assessment:
+  description: >
+    Realiza una evaluación fisioterapéutica del paciente. Deberás
+    1. Analizar la funcionalidad física y limitaciones
+    2. Evaluar patrones de movimiento y posturales
+    3. Diseñar un programa de ejercicios terapéuticos
+    4. Recomendar técnicas específicas de rehabilitación
+    Tu evaluación debe enfocarse en mejorar la movilidad y reducir el dolor.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: physiotherapist
+  expected_output: "Evaluación fisioterapéutica y plan de ejercicios"
+  context:
+    - general_practitioner_assessment
+    
+psychiatrist_assessment:
+  description: >
+    Realiza una evaluación psiquiátrica del paciente. Deberás
+    1. Analizar el estado mental y emocional
+    2. Identificar posibles trastornos psiquiátricos
+    3. Evaluar el impacto psicológico de la enfermedad física
+    4. Recomendar intervenciones psicoterapéuticas o farmacológicas
+    Tu evaluación debe considerar la relación bidireccional entre mente y cuerpo.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: psychiatrist
+  expected_output: "Evaluación psiquiátrica del caso"
+  context:
+    - general_practitioner_assessment
+    
+clinical_pharmacologist_assessment:
+  description: >
+    Realiza una evaluación farmacológica del paciente. Deberás
+    1. Analizar el régimen medicamentoso actual
+    2. Identificar posibles interacciones medicamentosas
+    3. Evaluar efectos adversos potenciales
+    4. Recomendar ajustes en la medicación
+    Tu evaluación debe optimizar el tratamiento farmacológico.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: clinical_pharmacologist
+  expected_output: "Evaluación farmacológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+rheumatologist_assessment:
+  description: >
+    Realiza una evaluación reumatológica del paciente. Deberás
+    1. Analizar síntomas articulares y musculoesqueléticos
+    2. Proponer pruebas reumatológicas específicas
+    3. Sugerir diagnósticos diferenciales reumatológicos
+    4. Recomendar tratamientos para enfermedades reumáticas
+    Tu evaluación debe enfocarse en condiciones inflamatorias y autoinmunes.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: rheumatologist
+  expected_output: "Evaluación reumatológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+pain_specialist_assessment:
+  description: >
+    Realiza una evaluación del dolor del paciente. Deberás
+    1. Analizar las características y patrones del dolor
+    2. Identificar factores desencadenantes y aliviadores
+    3. Proponer un enfoque multimodal para el manejo del dolor
+    4. Recomendar intervenciones farmacológicas y no farmacológicas
+    Tu evaluación debe enfocarse en mejorar la calidad de vida.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: pain_specialist
+  expected_output: "Evaluación y plan de manejo del dolor"
+  context:
+    - general_practitioner_assessment
+    
+orthopedist_assessment:
+  description: >
+    Realiza una evaluación ortopédica del paciente. Deberás
+    1. Analizar problemas estructurales y biomecánicos
+    2. Evaluar patologías óseas, articulares y ligamentosas
+    3. Proponer pruebas diagnósticas específicas
+    4. Recomendar tratamientos conservadores o quirúrgicos
+    Tu evaluación debe centrarse en el sistema musculoesquelético.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: orthopedist
+  expected_output: "Evaluación ortopédica del caso"
+  context:
+    - general_practitioner_assessment
+    
+dermatologist_assessment:
+  description: >
+    Realiza una evaluación dermatológica del paciente. Deberás
+    1. Analizar lesiones o alteraciones cutáneas
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales dermatológicos
+    4. Recomendar tratamientos tópicos o sistémicos
+    Tu evaluación debe centrarse en la piel, cabello y uñas.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: dermatologist
+  expected_output: "Evaluación dermatológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+podiatrist_assessment:
+  description: >
+    Realiza una evaluación podológica del paciente. Deberás
+    1. Analizar problemas en los pies y la marcha
+    2. Evaluar alteraciones biomecánicas
+    3. Proponer soluciones ortopédicas
+    4. Recomendar cuidados específicos para los pies
+    Tu evaluación debe enfocarse en la salud podal.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: podiatrist
+  expected_output: "Evaluación podológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+urologist_assessment:
+  description: >
+    Realiza una evaluación urológica del paciente. Deberás
+    1. Analizar síntomas del sistema urinario
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales urológicos
+    4. Recomendar tratamientos médicos o quirúrgicos
+    Tu evaluación debe centrarse en el sistema urinario.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: urologist
+  expected_output: "Evaluación urológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+allergist_assessment:
+  description: >
+    Realiza una evaluación alergológica del paciente. Deberás
+    1. Analizar reacciones alérgicas y sensibilidades
+    2. Proponer pruebas diagnósticas específicas
+    3. Identificar alérgenos potenciales
+    4. Recomendar tratamientos y medidas preventivas
+    Tu evaluación debe enfocarse en mecanismos de hipersensibilidad.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: allergist
+  expected_output: "Evaluación alergológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+gynecologist_assessment:
+  description: >
+    Realiza una evaluación ginecológica de la paciente. Deberás
+    1. Analizar síntomas relacionados con el sistema reproductor femenino
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales ginecológicos
+    4. Recomendar tratamientos apropiados
+    Tu evaluación debe centrarse en la salud reproductiva femenina.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: gynecologist
+  expected_output: "Evaluación ginecológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+gastroenterologist_assessment:
+  description: >
+    Realiza una evaluación gastroenterológica del paciente. Deberás
+    1. Analizar síntomas digestivos
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales gastrointestinales
+    4. Recomendar tratamientos para problemas digestivos
+    Tu evaluación debe centrarse en el sistema digestivo.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: gastroenterologist
+  expected_output: "Evaluación gastroenterológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+pediatrician_assessment:
+  description: >
+    Realiza una evaluación pediátrica del paciente. Deberás
+    1. Analizar síntomas considerando el desarrollo infantil
+    2. Evaluar el crecimiento y desarrollo del niño
+    3. Proponer diagnósticos diferenciales pediátricos
+    4. Recomendar tratamientos apropiados para la edad
+    Tu evaluación debe adaptarse a las particularidades de la edad pediátrica.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: pediatrician
+  expected_output: "Evaluación pediátrica del caso"
+  context:
+    - general_practitioner_assessment
+    
+geriatrician_assessment:
+  description: >
+    Realiza una evaluación geriátrica del paciente. Deberás
+    1. Analizar síntomas considerando los cambios del envejecimiento
+    2. Evaluar la funcionalidad y fragilidad
+    3. Considerar la polifarmacia y comorbilidades
+    4. Recomendar tratamientos apropiados para personas mayores
+    Tu evaluación debe adaptarse a las particularidades de la edad geriátrica.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: geriatrician
+  expected_output: "Evaluación geriátrica del caso"
+  context:
+    - general_practitioner_assessment
+    
+pulmonologist_assessment:
+  description: >
+    Realiza una evaluación neumológica del paciente. Deberás
+    1. Analizar síntomas respiratorios
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales pulmonares
+    4. Recomendar tratamientos para problemas respiratorios
+    Tu evaluación debe centrarse en el sistema respiratorio.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: pulmonologist
+  expected_output: "Evaluación neumológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+otorhinolaryngologist_assessment:
+  description: >
+    Realiza una evaluación otorrinolaringológica del paciente. Deberás
+    1. Analizar síntomas de oído, nariz y garganta
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales ORL
+    4. Recomendar tratamientos apropiados
+    Tu evaluación debe centrarse en la región de cabeza y cuello.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: otorhinolaryngologist
+  expected_output: "Evaluación otorrinolaringológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+ophthalmologist_assessment:
+  description: >
+    Realiza una evaluación oftalmológica del paciente. Deberás
+    1. Analizar síntomas visuales y oculares
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales oftalmológicos
+    4. Recomendar tratamientos para problemas oculares
+    Tu evaluación debe centrarse en la salud visual.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: ophthalmologist
+  expected_output: "Evaluación oftalmológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+hematologist_assessment:
+  description: >
+    Realiza una evaluación hematológica del paciente. Deberás
+    1. Analizar alteraciones sanguíneas
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales hematológicos
+    4. Recomendar tratamientos para trastornos de la sangre
+    Tu evaluación debe centrarse en componentes sanguíneos.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: hematologist
+  expected_output: "Evaluación hematológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+nephrologist_assessment:
+  description: >
+    Realiza una evaluación nefrológica del paciente. Deberás
+    1. Analizar la función renal
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales nefrológicos
+    4. Recomendar tratamientos para enfermedades renales
+    Tu evaluación debe centrarse en el sistema renal.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: nephrologist
+  expected_output: "Evaluación nefrológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+oncologist_assessment:
+  description: >
+    Realiza una evaluación oncológica del paciente. Deberás
+    1. Analizar signos y síntomas sugestivos de neoplasia
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales oncológicos
+    4. Recomendar abordajes terapéuticos si corresponde
+    Tu evaluación debe enfocarse en la detección y manejo de procesos neoplásicos.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: oncologist
+  expected_output: "Evaluación oncológica del caso"
+  context:
+    - general_practitioner_assessment
+    
+social_worker_assessment:
+  description: >
+    Realiza una evaluación social del paciente. Deberás
+    1. Analizar factores sociales que impactan en la salud
+    2. Identificar necesidades de apoyo
+    3. Evaluar recursos disponibles
+    4. Proponer intervenciones sociales específicas
+    Tu evaluación debe considerar el contexto sociofamiliar.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: social_worker
+  expected_output: "Evaluación social del caso"
+  context:
+    - general_practitioner_assessment
+    
+speech_therapist_assessment:
+  description: >
+    Realiza una evaluación logopédica del paciente. Deberás
+    1. Analizar trastornos del habla, lenguaje y deglución
+    2. Proponer pruebas diagnósticas específicas
+    3. Diseñar un plan de intervención logopédica
+    4. Recomendar ejercicios específicos
+    Tu evaluación debe centrarse en la comunicación y deglución.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: speech_therapist
+  expected_output: "Evaluación logopédica del caso"
+  context:
+    - general_practitioner_assessment
+    
+occupational_therapist_assessment:
+  description: >
+    Realiza una evaluación ocupacional del paciente. Deberás
+    1. Analizar la capacidad funcional en actividades diarias
+    2. Identificar barreras para la independencia
+    3. Evaluar necesidades de adaptaciones
+    4. Proponer intervenciones específicas
+    Tu evaluación debe enfocarse en maximizar la autonomía.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: occupational_therapist
+  expected_output: "Evaluación ocupacional del caso"
+  context:
+    - general_practitioner_assessment
+    
+clinical_nutritionist_assessment:
+  description: >
+    Realiza una evaluación nutricional clínica del paciente. Deberás
+    1. Analizar estado nutricional en contexto de enfermedad
+    2. Evaluar necesidades nutricionales específicas
+    3. Proponer soporte nutricional si es necesario
+    4. Recomendar adaptaciones dietéticas terapéuticas
+    Tu evaluación debe enfocarse en la nutrición como parte del tratamiento.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: clinical_nutritionist
+  expected_output: "Evaluación nutricional clínica del caso"
+  context:
+    - general_practitioner_assessment
+    
+palliative_care_physician_assessment:
+  description: >
+    Realiza una evaluación paliativa del paciente. Deberás
+    1. Analizar síntomas que afecten la calidad de vida
+    2. Evaluar necesidades físicas, emocionales y espirituales
+    3. Proponer medidas para el control sintomático
+    4. Recomendar un enfoque integral centrado en la persona
+    Tu evaluación debe enfocarse en el bienestar y dignidad.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: palliative_care_physician
+  expected_output: "Evaluación paliativa del caso"
+  context:
+    - general_practitioner_assessment
+    
+sleep_medicine_specialist_assessment:
+  description: >
+    Realiza una evaluación de medicina del sueño del paciente. Deberás
+    1. Analizar patrones y trastornos del sueño
+    2. Proponer pruebas diagnósticas específicas
+    3. Sugerir diagnósticos diferenciales
+    4. Recomendar intervenciones para mejorar el sueño
+    Tu evaluación debe centrarse en la calidad del sueño.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: sleep_medicine_specialist
+  expected_output: "Evaluación de medicina del sueño del caso"
+  context:
+    - general_practitioner_assessment
+    
+geneticist_assessment:
+  description: >
+    Realiza una evaluación genética del paciente. Deberás
+    1. Analizar antecedentes familiares y personales
+    2. Identificar posibles patrones hereditarios
+    3. Proponer pruebas genéticas específicas
+    4. Realizar asesoramiento genético si corresponde
+    Tu evaluación debe considerar factores genéticos relevantes.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: geneticist
+  expected_output: "Evaluación genética del caso"
+  context:
+    - general_practitioner_assessment
+    
+internist_assessment:
+  description: >
+    Realiza una evaluación de medicina interna del paciente. Deberás
+    1. Analizar de forma integral todos los sistemas
+    2. Evaluar interacciones entre diferentes patologías
+    3. Proponer un enfoque diagnóstico sistematizado
+    4. Recomendar un plan terapéutico integrado
+    Tu evaluación debe tener un enfoque holístico.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: internist
+  expected_output: "Evaluación de medicina interna del caso"
+  context:
+    - general_practitioner_assessment
+
+patient_care_assessment:
+  description: >
+    Realiza un resumen integrador para el paciente. Deberás
+    1. Sintetizar los hallazgos principales de todos los especialistas
+    2. Explicar de forma clara y comprensible los diagnósticos
+    3. Presentar el plan de tratamiento propuesto
+    4. Responder a las posibles dudas del paciente
+    5. Ofrecer recomendaciones para el seguimiento
+    Tu comunicación debe ser empática, clara y adaptada al nivel de comprensión del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: patient_care
+  expected_output: "Resumen y comunicación al paciente"
+  context:
+    - general_practitioner_assessment
+    - neurologist_assessment
+    - nutritionist_assessment
+    - autoimmune_specialist_assessment
+    - endocrinologist_assessment
+    - cardiologist_assessment
+    - physiotherapist_assessment
+    - psychiatrist_assessment
+    - clinical_pharmacologist_assessment
+    - rheumatologist_assessment
+    - pain_specialist_assessment
+    - orthopedist_assessment
+    - dermatologist_assessment
+    - podiatrist_assessment
+    - urologist_assessment
+    - allergist_assessment
+    - gynecologist_assessment
+    - gastroenterologist_assessment
+    - pediatrician_assessment
+    - geriatrician_assessment
+    - pulmonologist_assessment
+    - otorhinolaryngologist_assessment
+    - ophthalmologist_assessment
+    - hematologist_assessment
+    - nephrologist_assessment
+    - oncologist_assessment
+    - social_worker_assessment
+    - speech_therapist_assessment
+    - occupational_therapist_assessment
+    - clinical_nutritionist_assessment
+    - palliative_care_physician_assessment
+    - sleep_medicine_specialist_assessment
+    - geneticist_assessment
+    - internist_assessment
+

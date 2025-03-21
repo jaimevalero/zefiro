@@ -1,0 +1,29 @@
+{
+  "name": "meta_crew_backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/dotenv": "^1.4.2",
+    "axios": "^1.8.2",
+    "bootstrap": "^5.3.3",
+    "core-js": "^3.25.3",
+    "gapi-script": "^1.2.0",
+    "js-cookie": "^3.0.5",
+    "js-yaml": "^4.1.0",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.10"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.3"
+  }
+}

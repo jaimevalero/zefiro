@@ -1,0 +1,118 @@
+meta:
+  name: "dr-house"
+  description: "tu gabinete medico"
+
+backend:
+  case:
+    prompt: >
+      Eres un gabinete medico, y tienes que resolver el caso de un paciente que llega con los siguientes sintomas:
+      <case>{case}</case>
+
+  nomination:
+    method:
+      type: "prompt" # all to chose all agents or prompt
+      prompt: >
+        You have to select which AI agents, will resolve the case of the bottom.
+        - The agents selected will be the ones that will resolve the case.
+        - Escoge hasta 8 especialistas, pero pueden ser menos.
+        - The agents will be selected in the order you choose them (This is important because the stdout is passed from one to anoher).
+        - Siempre añade el agente dietista, como segundo agente.
+        - You MUST respond only with an array of the agents name, nothing else ( The response will be converted into an JSON array of strings).
+        Response Example: [ "general_practitioner", "dietista","neurologist" ,"patient_care" ]
+        <case>{case}</case>
+
+    always_first_agent: general_practitioner
+    always_last_agent: patient_care
+
+  source_of_truth:
+  - name: "book name"
+    description: "Use of the book"
+    file:
+        src: files/crons/delete-duplicates-dcip_jenkins_builds.sql
+
+frontend:
+  app_name: "Dr. Casa"
+  main_info: >
+    Esta aplicación genera reportes médicos, escogiendo los especialista según el caso descrito.
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/dr-casa.md"
+  # Nueva configuración de tema
+  theme:
+    dark: false
+    colors:
+      primary: "#0072CE"    # Azul médico, profesionalismo y confianza
+      secondary: "#4CAF50"  # Verde, representa salud y bienestar
+      accent: "#03A9F4"     # Azul cielo, frescura y claridad
+      info: "#2196F3"
+      warning: "#FFC107"
+      error: "#F44336"
+      alert: "#FFECB3"
+      success: "#4CAF50"
+  # Definición flexible de formularios
+  form:
+    # Formulario general para pacientes
+    title: "Información del Paciente"
+    description: "Por favor complete la información del paciente"
+    fields:
+      - name: "customer_data"
+        label: "Datos del Paciente"
+        description: "Peso, altura, edad, sexo, etc"
+        type: "textarea"
+        required: true
+        icon: "user"
+
+      - name: "symptoms"
+        label: "Síntomas"
+        description: "Describa los síntomas actuales"
+        type: "textarea"
+        required: true
+        icon: "stethoscope"
+
+      - name: "previous_illnesses"
+        label: "Enfermedades Previas"
+        description: "Historial de enfermedades"
+        type: "textarea"
+        required: false
+        icon: "file-medical"
+
+      - name: "medications"
+        label: "Medicamentos"
+        description: "Medicamentos que toma actualmente"
+        type: "textarea"
+        required: false
+        icon: "pills"
+
+      - name: "allergies"
+        label: "Alergias"
+        description: "Alergias conocidas"
+        type: "textarea"
+        required: false
+        icon: "allergies"
+
+      - name: "family_history"
+        label: "Historial Familiar"
+        description: "Antecedentes de enfermedades en familiares"
+        type: "textarea"
+        required: false
+        icon: "users"
+
+    # # Puedes definir otros formularios específicos
+    # pediatric_form:
+    #   title: "Información Pediátrica"
+    #   description: "Por favor complete la información del paciente pediátrico"
+    #   fields:
+    #     - name: "child_data"
+    #       label: "Datos del Niño"
+    #       description: "Edad, peso, altura, etc."
+    #       type: "textarea"
+    #       required: true
+    #       icon: "child"
+
+    #     - name: "development"
+    #       label: "Desarrollo"
+    #       description: "Hitos del desarrollo"
+    #       type: "textarea"
+    #       required: true
+    #       icon: "baby"
+
+    #     # ...otros campos específicos para pediatría
+

@@ -1,0 +1,67 @@
+number_block_1_assessment:
+  description: >
+    Create a short 3-line rhyme highlighting the uniqueness and importance of the number 1.
+    The rhyme should emphasize how "one" is the foundation of all other numbers and
+    demonstrate the concept of unity and singularity in a fun, enthusiastic way.
+    Make reference to "I am One! That was fun!" in your creation.
+    Follow all instructions provided in {case} when creating your response.
+  agent: number_block_1
+  expected_output: "A 3-line rhyme about the number 1"
+
+number_block_2_assessment:
+  description: >
+    Create a rhythmic pattern or chant that showcases the power of pairs and dualities.
+    Your pattern should repeat at least twice, demonstrating how things work better in twos.
+    Include examples of famous pairs or dualities and create
+    a "One, two!" call-and-response pattern that could be easily remembered.
+    Make sure to adhere to all specific requirements from {case} in your creation.
+  agent: number_block_2
+  expected_output: "A rhythmic pattern or chant about the number 2 and pairs"
+
+number_block_3_assessment:
+  description: >
+    Simplify a complex concept into exactly three easy-to-understand points.
+    Then, create a catchy 3-line slogan that begins with "Ba ba bum!!!" and makes learning
+    about this topic fun and memorable. Show how breaking things into threes makes
+    complicated ideas easier to understand and remember.
+    Format your response according to the instructions from {case}.
+  agent: number_block_3
+  expected_output: "Three simplified points and a catchy slogan"
+
+number_block_4_assessment:
+  description: >
+    Design a 2x2 matrix framework for analyzing a concept or situation.
+    Your framework should have four distinct quadrants that represent different
+    approaches or perspectives. Explain why your square framework provides
+    stability and structure to understanding the topic, and why "squares" are
+    more reliable than "round things" for this analysis.
+    Incorporate any specific guidelines mentioned in {case} when developing your framework.
+  agent: number_block_4
+  expected_output: "A 2x2 matrix framework with explanation"
+
+number_block_5_assessment:
+  description: >
+    Create a five-point star-shaped checklist for evaluating or implementing solutions.
+    Each point of the star should represent a critical aspect that needs to be considered.
+    Then, compose a short coordination chant that begins with "Are we all in order?"
+    to help teams remember all five points. Demonstrate how your five-point approach 
+    ensures comprehensive coverage.
+    Align your response with all requirements specified in {case}.
+  agent: number_block_5
+  expected_output: "A five-point star checklist and coordination chant"
+
+script_writer_assessment:
+  description: >
+    Write a short script for an episode of "Numberblocks" that incorporates the contributions
+    of all five Numberblocks agents. Each agent should have a speaking role that highlights
+    their unique abilities and roles. The script should follow the specific instructions
+    provided in {case} and showcase the teamwork and strengths of the agents.
+    Ensure that the script is engaging, educational, and aligns with the overall theme of the series.
+  agent: script_writer
+  expected_output: "A script for an episode of 'Numberblocks'"
+  context:
+    - number_block_5_assessment
+    - number_block_4_assessment
+    - number_block_3_assessment
+    - number_block_2_assessment
+    - number_block_1_assessment

@@ -1,0 +1,74 @@
+sports_physician_assessment:
+  description: >
+    Realiza una evaluación médica deportiva del runner. Deberás
+    1. Analizar su historial médico y deportivo
+    2. Identificar riesgos de lesiones relacionados con el running
+    3. Proponer pruebas médicas básicas para evaluar su condición física
+    4. Sugerir medidas preventivas para evitar lesiones
+    5. Proporcionar un plan inicial de manejo deportivo
+    Tu evaluación debe ser clara, concisa y enfocada en optimizar el rendimiento y la salud del runner.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: sports_physician
+  expected_output: "Evaluación médica deportiva del runner"
+  context:
+    - sports_physician_assessment
+
+nutritionist_assessment:
+  description: >
+    Realiza una evaluación nutricional del runner. Deberás
+    1. Analizar sus hábitos alimenticios actuales
+    2. Identificar deficiencias nutricionales o áreas de mejora
+    3. Proponer un plan de alimentación personalizado para optimizar su rendimiento
+    4. Sugerir suplementación segura y efectiva, si es necesaria
+    5. Adaptar la dieta a las fases de entrenamiento y competición
+    Tu evaluación debe ser práctica y enfocada en mejorar la energía y recuperación del runner.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: nutritionist
+  expected_output: "Evaluación nutricional del runner"
+  context:
+    - nutritionist_assessment
+
+physiotherapist_assessment:
+  description: >
+    Realiza una evaluación fisioterapéutica del runner. Deberás
+    1. Analizar su biomecánica y patrones de movimiento
+    2. Identificar posibles lesiones o desequilibrios musculares
+    3. Proponer ejercicios de fortalecimiento y estiramiento
+    4. Sugerir técnicas de prevención de lesiones
+    5. Proporcionar un plan de rehabilitación si es necesario
+    Tu evaluación debe ser detallada y enfocada en mejorar la movilidad y prevenir lesiones.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: physiotherapist
+  expected_output: "Evaluación fisioterapéutica del runner"
+  context:
+    - physiotherapist_assessment
+
+sports_psychologist_assessment:
+  description: >
+    Realiza una evaluación psicológica del runner. Deberás
+    1. Analizar su mentalidad y motivación actual
+    2. Identificar posibles bloqueos mentales o fuentes de estrés
+    3. Proponer estrategias para mejorar el enfoque y la concentración
+    4. Sugerir técnicas de gestión del estrés precompetitivo
+    5. Proporcionar un plan de apoyo psicológico personalizado
+    Tu evaluación debe ser empática y enfocada en fortalecer la mentalidad del runner.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: sports_psychologist
+  expected_output: "Evaluación psicológica del runner"
+  context:
+    - sports_psychologist_assessment
+
+strength_coach_assessment:
+  description: >
+    Realiza una evaluación de fuerza y acondicionamiento del runner. Deberás
+    1. Analizar su nivel de fuerza y resistencia muscular actual
+    2. Identificar desequilibrios musculares o áreas de mejora
+    3. Proponer ejercicios de fortalecimiento específicos para runners
+    4. Sugerir un plan de entrenamiento funcional para prevenir lesiones
+    5. Adaptar el programa a las fases de preparación y competición
+    Tu evaluación debe ser práctica y enfocada en mejorar la eficiencia de la zancada y la resistencia.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: strength_coach
+  expected_output: "Evaluación de fuerza y acondicionamiento del runner"
+  context:
+    - strength_coach_assessment

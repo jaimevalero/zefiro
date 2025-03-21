@@ -1,0 +1,82 @@
+Quiero que me ayudes hacer una app de crew.ai de nombre multilevel
+su cometido es adaptar curricularmente examenes y lecciones que un profesor imparte a su clase, a la enseñanza multinivel.
+Contexot Ahora es obligatoria en españa, que los profesores adapten los contenidos (lecciones, exámenes, ejercicios) a cada tipo de alumno que tenga necesidades educativas especiales, y por tanto niveles de aprendizaje diferentes. Usará la taxonimía de bloom para diseñar, dado una entrada que puede ser una lección, ejercicio ó examen y una descripción de la clase (numero de alumnos de cada tipo de necesidades educativas especificas, TDAH, altas capacidades, espectro autista, dislexia, etc). Usará la taxonomía de bloom para, sin bajar el nivel, generar reportes adaptados multnivel del caso presentado.
+
+En un paso anterior me has ayudado generante los agents.
+Quiero que basandote en esto, me generes el fichero de tasks.yaml
+Creame una task por agente, que describa como debe ordenadamente, generar un reporte que se le pasará al usuario.
+Usa context, para ver salidas de otras tareas serán usadas como input de estas (es decir, para poner el orden)
+Piensa adecuadamente, el rol del agente relacionado, para dar una salida estructurada al usuario que consulte al agente.
+
+
+<agents.yaml>
+
+
+ necesidades_evaluator:
+  backstory: "Psicopedagogo con 10 años de experiencia en evaluación e identificación de necesidades educativas especiales. Especialista en análisis de perfiles de aprendizaje diversos y desarrollo de planes personalizados. Ha colaborado en la creación de protocolos de evaluación para centros educativos inclusivos.\n"
+  context: "Evaluación del perfil de necesidades educativas del aula descrita por {user}"
+  goal: "Identificar y categorizar los diferentes perfiles de aprendizaje presentes en el aula Analizar el impacto de cada necesidad en el proceso educativo Determinar adaptaciones prioritarias para cada perfil Generar un mapa de necesidades del aula como guía para la adaptación\n"
+  role: Evaluador de Necesidades Educativas
+  verbose: true
+
+contenido_analyzer:
+  backstory: "Docente e investigador educativo con especialización en diseño curricular y análisis de contenidos. Ha desarrollado metodologías para descomponer objetivos educativos según taxonomías de aprendizaje. Experiencia en la adaptación de materiales para diversos contextos educativos.\n"
+  context: "Análisis del material educativo proporcionado por {user}"
+  goal: "Descomponer el contenido según los niveles de la taxonomía de Bloom Identificar conceptos clave y habilidades objetivo Evaluar la complejidad cognitiva de las actividades Mapear la progresión de aprendizaje implícita en el material\n"
+  role: Analizador de Contenidos
+  verbose: true
+
+adaptacion_designer:
+  backstory: "Especialista en educación inclusiva con 12 años diseñando adaptaciones curriculares. Formado en metodologías UDL (Diseño Universal de Aprendizaje) y diferenciación educativa. Ha implementado programas exitosos de enseñanza multinivel en diversos centros educativos.\n"
+  context: "Diseño de adaptaciones para el material educativo de {user} basado en los perfiles identificados"
+  goal: "Crear versiones adaptadas del contenido manteniendo los objetivos clave Aplicar técnicas de diferenciación por proceso, contenido y producto Asegurar progresión adecuada según la taxonomía de Bloom para cada perfil Mantener el nivel de exigencia ajustando la forma de acceso al conocimiento\n"
+  role: Diseñador de Adaptaciones
+  verbose: true
+
+material_generator:
+  backstory: "Creador de contenidos educativos con experiencia en desarrollo de materiales multinivel. Especializado en tecnologías educativas y formatos accesibles. Ha desarrollado recursos para editoriales educativas y plataformas digitales de aprendizaje adaptativo.\n"
+  context: "Generación de materiales educativos adaptados para {user}"
+  goal: "Producir versiones específicas de lecciones, exámenes y ejercicios Incorporar ajustes visuales, organizativos y procedimentales según cada perfil Generar instrucciones claras para la implementación en el aula Crear sistema de evaluación coherente con las adaptaciones realizadas\n"
+  role: Generador de Materiales
+  verbose: true
+
+implementacion_advisor:
+  backstory: "Asesor pedagógico especializado en implementación de programas inclusivos. Ha guiado a docentes en la transición hacia modelos multinivel. Experiencia en formación del profesorado sobre adaptaciones curriculares y evaluación diversificada.\n"
+  context: "Orientación para la implementación de adaptaciones en el aula de {user}"
+  goal: "Proporcionar estrategias prácticas para gestionar el aula multinivel Sugerir técnicas de organización temporal y espacial Recomendar herramientas de seguimiento del progreso individual Anticipar desafíos comunes y sus soluciones\n"
+  role: Asesor de Implementación
+  verbose: true
+
+
+</agents.yaml>
+
+<ejemplo_tasks.yaml>ç
+symptom_evaluator_assessment:
+  description: >
+    Realiza una evaluación de los síntomas emocionales del usuario. Deberás:
+    1. Analizar las descripciones textuales proporcionadas por el usuario
+    2. Clasificar los síntomas en categorías específicas (ansiedad, estrés, soledad)
+    3. Identificar patrones recurrentes de malestar emocional
+    4. Detectar señales de alerta temprana que requieran atención
+    5. Priorizar aspectos que necesiten intervención inmediata
+    Tu evaluación debe ser empática, precisa y enfocada en detectar los aspectos más relevantes.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: symptom_evaluator
+  expected_output: "Evaluación de síntomas emocionales del usuario"
+  context: []  # Primer paso, no requiere contexto previo
+
+crisis_filter_assessment:
+  description: >
+    Realiza un análisis de crisis potenciales en el usuario. Deberás:
+    1. Examinar el lenguaje utilizado para identificar señales de riesgo
+    2. Evaluar la gravedad de la situación emocional basada en la evaluación previa de síntomas
+    3. Determinar si es necesario activar protocolos de contención
+    4. Recomendar derivación a servicios profesionales cuando sea necesario
+    5. Preparar un reporte estructurado para seguimiento
+    Tu evaluación debe ser rápida, precisa y enfocada en la seguridad del usuario.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: crisis_filter
+  expected_output: "Análisis de riesgo y necesidad de intervención"
+  context:
+    - symptom_evaluator_assessment  # Usa la evaluación de síntomas como entrada
+</ejemplo_tasks.yaml>

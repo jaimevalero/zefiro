@@ -1,0 +1,124 @@
+meta:
+  name: "footnotes"
+  description: "tu gabinete medico"
+
+backend:
+  case:
+    prompt: >
+      Eres un equipo de preparación deportiva, y tienes que ayudar al runner a preparar su próxima competición, dentro de su carrera deportiva.
+      <case>{case}</case>
+
+  nomination:
+    method:
+      type: "all" # all to chose all agents or prompt
+      # prompt: > 
+      #   You have to select which AI agents, will resolve the case of the bottom.
+      #   - The agents selected will be the ones that will resolve the case.
+      #   - Escoge hasta 8 especialistas, pero pueden ser menos.
+      #   - The agents will be selected in the order you choose them (This is important because the stdout is passed from one to anoher).
+      #   - Siempre añade el agente dietista, como segundo agente.
+      #   - You MUST respond only with an array of the agents name, nothing else ( The response will be converted into an JSON array of strings).
+      #   Response Example: [ "general_practitioner", "dietista","neurologist" ,"patient_care" ]        
+      #   <case>{case}</case>
+      
+    # always_first_agent: general_practitioner
+    # always_last_agent: patient_care
+
+  # source_of_truth:
+  # - name: "book name"
+  #   description: "Use of the book"
+  #   file:
+  #       src: files/crons/delete-duplicates-dcip_jenkins_builds.sql
+
+frontend:
+  app_name: "Foot Notes"
+  main_info: >
+    Esta aplicación genera asistencia para runners que desean preparar una competición. Los expertos incluyen:
+    - Médico del Deporte  
+    - Nutricionista Deportivo  
+    - Fisioterapeuta Deportivo  
+    - Psicólogo Deportivo  
+    - Entrenador de Fuerza.  
+
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/footnotes.md"
+  # Nueva configuración de tema
+  theme:
+    dark: false
+    colors:
+      primary: "#E91E63"    # Fucsia, dinamismo y energía
+      secondary: "#1E88E5"  # Azul energético, dinamismo y motivación
+      accent: "#6A1B9A"     # Púrpura oscuro, complementa los otros colores y permite texto blanco
+      info: "#2196F3"
+      warning: "#FFC107"    # Amarillo, atención y precaución
+      error: "#F44336"
+      alert: "#FFECB3"
+      success: "#4CAF50"    # Verde, logros y éxito
+  # Definición flexible de formularios
+  form:
+    # Formulario general para preparación deportiva
+    title: "Información del Runner"
+    description: "Por favor complete la información del runner"
+    fields:
+      - name: "runner_data"
+        label: "Datos del Runner"
+        description: "Peso, altura, edad, sexo, etc"
+        type: "textarea"
+        required: true
+        icon: "user"
+        
+      - name: "training_goals"
+        label: "Objetivos de Entrenamiento"
+        description: "Describa los objetivos de entrenamiento del runner"
+        type: "textarea"
+        required: true
+        icon: "bullseye"
+        
+      - name: "current_fitness"
+        label: "Condición Física Actual"
+        description: "Describa la condición física actual del runner"
+        type: "textarea"
+        required: true
+        icon: "dumbbell"
+        
+      - name: "nutrition_plan"
+        label: "Plan de Nutrición"
+        description: "Describa el plan de nutrición actual del runner"
+        type: "textarea"
+        required: false
+        icon: "apple"
+        
+      - name: "injury_history"
+        label: "Historial de Lesiones"
+        description: "Describa cualquier lesión previa del runner"
+        type: "textarea"
+        required: false
+        icon: "crutch"
+        
+      - name: "mental_preparation"
+        label: "Preparación Mental"
+        description: "Describa las estrategias de preparación mental del runner"
+        type: "textarea"
+        required: false
+        icon: "brain"
+  
+    # # Puedes definir otros formularios específicos
+    # pediatric_form:
+    #   title: "Información Pediátrica"
+    #   description: "Por favor complete la información del paciente pediátrico"
+    #   fields:
+    #     - name: "child_data"
+    #       label: "Datos del Niño"
+    #       description: "Edad, peso, altura, etc."
+    #       type: "textarea"
+    #       required: true
+    #       icon: "child"
+          
+    #     - name: "development"
+    #       label: "Desarrollo"
+    #       description: "Hitos del desarrollo"
+    #       type: "textarea"
+    #       required: true
+    #       icon: "baby"
+          
+    #     # ...otros campos específicos para pediatría
+

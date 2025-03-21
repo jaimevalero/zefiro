@@ -1,0 +1,79 @@
+necesidades_evaluator_assessment:
+  description: >
+    Realiza una evaluación completa de los perfiles de necesidades educativas especiales presentes en el aula. Deberás:
+    1. Analizar la descripción de la clase proporcionada por el usuario
+    2. Identificar y categorizar los diferentes perfiles de aprendizaje (TDAH, altas capacidades, espectro autista, dislexia, etc.)
+    3. Cuantificar la distribución de necesidades específicas en el aula
+    4. Analizar el impacto potencial de cada necesidad en el proceso de aprendizaje
+    5. Determinar adaptaciones prioritarias para cada perfil identificado
+    6. Generar un mapa estructurado de necesidades del aula como base para las adaptaciones
+    Tu evaluación debe ser detallada, basada en evidencia y enfocada en facilitar el trabajo adaptativo posterior.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: necesidades_evaluator
+  expected_output: "Mapa de necesidades educativas del aula con perfiles identificados y prioridades de adaptación"
+  context: []  # Primer paso, no requiere contexto previo
+
+contenido_analyzer_assessment:
+  description: >
+    Realiza un análisis detallado del material educativo proporcionado. Deberás:
+    1. Identificar el tipo de material (lección, examen, ejercicio) y su objetivo pedagógico
+    2. Descomponer el contenido según los seis niveles de la taxonomía de Bloom (recordar, comprender, aplicar, analizar, evaluar, crear)
+    3. Identificar conceptos clave, habilidades objetivo y competencias a desarrollar
+    4. Evaluar la complejidad cognitiva de cada actividad o pregunta
+    5. Mapear la progresión de aprendizaje implícita en el material
+    6. Generar un informe estructurado de análisis que servirá como base para las adaptaciones
+    Tu análisis debe ser riguroso, vinculado explícitamente a la taxonomía de Bloom y orientado a mantener los objetivos pedagógicos en las adaptaciones.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: contenido_analyzer
+  expected_output: "Análisis estructurado del material educativo según taxonomía de Bloom"
+  context: []  # Puede realizarse en paralelo a la evaluación de necesidades
+
+adaptacion_designer_plan:
+  description: >
+    Desarrolla un plan detallado de adaptaciones curriculares para cada perfil identificado. Deberás:
+    1. Integrar el mapa de necesidades educativas con el análisis del material
+    2. Diseñar adaptaciones específicas para cada perfil manteniendo los objetivos clave
+    3. Aplicar técnicas de diferenciación por proceso, contenido y producto
+    4. Asegurar la progresión adecuada según la taxonomía de Bloom para cada perfil
+    5. Especificar ajustes metodológicos, organizativos y evaluativos para cada adaptación
+    6. Crear una matriz de adaptaciones que vincule cada perfil con los ajustes específicos
+    Tu plan debe ser coherente, mantener el nivel de exigencia ajustando la forma de acceso al conocimiento y basarse en el Diseño Universal de Aprendizaje.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: adaptacion_designer
+  expected_output: "Plan de adaptaciones curriculares multinivel con matriz de ajustes por perfil"
+  context:
+    - necesidades_evaluator_assessment  # Usa el mapa de necesidades como entrada
+    - contenido_analyzer_assessment  # Usa el análisis de contenido como entrada
+
+material_generator_production:
+  description: >
+    Produce los materiales educativos adaptados según el plan diseñado. Deberás:
+    1. Generar versiones específicas del material original (lecciones, exámenes, ejercicios) para cada perfil
+    2. Incorporar ajustes visuales, organizativos y procedimentales según las necesidades identificadas
+    3. Desarrollar instrucciones claras y específicas para cada versión adaptada
+    4. Crear instrumentos de evaluación coherentes con las adaptaciones realizadas
+    5. Mantener la alineación con los objetivos originales y la taxonomía de Bloom
+    6. Organizar el material en un formato accesible y práctico para su implementación
+    Tu producción debe ser concreta, lista para usar en el aula y claramente etiquetada para cada perfil de necesidad educativa.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: material_generator
+  expected_output: "Materiales educativos adaptados para cada perfil con instrucciones de aplicación"
+  context:
+    - adaptacion_designer_plan  # Usa el plan de adaptaciones como entrada
+
+implementacion_advisor_guidance:
+  description: >
+    Proporciona orientación práctica para la implementación efectiva de las adaptaciones en el aula. Deberás:
+    1. Desarrollar estrategias específicas para gestionar simultáneamente diferentes niveles en el aula
+    2. Sugerir técnicas de organización temporal y espacial para facilitar el trabajo multinivel
+    3. Recomendar herramientas concretas para el seguimiento del progreso individual
+    4. Anticipar desafíos comunes en la implementación y proponer soluciones prácticas
+    5. Ofrecer consejos para la comunicación con el alumnado y sus familias sobre las adaptaciones
+    6. Proporcionar recursos adicionales y referencias para profundizar en técnicas específicas
+    Tu orientación debe ser práctica, realista y enfocada en la aplicabilidad inmediata en el contexto educativo real.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: implementacion_advisor
+  expected_output: "Guía de implementación práctica con estrategias, técnicas y soluciones a desafíos"
+  context:
+    - material_generator_production  # Usa los materiales generados como entrada
+    - necesidades_evaluator_assessment  # Considera también el mapa de necesidades original
