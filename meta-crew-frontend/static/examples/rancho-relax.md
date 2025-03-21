@@ -1,11 +1,7 @@
-# 0 Informe: Evaluación De Síntomas Emocionales Del Usuario
-
-## Caso ficticio de María, 34 años
-**Evaluación de Síntomas Emocionales - María, 34 años**
-# Caso de usuario: María, 34 años
+# Caso ficticio de María, 34 años
 
 ## Datos Personales
-Soy María, tengo 34 años y trabajo como ingeniera de software en una empresa tecnológica. Vivo sola en un apartamento en la ciudad desde hace 3 años, tras mi separación. No tengo hijos. Mi familia vive en otra ciudad, a unas 3 horas de distancia.
+Soy María, tengo 34 años y trabajo como ingeniera en una empresa tecnológica. Vivo sola en un apartamento en la ciudad desde hace 3 años, tras mi separación. No tengo hijos. Mi familia vive en otra ciudad, a unas 3 horas de distancia.
 
 ## Estado Emocional
 Durante los últimos meses me he sentido constantemente abrumada y con una sensación de vacío. Hay días en que me cuesta mucho levantarme de la cama. Siento una angustia casi permanente, como si algo malo fuera a pasar, aunque no haya razones objetivas para ello. A veces tengo episodios donde mi corazón se acelera y siento que me falta el aire, especialmente cuando pienso en todas las responsabilidades que tengo.
