@@ -2,7 +2,7 @@
 
 
 ## Description
-With this project, you can easily create crews for  crew.ai library. 
+With this project, you can easily create crews for  crew.ai framework. 
 
 
 ## Currents crews
