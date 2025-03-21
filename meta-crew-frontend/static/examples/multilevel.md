@@ -46,8 +46,10 @@ Contenido:
    a) El resultado de multiplicar un número por 10 siempre termina en 0.
 
    b) Para multiplicar por 0,5 es lo mismo que dividir entre 2.
+
+   c) El resultado de dividir un número entre 1 es siempre el mismo 
+   número.
    
-   c) El resultado de dividir un número entre 1 es siempre el mismo número.
    d) En la división, el dividendo siempre es mayor que el divisor.
 
 Área o Asignatura: Matemáticas
