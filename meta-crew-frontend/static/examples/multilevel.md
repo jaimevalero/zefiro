@@ -35,13 +35,18 @@ Contenido:
 
 3. Problemas:
    a) En la tienda hay 24 cajas de lápices. Cada caja tiene 12 lápices. ¿Cuántos lápices hay en total?
+
    b) Elena tiene 45,5 euros. Quiere comprar 3 libros que cuestan lo mismo cada uno. ¿Cuánto cuesta cada libro si gasta todo su dinero?
+
    c) La maestra reparte 96 caramelos entre los 24 estudiantes de la clase. ¿Cuántos caramelos recibe cada estudiante?
+
    d) Un camión transporta 125 kg de patatas. Si cada bolsa pesa 2,5 kg, ¿cuántas bolsas transporta el camión?
 
 4. Indica si estas afirmaciones son verdaderas o falsas:
    a) El resultado de multiplicar un número por 10 siempre termina en 0.
+
    b) Para multiplicar por 0,5 es lo mismo que dividir entre 2.
+   
    c) El resultado de dividir un número entre 1 es siempre el mismo número.
    d) En la división, el dividendo siempre es mayor que el divisor.
 
