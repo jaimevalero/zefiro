@@ -54,3 +54,5 @@ To build and run the Docker containers, follow these steps:
    docker compose build
    docker compose up -d
    ```
+
+## Note
