@@ -34,19 +34,7 @@ pip install -r meta_crew_backend/requirements.txt
 To build and run the Docker containers, follow these steps:
 
 1. Ensure Docker and Docker Compose are installed on your system.
-2. Navigate to the project directory:
-   ```bash
-   cd /root/scripts/meta-crew
-   ```
-3. Pull the latest changes from the repository:
-   ```bash
-   git pull origin main
-   ```
-4. Copy the environment files to the appropriate locations:
-   ```bash
-   cp meta-crew-frontend/.env_docker_frontend /root/scripts/meta-crew/meta-crew-frontend/.env
-   cp meta_crew_backend/.env /root/scripts/meta-crew/meta_crew_backend/.env
-   cp meta-crew-frontend/.env_docker_frontend /root/scripts/meta-crew/meta-crew-frontend/.env_docker_frontend
+
    ```
 5. Run Docker Compose to build and start the containers:
    ```bash
