@@ -11,8 +11,6 @@ With this project, you can easily create crews for  crew.ai framework.
 |----------------|------------------------------------------------------------------------------------------------------------|-------------------------------|------------------------------------------------------------------------------|
 | rancho-relaxo  | App para bienestar mental y emocional [agentes](etc/configs/rancho-relaxo/config/agents.yaml) [tareas](etc/configs/rancho-relaxo/config/tasks.yaml) | Mental wellness app          | [rancho-relax.md](meta-crew-frontend/static/examples/rancho-relax.md) ⭐      |
 | footnotes      | App para corredores y atletas [agentes](etc/configs/footnotes/config/agents.yaml) [tareas](etc/configs/footnotes/config/tasks.yaml)             | Running and athlete app      | [footnotes.md](meta-crew-frontend/static/examples/footnotes.md) ⭐            |
-| dr-casa        | App para asistencia médica especializada [agentes](etc/configs/dr-casa/config/agents.yaml) [tareas](etc/configs/dr-casa/config/tasks.yaml)     | Specialized medical assistance app | [dr-casa.md](meta-crew-frontend/static/examples/dr-casa.md) ⭐                |
-| hidalgos       | App para asistencia a personas de la tercera edad [agentes](etc/configs/hidalgos/config/agents.yaml) [tareas](etc/configs/hidalgos/config/tasks.yaml) | Elderly assistance app       | [hidalgos.md](meta-crew-frontend/static/examples/hidalgos.md) ⭐              |
 | alphablocks    | Episode writer (development only) [agentes](etc/configs/alphablocks/config/agents.yaml) [tareas](etc/configs/alphablocks/config/tasks.yaml)     | Create scripts for episodes  | N/A                                                                          |
 
 ## Example Directory Structure
