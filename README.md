@@ -57,4 +57,4 @@ To build and run the Docker containers, follow these steps:
 6. Access with a browser at `http://localhost:3000` 
 
 ## Note:
-This app need an open router token
+This app need an open router token. This has
