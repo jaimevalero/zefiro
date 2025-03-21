@@ -12,4 +12,108 @@ Quiero que me cambies especialmente.
 
 Te pego un ejemplo de config, cambialo para que se adecue
 <ejempo_config.yaml>
+frontend:
+  app_name: "rancho-relaxo"
+  main_info: >
+    Esta aplicación genera asistencia personalizada para personas que enfrentan problemas de salud mental cotidiana. Los expertos incluyen:
+    Evaluador de Síntomas, Filtro de Crisis, Generador de Recursos, Curador de Tiempo Libre y Tracker de Progreso.
+
+  download_example_report_link: "https://github.com/jaimevalero/mental-well-app/raw/master/examples/example_report.pdf"
+  # Nueva configuración de tema
+  theme:
+    dark: false
+    colors:
+      primary: "#4CAF50"    # Verde, simboliza salud y bienestar
+      secondary: "#8BC34A"  # Azul claro, tranquilidad
+      accent: "#03A9F4"     # Verde claro, frescura
+      info: "#2196F3"
+      warning: "#FF9800"
+      error: "#F44336"
+      alert: "#FGFGFG"
+      success: "#4CAF50"
+  # Definición flexible de formularios
+  form:
+    # Formulario para evaluación de bienestar psicológico
+    title: "Información del Usuario"
+    description: "Por favor complete la siguiente información para una evaluación personalizada"
+    fields:
+      - name: "personal_data"
+        label: "Datos Personales"
+        description: "Edad, ocupación, situación familiar, etc."
+        type: "textarea"
+        required: true
+        icon: "user"
+        
+      - name: "emotional_state"
+        label: "Estado Emocional"
+        description: "Describa cómo se ha sentido emocionalmente en las últimas semanas"
+        type: "textarea"
+        required: true
+        icon: "heart"
+        
+      - name: "current_challenges"
+        label: "Desafíos Actuales"
+        description: "Describa las situaciones o problemas que están afectando su bienestar emocional"
+        type: "textarea"
+        required: true
+        icon: "alert-circle"
+        
+      - name: "stress_triggers"
+        label: "Desencadenantes de Estrés"
+        description: "Identifique situaciones o factores que le generan estrés o ansiedad"
+        type: "textarea"
+        required: true
+        icon: "bolt"
+        
+      - name: "coping_strategies"
+        label: "Estrategias de Afrontamiento"
+        description: "Describa qué hace actualmente para manejar situaciones difíciles"
+        type: "textarea"
+        required: false
+        icon: "shield"
+        
+      - name: "sleep_patterns"
+        label: "Patrones de Sueño"
+        description: "Describa su calidad de sueño y hábitos relacionados"
+        type: "textarea"
+        required: false
+        icon: "bed"
+        
+      - name: "social_connections"
+        label: "Conexiones Sociales"
+        description: "Describa su red de apoyo y relaciones sociales"
+        type: "textarea"
+        required: false
+        icon: "users"
+        
+      - name: "daily_routine"
+        label: "Rutina Diaria"
+        description: "Describa brevemente su rutina diaria incluyendo trabajo, descanso y ocio"
+        type: "textarea"
+        required: false
+        icon: "calendar"
+        
+      - name: "previous_interventions"
+        label: "Intervenciones Previas"
+        description: "Describa cualquier tratamiento o intervención previa para su bienestar emocional"
+        type: "textarea"
+        required: false
+        icon: "history"
+        
+      - name: "wellbeing_goals"
+        label: "Objetivos de Bienestar"
+        description: "¿Qué espera lograr para mejorar su bienestar emocional?"
+        type: "textarea"
+        required: true
+        icon: "bullseye"
+
+backend:
+  case:
+    prompt: >
+      Eres un equipo de especialistas en bienestar psicológico y salud mental cotidiana. 
+      <case>{case}</case>
+
+  nomination:
+    method:
+      type: all
 </ejempo_config.yaml>
