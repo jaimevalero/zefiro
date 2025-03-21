@@ -1,4 +1,4 @@
-# Meta-Crew : La IA que crea IAs
+# Meta-Crew : La IA que hace IAs
 
 
 ## Description
