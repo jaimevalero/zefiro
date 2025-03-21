@@ -35,7 +35,7 @@ To build and run the Docker containers, follow these steps:
 
 1. Ensure Docker and Docker Compose are installed on your system.
 
-   ```
+2 Copy the 
 5. Run Docker Compose to build and start the containers:
    ```bash
    docker compose down
