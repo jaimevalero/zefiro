@@ -66,24 +66,24 @@ Objetivo: Prepararse para el Maratón de Madrid (a realizarse en 8 semanas)
 - Conseguir su objetivo de tiempo (<2h 40min)
 - Mantener el equilibrio entre entrenamiento y vida profesional
 
-**Evaluación Médica Deportiva del Runner - Carlos Martínez**
+**Fin caso ficticio*
 
 ---
 
-**1. Análisis de Historial Médico-Deportivo:**  
-- **Antecedentes lesionales:**  
+# 1. Análisis de Historial Médico-Deportivo:
+## Antecedentes lesionales:
   • Tendinitis aquileana bilateral recurrente (predisposición a degeneración tendinosa)  
   • Fascitis plantar resuelta (riesgo de recidiva por sobrecarga plantar)  
   • Síndrome de cintilla iliotibial (desequilibrio muscular glúteo medio/tensor fascia lata)  
   • Esguince tobillo grado II reciente (posible inestabilidad residual)  
 
-- **Condiciones actuales:**  
+## Condiciones actuales:
   • Dolor rodilla derecha >10 km (sospecha de reinicio cintilla iliotibial o condropatía rotuliana)  
   • Molestias Aquiles derecho post-entrenamiento (tendinosis incipiente)  
   • Parestesias pie izquierdo >15 km (posible atrapamiento nervio interdigital o calzado inadecuado)  
   • Lumbalgia post-velocidad (disfunción cadena posterior/core inestable)  
 
-- **Factores de riesgo contextuales:**  
+## Factores de riesgo contextuales:
   • Sedentarismo laboral (8-10h/día sentado → acortamiento isquiosural/hipopresivos)  
   • Sueño insuficiente (6-7h → alteración síntesis proteica/recuperación)  
   • Estrés laboral (↑ cortisol → retraso regeneración tisular)  

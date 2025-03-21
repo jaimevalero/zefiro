@@ -37,7 +37,7 @@
     </v-main>
     <v-footer app color="primary" dark class="footer-compact" absolute>
       <v-col class="text-right py-2" cols="12">
-        <v-btn icon href="https://github.com/jaimevalero/gifted-children-helper" target="_blank">
+        <v-btn icon href="https://github.com/jaimevalero/meta-crew" target="_blank">
           <v-icon>mdi-github</v-icon>
         </v-btn>
         Hecho con <v-icon color="red">mdi-heart</v-icon>
