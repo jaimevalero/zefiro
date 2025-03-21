@@ -1,0 +1,146 @@
+- name: Setup and deploy meta-crew
+  hosts: epg-wellness
+  become: true
+  vars:
+    repo_url: "git@github.com:jaimevalero/meta-crew.git"
+    repo_path: "/root/scripts/meta-crew"
+    local_env_files:
+      - "./meta-crew-frontend/.env"
+      - "./.env"
+    remote_env_files:
+      - "/root/scripts/meta-crew/meta-crew-frontend/.env"
+      - "/root/scripts/meta-crew/.env"
+    local_ssh_key: "/home/jaimevalero/.ssh/id_rsa.github"
+    remote_ssh_key: "/root/.ssh/id_rsa.github"
+    openrouter_token: "{{ openrouter_token }}"
+
+  tasks:
+    # - name: Ensure required packages are installed
+    #   apt:
+    #     name:
+    #       - git
+    #       - curl
+    #       - vim
+    #     state: present
+    #     update_cache: yes
+
+    # - name: Install required system packages
+    #   apt:
+    #     name:
+    #       - apt-transport-https
+    #       - ca-certificates
+    #       - curl
+    #       - software-properties-common
+    #     state: present
+    #     update_cache: yes
+
+    # - name: Add Docker GPG key
+    #   apt_key:
+    #     url: https://download.docker.com/linux/ubuntu/gpg
+    #     state: present
+
+    # - name: Add Docker repository
+    #   apt_repository:
+    #     repo: deb https://download.docker.com/linux/ubuntu focal stable
+    #     state: present
+
+    # - name: Install Docker
+    #   apt:
+    #     name: docker-ce
+    #     state: present
+    #     update_cache: yes
+
+    # - name: Install Docker Compose
+    #   get_url:
+    #     url: "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ lookup('pipe', 'uname -s') }}-{{ lookup('pipe', 'uname -m') }}"
+    #     dest: /usr/local/bin/docker-compose
+    #     mode: '0755'
+
+    # - name: Ensure Docker service is running
+    #   service:
+    #     name: docker
+    #     state: started
+    #     enabled: yes
+
+    # - name: Add user to docker group
+    #   user:
+    #     name: "{{ ansible_user }}"
+    #     groups: docker
+    #     append: yes
+
+    # - name: Create /root/scripts directory
+    #   file:
+    #     path: /root/scripts
+    #     state: directory
+
+    # - name: Create .ssh directory
+    #   file:
+    #     path: /root/.ssh
+    #     state: directory
+    #     mode: '0700'
+
+    # - name: Copy SSH key to the remote machine
+    #   copy:
+    #     src: "{{ local_ssh_key }}"
+    #     dest: "{{ remote_ssh_key }}"
+    #     owner: root
+    #     group: root
+    #     mode: '0600'
+
+    # - name: Clone the repository if it doesn't exist
+    #   git:
+    #     repo: "https://{{ github_token }}@github.com/jaimevalero/meta-crew.git"
+    #     dest: "{{ repo_path }}"
+    #     version: main
+    #     update: no
+
+    # - name: Add GitHub to known hosts
+    #   shell: |
+    #     ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    #   args:
+    #     creates: ~/.ssh/known_hosts
+
+
+
+    # - name: Configure token in .git/config
+    #   shell: |
+    #     git remote set-url origin https://{{ github_token }}@github.com/jaimevalero/meta-crew.git
+    #   args:
+    #     chdir: "{{ repo_path }}"
+    
+
+    - name: Git Pull the latest changes 
+      raw:
+        cmd: cd /root/scripts/meta-crew/meta-crew-frontend ; git pull origin main
+
+      args:
+        chdir: "{{ repo_path }}"
+        executable: /bin/bash
+
+
+    - name: Copy .env files to the remote machine
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        group: root
+        mode: '0644'
+      with_items:
+        - { src: "meta-crew-frontend/.env_docker_frontend", dest: "/root/scripts/meta-crew/meta-crew-frontend/.env" }
+        - { src: "meta_crew_backend/.env", dest: "/root/scripts/meta-crew/meta_crew_backend/.env" }
+        - { src: "meta-crew-frontend/.env_docker_frontend", dest: "/root/scripts/meta-crew/meta-crew-frontend/.env_docker_frontend" }
+
+    - name: Run docker-compose down
+      command: docker compose down
+      args:
+        chdir: "{{ repo_path }}"
+
+    - name: Run docker-compose build
+      command: docker compose build 
+      args:
+        chdir: "{{ repo_path }}"
+
+    - name: Run docker-compose up
+      command: docker compose up -d
+      args:
+        chdir: "{{ repo_path }}"

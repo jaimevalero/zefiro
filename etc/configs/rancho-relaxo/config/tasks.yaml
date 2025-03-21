@@ -1,0 +1,79 @@
+symptom_evaluator_assessment:
+  description: >
+    Realiza una evaluación de los síntomas emocionales del usuario. Deberás:
+    1. Analizar las descripciones textuales proporcionadas por el usuario
+    2. Clasificar los síntomas en categorías específicas (ansiedad, estrés, soledad)
+    3. Identificar patrones recurrentes de malestar emocional
+    4. Detectar señales de alerta temprana que requieran atención
+    5. Priorizar aspectos que necesiten intervención inmediata
+    Tu evaluación debe ser empática, precisa y enfocada en detectar los aspectos más relevantes.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: symptom_evaluator
+  expected_output: "Evaluación de síntomas emocionales del usuario"
+  context: []  # Primer paso, no requiere contexto previo
+
+crisis_filter_assessment:
+  description: >
+    Realiza un análisis de crisis potenciales en el usuario. Deberás:
+    1. Examinar el lenguaje utilizado para identificar señales de riesgo
+    2. Evaluar la gravedad de la situación emocional basada en la evaluación previa de síntomas
+    3. Determinar si es necesario activar protocolos de contención
+    4. Recomendar derivación a servicios profesionales cuando sea necesario
+    5. Preparar un reporte estructurado para seguimiento
+    Tu evaluación debe ser rápida, precisa y enfocada en la seguridad del usuario.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: crisis_filter
+  expected_output: "Análisis de riesgo y necesidad de intervención"
+  context:
+    - symptom_evaluator_assessment  # Usa la evaluación de síntomas como entrada
+
+resource_generator_assessment:
+  description: >
+    Realiza una evaluación para generar recursos terapéuticos personalizados. Deberás:
+    1. Analizar las necesidades específicas del usuario basadas en sus síntomas
+    2. Considerar el nivel de riesgo identificado en el análisis de crisis
+    3. Proponer ejercicios adaptados a su contexto particular
+    4. Sugerir rutinas basadas en evidencia científica
+    5. Crear un plan de recursos escalonado según nivel de dificultad
+    Tu evaluación debe ser práctica, personalizada y enfocada en herramientas que el usuario pueda implementar.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: resource_generator
+  expected_output: "Plan de recursos terapéuticos personalizados"
+  context:
+    - symptom_evaluator_assessment
+    - crisis_filter_assessment  # Usa tanto la evaluación de síntomas como el análisis de crisis
+
+leisure_curator_assessment:
+  description: >
+    Realiza una evaluación para planificar actividades reconstructivas. Deberás:
+    1. Analizar los intereses y contexto del usuario
+    2. Considerar los síntomas identificados y recursos terapéuticos sugeridos
+    3. Proponer hobbies complementarios a los recursos terapéuticos
+    4. Sugerir rutinas de desconexión digital y reconexión personal
+    5. Diseñar un calendario de actividades reconstructivas
+    Tu evaluación debe ser creativa, realista y enfocada en actividades que generen bienestar.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: leisure_curator
+  expected_output: "Plan de actividades reconstructivas"
+  context:
+    - symptom_evaluator_assessment
+    - resource_generator_assessment  # Usa la evaluación de síntomas y el plan de recursos
+
+progress_tracker_assessment:
+  description: >
+    Realiza una evaluación para seguimiento de progreso del usuario. Deberás:
+    1. Analizar todos los datos recopilados en las evaluaciones previas
+    2. Identificar los indicadores clave para medir el progreso
+    3. Establecer métricas objetivas para evaluar el impacto de recursos y actividades
+    4. Proponer un plan de seguimiento con intervalos definidos
+    5. Generar un informe visual de línea base y objetivos
+    Tu evaluación debe ser objetiva, cuantificable y enfocada en tendencias de bienestar.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: progress_tracker
+  expected_output: "Informe de seguimiento y progreso"
+  context:
+    - symptom_evaluator_assessment
+    - crisis_filter_assessment
+    - resource_generator_assessment
+    - leisure_curator_assessment  # Usa todas las evaluaciones previas
+    

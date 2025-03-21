@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    env_file:
+      - meta_crew_backend/.env
+    volumes:
+      - ./etc:/app/etc
+      - $PWD/logs:/app/meta_crew_backend/logs
+    ports:
+      - "8000:8000"
+    networks:
+      - meta-crew-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    env_file:
+      - ./meta-crew-frontend/.env_docker_frontend
+    environment:
+      # override the .env file
+      - VUE_APP_API_URL=http://backend:8000
+    volumes:
+      - ./etc:/app/static/etc
+      - $PWD/logs:/app/logs
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - meta-crew-network
+
+volumes:
+  logs:
+
+networks:
+  meta-crew-network:
+    driver: bridge
+

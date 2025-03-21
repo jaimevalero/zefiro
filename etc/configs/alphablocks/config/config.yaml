@@ -1,0 +1,49 @@
+
+meta:
+  name: "alphablocks"
+  description: "episode writer"
+
+backend:
+  case:
+    prompt: >
+      You are a script writer for the animated series "Numberblocks"
+      Based on the case, you will have to write a script that will be used in the new episode.
+      Follow the instructions on the case:
+      <case>{case}</case>
+
+
+  nomination:
+    method:
+      type: "prompt" # all to chose all agents or prompt
+      prompt: > 
+        You have to select which AI agents, will resolve the case of the bottom.
+        - The agents selected will be the ones that will resolve the case.
+        - The agents will be selected in the order you choose them (This is important because the stdout is passed from one to anoher).
+        - You MUST respond only with an array of the agents name, nothing else ( The response will be converted into an JSON array of strings).
+        - Consider that the first agent will always be "number_block_1", and the last agent "number_block_5", so not consider them in your response.
+        Response Example: [ "number_block_2", "number_block_3", "number_block_4", "number_block_5"]        
+        <case>{case}</case>
+      
+      
+    always_first_agent: number_block_1
+    always_last_agent: script_writer
+
+
+  source_of_truth:
+  - name: "book name"
+    description: "Use of the book"
+    file:
+        src: files/crons/delete-duplicates-dcip_jenkins_builds.sql
+
+frontend:
+  questions:
+    - config:
+      minimun_length: 1
+      maximum_length: 100
+    
+    - question: "Introducz"
+      description: "Use of the book"
+      awesome-icon-name: "book"
+    
+      
+        

@@ -1,0 +1,23 @@
+[project]
+name = "meta_crew_backend"
+version = "0.1.0"
+description = "meta-crew-frontend using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.102.0,<1.0.0"
+]
+
+[project.scripts]
+meta_crew_backend = "meta_crew_backend.main:run"
+run_crew = "meta_crew_backend.main:run"
+train = "meta_crew_backend.main:train"
+replay = "meta_crew_backend.main:replay"
+test = "meta_crew_backend.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

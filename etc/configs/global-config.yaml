@@ -1,0 +1,6 @@
+# Global configuration for all apps
+app_list:
+  rancho-relaxo: "App para bienestar mental y emocional"
+  footnotes: "App para corredores y atletas"
+  dr-casa: "App para asistencia médica especializada"
+  hidalgos: "App para asistencia a personas de la tercera edad"

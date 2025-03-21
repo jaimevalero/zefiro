@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Depurador de Python: Archivo actual",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Crew factory",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/meta_crew_backend/src/crew_factory.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/meta_crew_backend",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "src.backend_fastapi.main:app",
+                "--reload"
+            ],
+            "cwd": "${workspaceFolder}/meta_crew_backend",
+            "jinja": true,
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/meta_crew_backend"
+            }
+        },
+        {
+            "name": "Vue App",
+            "type": "node",
+            "request": "launch",
+            "program": "/home/jaimevalero/.nvm/versions/node/v20.11.0/bin/npm",
+            "args": ["run", "dev"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/meta-crew-frontend"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All F+B",
+            "configurations": ["Vue App", "FastAPI"]
+        }
+    ]
+}
