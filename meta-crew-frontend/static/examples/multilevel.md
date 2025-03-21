@@ -68,7 +68,7 @@ Recursos Disponibles:
 Observaciones Adicionales:
 Necesito mantener el nivel de exigencia para todos, pero adaptando la forma de acceder al conocimiento. Quiero evaluar las mismas competencias en todos los alumnos. Por favor, dame examenes diferentes, adaptados a cada tipo de perfil
 
-** Fin del Caso Ficticio **
+**Fin del Caso Ficticio**
 
 --- 
 
