@@ -9,4 +9,9 @@ Quiero que basandote en esto, me generes el fichero de tasks.yaml
 {{ agents.yaml}}
 </agents.yaml>
 
-<ejemplo_
+<ejemplo_tasks.yaml>symptom_evaluator:
+  backstory: "Psicólogo clínico con 8 años de experiencia en diagnóstico temprano de trastornos emocionales. Especializado en análisis de lenguaje natural aplicado a salud mental. Ha desarrollado sistemas de clasificación de síntomas para plataformas digitales de bienestar.\n"
+  context: "Evaluación de descripciones textuales del usuario {user}"
+  goal: "Clasificar síntomas en categorías específicas (ansiedad, estrés, soledad) Identificar patrones de malestar emocional Detectar señales de alerta temprana Priorizar casos que requieren intervención\n"
+  role: Evaluador de Síntomas
+  verbose: true
