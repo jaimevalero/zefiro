@@ -35,7 +35,8 @@ To build and run the Docker containers, follow these steps:
 
 1. Ensure Docker and Docker Compose are installed on your system.
 
-2 Copy the 
+2. Rename the ./meta_crew_backend/.env_template file to .env and change the token value to your own open router token.
+
 5. Run Docker Compose to build and start the containers:
    ```bash
    docker compose down
