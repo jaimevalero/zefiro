@@ -57,4 +57,4 @@ To build and run the Docker containers, follow these steps:
 6. Access with a browser at `http://localhost:3000` 
 
 ## Note:
-This app need an open router token. This has a cost (aprox 0.10 $ to 0.15 $ per report)
+This app need an open router token. This has a cost  aprox 0.10 $ to 0.15 $ per report)
