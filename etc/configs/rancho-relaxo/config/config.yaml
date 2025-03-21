@@ -17,7 +17,7 @@ frontend:
     Esta aplicación genera asistencia personalizada para personas que enfrentan problemas de salud mental cotidiana. Los expertos incluyen:
     Evaluador de Síntomas, Filtro de Crisis, Generador de Recursos, Curador de Tiempo Libre y Tracker de Progreso.
 
-  download_example_report_link: "https://github.com/jaimevalero/mental-well-app/raw/master/examples/example_report.pdf"
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/rancho-relax.md"
   # Nueva configuración de tema
   theme:
     dark: false

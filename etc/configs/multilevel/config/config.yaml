@@ -9,7 +9,7 @@ frontend:
     - Generador de Materiales
     - Asesor de Implementación
 
-  download_example_report_link: "https://github.com/multilevel/adaptaciones-curriculares/raw/master/examples/ejemplo_adaptacion.pdf"
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/multilevel.md"
   # Configuración de tema infantil
   theme:
     dark: false

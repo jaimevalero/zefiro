@@ -40,7 +40,7 @@ frontend:
     - Psicólogo Deportivo  
     - Entrenador de Fuerza.  
 
-  download_example_report_link: "https://github.com/jaimevalero/gifted-children-helper/raw/master/examples/example_report.pdf"
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/footnotes.md"
   # Nueva configuración de tema
   theme:
     dark: false

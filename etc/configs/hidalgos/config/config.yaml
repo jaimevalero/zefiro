@@ -3,9 +3,9 @@ frontend:
   main_info: >
     Esta aplicación genera asistencia personalizada para personas de la tercera edad.
     Los expertos incluyen:
-    - Geriatra  - Nutricionista Geriátrico  - Fisioterapeuta Geriátrico  - Psicólogo Geriátrico - Terapeuta Ocupacional  - Trabajador Social  - Farmacéutico Geriátrico - Especialista en Apoyo a Cuidadores.  
+    - Geriatra  - Nutricionista Geriátrico  - Fisioterapeuta Geriátrico  - Psicólogo Geriátrico - Terapeuta Ocupacional  - Trabajador Social  - Farmacéutico Geriátrico - Especialista en Apoyo a Cuidadores.
 
-  download_example_report_link: "https://github.com/jaimevalero/gifted-children-helper/raw/master/examples/example_report.pdf"
+  download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/hidalgos.md"
   # Nueva configuración de tema
   theme:
     dark: false
