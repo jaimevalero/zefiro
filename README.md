@@ -54,6 +54,7 @@ To build and run the Docker containers, follow these steps:
    docker compose build
    docker compose up -d
    ```
+6. Access the frontend at `http://localhost:3000` and the backend at `http://localhost:8000`.
 
 ## Note:
 This
