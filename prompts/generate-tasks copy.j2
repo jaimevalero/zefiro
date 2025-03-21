@@ -1,0 +1,45 @@
+
+Quiero que me ayudes hacer una app de crew.ai de {{ app_name }}
+su cometido es: {{ app_description }}.
+
+En un paso anterior me has ayudado generante los agents.
+Quiero que basandote en esto, me generes el fichero de tasks.yaml
+Creame una task por agente, que describa como debe ordenadamente, generar un reporte que se le pasará al usuario.
+Usa context, para ver salidas de otras tareas serán usadas como input de estas (es decir, para poner el orden)
+Piensa adecuadamente, el rol del agente relacionado, para dar una salida estructurada al usuario que consulte al agente.
+
+
+<agents.yaml>
+{{ agents.yaml}}
+</agents.yaml>
+
+<ejemplo_tasks.yaml>ç
+symptom_evaluator_assessment:
+  description: >
+    Realiza una evaluación de los síntomas emocionales del usuario. Deberás:
+    1. Analizar las descripciones textuales proporcionadas por el usuario
+    2. Clasificar los síntomas en categorías específicas (ansiedad, estrés, soledad)
+    3. Identificar patrones recurrentes de malestar emocional
+    4. Detectar señales de alerta temprana que requieran atención
+    5. Priorizar aspectos que necesiten intervención inmediata
+    Tu evaluación debe ser empática, precisa y enfocada en detectar los aspectos más relevantes.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: symptom_evaluator
+  expected_output: "Evaluación de síntomas emocionales del usuario"
+  context: []  # Primer paso, no requiere contexto previo
+
+crisis_filter_assessment:
+  description: >
+    Realiza un análisis de crisis potenciales en el usuario. Deberás:
+    1. Examinar el lenguaje utilizado para identificar señales de riesgo
+    2. Evaluar la gravedad de la situación emocional basada en la evaluación previa de síntomas
+    3. Determinar si es necesario activar protocolos de contención
+    4. Recomendar derivación a servicios profesionales cuando sea necesario
+    5. Preparar un reporte estructurado para seguimiento
+    Tu evaluación debe ser rápida, precisa y enfocada en la seguridad del usuario.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: crisis_filter
+  expected_output: "Análisis de riesgo y necesidad de intervención"
+  context:
+    - symptom_evaluator_assessment  # Usa la evaluación de síntomas como entrada
+</ejemplo_tasks.yaml>
