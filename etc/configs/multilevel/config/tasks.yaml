@@ -1,0 +1,121 @@
+geriatrician_assessment:
+  description: >
+    Realiza una evaluación geriátrica completa del paciente. Deberás
+    1. Analizar su historial médico y condiciones crónicas
+    2. Identificar riesgos de salud específicos para personas mayores
+    3. Proponer pruebas médicas básicas para evaluar su estado general
+    4. Sugerir medidas preventivas para mejorar su calidad de vida
+    5. Proporcionar un plan inicial de manejo médico
+    Tu evaluación debe ser clara, concisa y enfocada en optimizar la salud y funcionalidad del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: geriatrician
+  expected_output: "Evaluación geriátrica del paciente"
+  context:
+    - geriatrician_assessment
+
+physiotherapist_assessment:
+  description: >
+    Realiza una evaluación fisioterapéutica del paciente. Deberás
+    1. Analizar su movilidad y funcionalidad actual
+    2. Identificar riesgos de caídas o desequilibrios musculares
+    3. Proponer ejercicios de fortalecimiento y equilibrio
+    4. Sugerir técnicas de prevención de lesiones
+    5. Proporcionar un plan de rehabilitación si es necesario
+    Tu evaluación debe ser detallada y enfocada en mejorar la independencia del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: physiotherapist
+  expected_output: "Evaluación fisioterapéutica del paciente"
+  context:
+    - physiotherapist_assessment
+
+social_worker_assessment:
+  description: >
+    Realiza una evaluación social del paciente. Deberás
+    1. Analizar sus necesidades sociales y emocionales
+    2. Identificar recursos comunitarios disponibles
+    3. Proponer estrategias para mejorar su bienestar social
+    4. Sugerir programas de apoyo y beneficios
+    5. Brindar acompañamiento emocional y familiar
+    Tu evaluación debe ser empática y enfocada en mejorar la calidad de vida del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: social_worker
+  expected_output: "Evaluación social del paciente"
+  context:
+    - social_worker_assessment
+
+nutritionist_assessment:
+  description: >
+    Realiza una evaluación nutricional del paciente. Deberás
+    1. Analizar sus hábitos alimenticios actuales
+    2. Identificar deficiencias nutricionales o áreas de mejora
+    3. Proponer un plan de alimentación personalizado
+    4. Sugerir suplementación segura y efectiva, si es necesaria
+    5. Adaptar la dieta a sus condiciones de salud
+    Tu evaluación debe ser práctica y enfocada en mejorar su salud y energía.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: nutritionist
+  expected_output: "Evaluación nutricional del paciente"
+  context:
+    - nutritionist_assessment
+
+psychologist_assessment:
+  description: >
+    Realiza una evaluación psicológica del paciente. Deberás
+    1. Analizar su estado emocional y mental
+    2. Identificar signos de depresión, ansiedad o duelo
+    3. Proponer estrategias para mejorar su bienestar emocional
+    4. Sugerir técnicas de manejo del estrés y adaptación a cambios
+    5. Brindar apoyo psicológico personalizado
+    Tu evaluación debe ser empática y enfocada en fortalecer su salud mental.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: psychologist
+  expected_output: "Evaluación psicológica del paciente"
+  context:
+    - psychologist_assessment
+
+occupational_therapist_assessment:
+  description: >
+    Realiza una evaluación de terapia ocupacional del paciente. Deberás
+    1. Analizar su capacidad para realizar actividades diarias
+    2. Identificar barreras en su entorno
+    3. Proponer adaptaciones del hogar para mayor seguridad
+    4. Sugerir ayudas técnicas (andadores, bastones, etc.)
+    5. Proporcionar un plan para mejorar su independencia
+    Tu evaluación debe ser práctica y enfocada en promover la autonomía del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: occupational_therapist
+  expected_output: "Evaluación de terapia ocupacional del paciente"
+  context:
+    - occupational_therapist_assessment
+
+pharmacist_assessment:
+  description: >
+    Realiza una revisión farmacológica del paciente. Deberás
+    1. Analizar su medicación actual
+    2. Identificar interacciones farmacológicas o polifarmacia
+    3. Proponer ajustes en la medicación si es necesario
+    4. Sugerir estrategias para mejorar la adherencia terapéutica
+    5. Coordinar con el médico para optimizar el tratamiento
+    Tu evaluación debe ser detallada y enfocada en la seguridad del paciente.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: pharmacist
+  expected_output: "Revisión farmacológica del paciente"
+  context:
+    - pharmacist_assessment
+
+caregiver_support_assessment:
+  description: >
+    Realiza una evaluación de apoyo a cuidadores. Deberás
+    1. Analizar las necesidades del cuidador principal
+    2. Identificar signos de estrés o síndrome del cuidador
+    3. Proponer estrategias de autocuidado y manejo emocional
+    4. Sugerir recursos y grupos de apoyo disponibles
+    5. Brindar formación para el cuidado del paciente
+    Tu evaluación debe ser empática y enfocada en mejorar el bienestar del cuidador.
+    Sigue todas las instrucciones proporcionadas en {case}.
+  agent: caregiver_support
+  expected_output: "Evaluación de apoyo a cuidadores"
+  context:
+    - caregivr_support_assessment
+
+    
