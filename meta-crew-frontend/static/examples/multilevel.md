@@ -17,8 +17,11 @@ Duración: 45 minutos
 Contenido:
 1. Resuelve las siguientes multiplicaciones:
    a) 34,5 × 24 = 
+
    b) 56,8 × 35 = 
+
    c) 125,6 × 59= 
+   
    d) 78,25 × 47 = 
 
 2. Resuelve las siguientes divisiones:
