@@ -58,9 +58,10 @@ def convert_markdown_to_pdf_old(markdown_file, pdf_file):
         raise
 
 
+
 def convert_markdown_to_pdf(markdown_file, pdf_file):
     """
-    Convert a Markdown file to PDF using pandoc.
+    Convert a Markdown file to PDF using pandoc, with a preprocessing step to handle Unicode characters.
 
     Args:
         markdown_file (str): The path to the Markdown file.
@@ -69,24 +70,36 @@ def convert_markdown_to_pdf(markdown_file, pdf_file):
     try:
         log_system_usage()
         logger.info(f"Converting {markdown_file} to {pdf_file}")
+
+        # Preprocess the Markdown file to handle Unicode characters
+        clean_markdown_file = f"/tmp/clean-{os.path.basename(markdown_file)}"
+        iconv_command = [
+            'iconv',
+            '-f', 'utf-8',
+            '-t', 'ascii//TRANSLIT',
+            markdown_file,
+            '-o', clean_markdown_file
+        ]
+        subprocess.run(iconv_command, check=True)
+        logger.info(f"Preprocessed {markdown_file} to {clean_markdown_file}")
+
         # Execute the pandoc command to convert Markdown to PDF
-        #command = ['pandoc', markdown_file, '-o', pdf_file, '-V', 'geometry:margin=1in']
         command = [
             'pandoc',
-            markdown_file,
+            clean_markdown_file,
             '-o', pdf_file,
-            '--pdf-engine=pdflatex',  # Más ligero que el motor por defecto
+            '--pdf-engine=pdflatex',  # Lighter than the default engine
             '-V', 'geometry:margin=1in',
-            '--standalone',  # Procesa más rápido documentos independientes
-            '-f', 'markdown-raw_html',  # Deshabilita parsing innecesario
-            '--variable=papersize:a4',  # Especifica tamaño papel explícitamente
-            '+RTS', '-N2', '-RTS'  # Usar 2 threads para procesamiento
-        ]        
+            '--standalone',  # Processes standalone documents faster
+            '-f', 'markdown-raw_html',  # Disables unnecessary parsing
+            '--variable=papersize:a4',  # Explicitly specifies paper size
+            '+RTS', '-N2', '-RTS'  # Use 2 threads for processing
+        ]
         # Capture stdout and stderr
         result = subprocess.run(command, check=True, capture_output=True, text=True)
         log_system_usage()
         # Log the successful conversion
-        logger.info(f"Converted {markdown_file} to {pdf_file} with output: {result.stdout}")
+        logger.info(f"Converted {clean_markdown_file} to {pdf_file} with output: {result.stdout}")
     except subprocess.CalledProcessError as e:
         # Log the error with stdout and stderr
         logger.error(f"Failed to convert {markdown_file} to {pdf_file}: {e}")
@@ -95,6 +108,7 @@ def convert_markdown_to_pdf(markdown_file, pdf_file):
         # Log any unexpected errors
         logger.error("An unexpected error occurred: {}", e)
         raise e
+
 
 def log_system_usage():
     """
