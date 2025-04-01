@@ -26,13 +26,12 @@ def run_wrapper(crew_name:str, case:str, websocket_callback, session_id:str, use
         # case = get_case()
         raise Exception("Case is required")
     inputs = {
-        'case': case
-    }
+            'case': case,
+            'crew_name': crew_name
+        }
     factory = CrewFactory(crew_name,session_id=session_id)
     crew =factory.build_crew_from_config(case)
-    inputs = {
-            'case': case
-        }
+
     crew.kickoff(inputs)
     crew.generate_consolidated_report(session_id)
     # Conver to pdf
@@ -98,7 +97,7 @@ class CrewFactory:
         """
         # Start with the current config directory and convert to absolute path
         current_path = os.path.abspath(self.config_dir)
-        
+
         max_levels = 3
         level = 0
         tried_paths = []
@@ -603,7 +602,8 @@ Conseguir su objetivo de tiempo (<2h 40min)
 Mantener el equilibrio entre entrenamiento y vida profesional"""
     crew =CrewFactory(crew_name,session_id="0000").build_crew_from_config(case)
     inputs = {
-            'case': case
+            'case': case,
+            'crew_name': crew_name
         }
     crew.kickoff(inputs)
     a = 0
