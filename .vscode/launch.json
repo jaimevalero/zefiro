@@ -18,7 +18,9 @@
             "program": "${workspaceFolder}/meta_crew_backend/src/crew_factory.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/meta_crew_backend",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "/home/jaimevalero/git/meta-crew/meta_crew_backend/.env",
+            // not only my code
+             "justMyCode": false
         },
         {
             "name": "FastAPI",

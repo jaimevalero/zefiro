@@ -1,0 +1,227 @@
+# tasks.yaml
+requirements_analyzer_assessment:
+  description: >
+    Realiza el análisis de requisitos para el sistema multiagente. Deberás:
+    1. Analizar la descripción del caso de uso proporcionada mas abajo.
+    2. Identificar el dominio específico y propósito del sistema
+    3. Extraer requisitos funcionales clave
+    4. Determinar competencias necesarias para resolver el problema
+    5. Proponer estructura general inicial para el crew
+    Sigue todas las instrucciones proporcionadas en {case}.
+    Recuerda que la IA solo tendra inputs humano al principio (no retroalimentación humana durante la ejecución de la IA que generes ni iterativamente)
+    Tambien recuerda que las IAs generadas no tendran acceso a Intenet, ni a otros recursos (API...) Toda la info tendrá que ser proporcionada por el usuario desde la webapp manualmente.
+  agent: requirements_analyzer
+  expected_output: "Documento de requisitos técnicos detallados"
+  context: []  # Paso inicial
+
+domain_expert_assessment:
+  description: >
+    Proporciona conocimiento especializado del dominio identificado. Deberás:
+    1. Analizar el dominio específico del caso de uso
+    2. Identificar terminología y conceptos clave del sector
+    3. Determinar mejores prácticas relevantes, metodologías y estándares.
+    4. Sugerir fuentes de conocimiento y referentes técnicos
+    5. Evaluar particularidades críticas del dominio
+    Sigue todas las instrucciones proporcionadas en {case}.
+    Recuerda que las IA solo tendra inputs humano al principio (no retroalimentación humana durante la ejecución de la IA que generes ni iterativamente)
+    Tambien recuerda que las IAs generadas no tendran acceso a Intenet, ni a otros recursos (API...) Toda la info tendrá que ser proporcionada por el usuario desde la webapp manualmente.
+
+  agent: domain_expert
+  expected_output: "Informe de dominio especializado con recomendaciones clave"
+  context:
+    - requirements_analysis_assessment
+
+agents_designer_assessment:
+  description: >
+    Diseña la arquitectura para generar una IA de agentes de crew.ai.
+    Deberás definiir cada uno de los agentes necesarios para el crew.
+    Para ello, deberás  :
+    1. Crear perfiles detallados para cada agente.
+    2. Desarrollar backstories coherentes con el contexto
+    3. Asignar roles complementarios y especializados
+    4. Definir objetivos individuales alineados al propósito global
+    5. Establecer protocolos de interacción entre agentes
+    Sigue todas las instrucciones proporcionadas en {case}.
+    Recuerda que las IA solo tendra inputs humano al principio (no retroalimentación humana durante la ejecución de la IA que generes ni iterativamente)
+    Tambien recuerda que las IAs generadas no tendran acceso a Intenet, ni a otros recursos (API...) Toda la info tendrá que ser proporcionada por el usuario desde la webapp manualmente.
+    Responde unicamente con el fichero YAML que contiene el diseño de cada uno los agentes. No incluyas explicaciones ni comentarios adicionales. No pongas backticks de contenido "```yaml"
+    Puedes basarte en el siguiente ejemplo:
+    <ejemplo_de_diseño_de_un_agente>
+    geriatrician:
+      role: Geriatra
+      goal: >
+        Evaluar la salud integral de personas mayores
+        Diagnosticar y tratar enfermedades geriátricas
+        Valorar la funcionalidad y necesidades específicas del anciano
+        Proponer plan de cuidados personalizado
+      backstory: Geriatra con 16 años de experiencia en atención a pacientes mayores y medicina geriátrica. Eminencia en su campo y ponente en charlas de como comunicar con personas mayores. Ha trabajado en hospitales y clínicas geriátricas, desarrollando un enfoque centrado en el paciente.
+      context: Evaluación geriátrica del caso (case)
+    </ejemplo_de_diseño_de_un_agente>
+    En el yaml de salida que generes, para indicar el caso original que estas basando, aunque en el ejemplo pondra (case), lo tiene que generar cambiando los caracteres paréntesis por llaves.
+  output_file: agents_created.yaml
+  agent: agents_designer
+  expected_output: "Diseño de arquitectura de agentes con perfiles cognitivos"
+  context:
+    - requirements_analysis_assessment
+    - domain_expertise_assessment
+
+
+
+tasks_designer_assessment:
+  description: >
+    Diseña la arquitectura para generar una IA de agentes de crew.ai, especificamente la parte de generar el ficher de tareas tasks.yaml.
+    Te basarás en el generado en la fase agents_design_assessment agents_created.yaml.
+    Genera el archivos de tareas tasks.yaml. Deberás:
+    1. Generar una task por cada agente, en el que el nombre de la task sera <nombre_de_agente>_assesment.
+    2. Cada task va a generar un informe. Piensa que epígrafes tendrá cada informe, siguiendo las mejores prácticas del ambito del dominio del agente.
+    3. Piensa detenidamente cual va a ser el context de cada task.
+    El context tiene que ser un array en yaml que puede estar vacio que indica el orden en que se ejecutaran las tasks, dependiendo del orden lógico en que los agentes se pasarán la informacion los unos a los otros.
+    Habrá una task inicial que no tendrá context, y el resto de tasks tendrán como context la task anterior (Aunque pueden estar vacios).
+    Recuerda que el orden de las tasks dentro del YAML es importante. No pongas una task cuyo contexto sea una task futura, es decir que va posterior en el yaml (las tasks se ejecutaran en orden secuencial según el yaml)
+    4. Aplicar mejores prácticas en estructura YAML
+    5. Validar consistencia entre componentes
+    6. Generar documentación clara para cada elemento
+    7. Optimizar sintaxis para mantenibilidad
+    Sigue todas las instrucciones proporcionadas en {case}.
+    Recuerda que las IA solo tendra inputs humano al principio (no retroalimentación humana durante la ejecución de la IA que generes ni iterativamente)
+    Tambien recuerda que las IAs generadas no tendran acceso a Intenet, ni a otros recursos (API...) Toda la info tendrá que ser proporcionada por el usuario desde la webapp manualmente.
+    Responde unicamente con el fichero YAML que contiene el diseño de cada una los tasks. No incluyas explicaciones ni comentarios adicionales.No pongas backticks de contenido "```yaml"
+    Puedes basarte en el siguiente ejemplo:
+    <ejemplo_de_diseño_de_una_task>
+    geriatrician_assessment:
+      description: >
+        Realiza una evaluación geriátrica del paciente. Deberás
+        1. Analizar síntomas considerando los cambios del envejecimiento
+        2. Evaluar la funcionalidad y fragilidad
+        3. Considerar la polifarmacia y comorbilidades
+        4. Recomendar tratamientos apropiados para personas mayores
+        Tu evaluación debe adaptarse a las particularidades de la edad geriátrica.
+        Sigue todas las instrucciones proporcionadas en (case).
+      agent: geriatrician
+      expected_output: "Evaluación geriátrica del caso"
+      context:
+        - general_practitioner_assessment
+    </ejemplo_de_diseño_de_una_task>
+    En el yaml de salida que generes, para indicar el caso original que estas basando, aunque en el ejemplo pondra (case), lo tiene que generar cambiando los caracteres paréntesis por llaves.
+  agent: tasks_designer
+  output_file: tasks_created.yaml
+  expected_output: "Archivos YAML sintácticamente correctos y documentados"
+  context:
+    - requirements_analysis_assessment
+    - domain_expertise_assessment
+    - agents_designer_assessment
+
+interface_designer_assessment:
+  description: >
+    Diseña la interfaz de usuario del sistema, para una webapp que contactará con una crew de crew.ai
+    Es decir, las ventanas que se le ofrecerán al usuario en la web de la crew para resolver el problema que te han dicho.
+    Debes generarlo en formato yaml, y siguiendo el formato de los ejemplos que te he dado.
+    Deberás:
+    1. Crear una pequeña descripcion (description:) de la applicacion, y el nombre (name:) un slim codename alfanumerico de minusculas y guiones medio o bajos).
+    2. Generarás en prompt (prompt:) una descripción de la tarea que va a realizar la IA.
+    3. en nomination, dejalo todo "all" y no lo modifiques.
+    4: En (main_info:), una descripción de la aplicación que es lo que leerá al usuario nada mas llegar a la página web, y una descripcion de los agentes implicados.
+    5. En (download_example_report_link:), Deja que apunte a google, de momento.
+    6. Los colores, deben ser los que creas que mas acompañan al tipo de problema que resuelve la IA, (por ejemplo, si la IA resuelve problemas de personas mayores tonos ocres.). Aquí haz de diseñador web
+    7: En (form:), genera un formulario de ejemplo, con tantos campos como veas necesarios. Los i
+    8: Asegurate de el yaml esté bien formado y no tenga errores de sintaxis.
+    9: Responde unicamente con el fichero YAML que contiene el diseño de la interfaz. No incluyas explicaciones ni comentarios adicionales. No pongas backticks de contenido "```yaml"
+    Recuerda que las IA solo tendra inputs humano al principio (no retroalimentación humana durante la ejecución de la IA que generes ni iterativamente). Todo la info que se necesita para el caso debera ser solicitada dentro de los campos fields:
+    Tambien recuerda que las IAs generadas no tendran acceso a Intenet, ni a otros recursos (API...) Toda la info tendrá que ser proporcionada por el usuario desde la webapp manualmente.
+
+    Puedes basarte en el siguiente ejemplo:
+    <ejemplo_de_diseño_de_interfaz>
+    meta:
+      name: "footnotes"
+      description: "tu gabinete medico"
+
+    backend:
+      case:
+        prompt: >
+          Eres un equipo de preparación deportiva, y tienes que ayudar al runner a preparar su próxima competición, dentro de su carrera deportiva.
+          <case>(case)</case>
+
+      nomination:
+        method:
+          type: "all" # all to chose all agents or prompt
+
+
+    frontend:
+      app_name: "Foot Notes"
+      main_info: >
+        Esta aplicación genera asistencia para runners que desean preparar una competición. Los expertos incluyen:
+        - Médico del Deporte
+        - Nutricionista Deportivo
+        - Fisioterapeuta Deportivo
+        - Psicólogo Deportivo
+        - Entrenador de Fuerza.
+
+      download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/footnotes.md"
+      # Nueva configuración de tema
+      theme:
+        dark: false
+        colors:
+          primary: "#E91E63"    # Fucsia, dinamismo y energía
+          secondary: "#1E88E5"  # Azul energético, dinamismo y motivación
+          accent: "#6A1B9A"     # Púrpura oscuro, complementa los otros colores y permite texto blanco
+          info: "#2196F3"
+          warning: "#FFC107"    # Amarillo, atención y precaución
+          error: "#F44336"
+          alert: "#FFECB3"
+          success: "#4CAF50"    # Verde, logros y éxito
+      # Definición flexible de formularios
+      form:
+        # Formulario general para preparación deportiva
+        title: "Información del Runner"
+        description: "Por favor complete la información del runner"
+        fields:
+          - name: "runner_data"
+            label: "Datos del Runner"
+            description: "Peso, altura, edad, sexo, etc"
+            type: "textarea"
+            required: true
+            icon: "user"
+
+          - name: "training_goals"
+            label: "Objetivos de Entrenamiento"
+            description: "Describa los objetivos de entrenamiento del runner"
+            type: "textarea"
+            required: true
+            icon: "bullseye"
+
+          - name: "current_fitness"
+            label: "Condición Física Actual"
+            description: "Describa la condición física actual del runner"
+            type: "textarea"
+            required: true
+            icon: "dumbbell"
+
+          - name: "nutrition_plan"
+            label: "Plan de Nutrición"
+            description: "Describa el plan de nutrición actual del runner"
+            type: "textarea"
+            required: false
+            icon: "apple"
+
+          - name: "injury_history"
+            label: "Historial de Lesiones"
+            description: "Describa cualquier lesión previa del runner"
+            type: "textarea"
+            required: false
+            icon: "crutch"
+
+          - name: "mental_preparation"
+            label: "Preparación Mental"
+            description: "Describa las estrategias de preparación mental del runner"
+            type: "textarea"
+            required: false
+            icon: "brain"
+      </ejemplo_de_diseño_de_interfaz>
+  output_file: config_created.yaml
+  agent: interface_designer
+  expected_output: "Diseño de arquitectura de agentes con perfiles cognitivos"
+  context:
+    - requirements_analysis_assessment
+    - domain_expertise_assessment
+    - agents_designer_assessment
+

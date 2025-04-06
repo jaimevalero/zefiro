@@ -2,6 +2,9 @@ import re
 import os
 import json
 import yaml
+
+from loguru import logger
+
 from typing import Dict, List, Optional, Union, Any, Callable
 from pathlib import Path
 from filelock import FileLock  # Import FileLock
@@ -243,6 +246,114 @@ class DerivedCrew(Crew):
             logger.error(f"Error sending consolidated report: {e}")
             return False
 
+    def create_crew_config(self):
+
+
+        def load_yaml_with_backtick_handling(filename: str):
+            """
+            Read a file, remove triple-backticks if present, then parse as YAML.
+            """
+            try:
+                with open(filename, "r") as f:
+                    content = f.read()
+                # Remove possible code fences
+                content = content.replace("```yaml", "").replace("```", "").strip()
+                return yaml.safe_load(content)
+            except Exception as e:
+                logger.error(f"Error loading YAML from {filename}: {e}")
+                return None
+
+        def transform_data(data):
+            """
+            Recursively traverse the YAML data and replace variables enclosed in curly braces 
+            (e.g., {variable}) with '{case}'.
+            
+            The Pragmatic Programmer: Keep transformations DRY.
+            Clean Code in Python: Use clear, self-explanatory functions.
+            """
+            if isinstance(data, dict):
+                for k, v in data.items():
+                    data[k] = transform_data(v)
+            elif isinstance(data, list):
+                for i, item in enumerate(data):
+                    data[i] = transform_data(item)
+            elif isinstance(data, str):
+                # Replace patterns in strings using regex (Fluent Python: str methods are powerful)
+                data = re.sub(r"\{(\w+)\}", "{case}", data)  # Reemplaza cualquier {variable} con {case}
+                # If the string contains "(case)", replace it with "{case}"
+                data = re.sub(r"\(case\)", "{case}", data)
+                if "{case}" in data:
+                    logger.debug(f"Transforming data: {data}")
+            return data
+
+        try:
+            agents_data = load_yaml_with_backtick_handling("agents_created.yaml")
+            config_data = load_yaml_with_backtick_handling("config_created.yaml")
+            tasks_data = load_yaml_with_backtick_handling("tasks_created.yaml")
+
+            # Zen of Python: "Explicit is better than implicit"
+            agents_data = transform_data(agents_data)
+            config_data = transform_data(config_data)
+            tasks_data = transform_data(tasks_data)
+
+            if not all([agents_data, config_data, tasks_data]):
+                logger.error("Some YAML files did not load correctly.")
+                return
+        except Exception as e:
+            logger.error(f"Overall error loading created YAML files: {e}")
+            return
+
+        codename = config_data.get("meta",{}).get("name", "default_codename")
+        description = config_data.get("meta",{}).get("description", "default_description")
+        target_dir = f"./etc/configs/{codename}"
+        os.makedirs(target_dir, exist_ok=True)
+
+        final_agents_path = os.path.join(target_dir, "agents.yaml")
+        final_config_path = os.path.join(target_dir, "config.yaml")
+        final_tasks_path = os.path.join(target_dir, "tasks.yaml")
+
+        def save_yaml(data, path):
+            """
+            Save YAML data to a file, ensuring proper handling of special characters.
+            
+            - Fluent Python: Use libraries effectively.
+            - Clean Code: Keep functions focused and clear.
+            """
+            with open(path, "w", encoding="utf-8") as f:
+                yaml.safe_dump(data, f, allow_unicode=True)  # Ensure special characters are saved correctly
+
+        try:
+            save_yaml(agents_data, final_agents_path)
+            save_yaml(config_data, final_config_path)
+            save_yaml(tasks_data, final_tasks_path)
+            logger.info(f"Config crew created at: {target_dir}")
+        except Exception as e:
+            logger.error(f"Error saving YAML files to {target_dir}: {e}")
+
+        # Load the global config yaml file in etc/configs/global-config.yaml
+        global_config_path = "etc/configs/global-config.yaml"
+        try:
+            with open(global_config_path, "r", encoding="utf-8") as f:
+                global_config = yaml.safe_load(f)
+            logger.info(f"Global config loaded from {global_config_path}")
+
+            # Verificar si el codename está en la lista global_config["app_list"]
+            if codename not in global_config.get("app_list", {}):
+                logger.info(f"Codename '{codename}' not found in global config. Adding it.")
+                global_config["app_list"][codename] = description
+
+                # Ordenar las claves de app_list alfabéticamente antes de guardar
+                global_config["app_list"] = dict(sorted(global_config["app_list"].items()))
+
+                # Guardar el archivo YAML actualizado
+                with open(global_config_path, "w", encoding="utf-8") as f:
+                    yaml.safe_dump(global_config, f, allow_unicode=True)  # Ensure special characters are saved correctly
+                logger.info(f"Codename '{codename}' added to global config and saved to {global_config_path}")
+            else:
+                logger.info(f"Codename '{codename}' already exists in global config. No changes made.")
+        except Exception as e:
+            logger.error(f"Error handling global config at {global_config_path}: {e}")
+
     def kickoff(self, inputs: Dict[str, Any]):
         """
         Start the execution of the crew's tasks.
@@ -268,6 +379,13 @@ class DerivedCrew(Crew):
                 self.reset_memories(command_type = command_type)
             except Exception as e:
                 logger.error(f"Error resetting memories: {e}")
-                
+
+      
         # Llamar al método kickoff de la superclase
-        super().kickoff(inputs)
+        results = super().kickoff(inputs)
+
+        if self.name == "zefiro" :
+            # Execute the function create_crew_config
+            self.create_crew_config()
+
+        return results

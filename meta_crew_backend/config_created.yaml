@@ -1,0 +1,83 @@
+meta:
+  name: "arch-scan"
+  description: "ai-powered software architecture analysis suite"
+
+backend:
+  case:
+    prompt: >
+      Eres un equipo de análisis arquitectónico de software, debes evaluar sistemas existentes y proponer mejoras estructurales.
+      <case>(case)</case>
+
+  nomination:
+    method:
+      type: "all"
+
+frontend:
+  app_name: "Architect Scan"
+  main_info: >
+    Esta aplicación analiza arquitecturas de software mediante inteligencia artificial especializada. Nuestros agentes incluyen:
+    - Arquitecto de Software Principal
+    - Especialista en Optimización de Rendimiento
+    - Auditor de Deuda Técnica
+    - Experto en Costos Cloud
+    - Consultor de Estándares Industriales
+    - Ingeniero de Simulaciones
+
+  download_example_report_link: "https://google.com"
+  theme:
+    dark: false
+    colors:
+      primary: "#2D3748"    # Azul oscuro profesional
+      secondary: "#4A5568"  # Gris azulado técnico
+      accent: "#48BB78"     # Verde de validación
+      info: "#4299E1"
+      warning: "#ECC94B"    # Amarillo alerta
+      error: "#F56565"
+      alert: "#FEEBC8"
+      success: "#48BB78"    # Verde éxito
+
+  form:
+    title: "Detalles de la Arquitectura"
+    description: "Proporcione información detallada del sistema a analizar"
+    fields:
+      - name: "architecture_overview"
+        label: "Descripción Arquitectónica"
+        description: "Componentes principales, patrones de diseño y dependencias"
+        type: "textarea"
+        required: true
+        icon: "code"
+
+      - name: "performance_metrics"
+        label: "Métricas Clave"
+        description: "CPU/memoria promedio, latencia pico, throughput"
+        type: "textarea"
+        required: true
+        icon: "gauge"
+
+      - name: "technical_debt"
+        label: "Deuda Técnica Conocida"
+        description: "Componentes legacy, código problemático"
+        type: "textarea"
+        required: false
+        icon: "warning"
+
+      - name: "cloud_costs"
+        label: "Costos Operativos"
+        description: "Desglose mensual de gastos cloud (opcional)"
+        type: "textarea"
+        required: false
+        icon: "cloud"
+
+      - name: "compliance_standards"
+        label: "Estándares Requeridos"
+        description: "ISO, AWS Well-Architected, etc."
+        type: "textarea"
+        required: false
+        icon: "shield-check"
+
+      - name: "current_issues"
+        label: "Problemas Reportados"
+        description: "Incidentes recurrentes o fallos críticos"
+        type: "textarea"
+        required: false
+        icon: "alert"

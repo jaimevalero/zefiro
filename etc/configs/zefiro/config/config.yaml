@@ -1,3 +1,15 @@
+# Las bibliotecas de iconos más comunes en aplicaciones Nuxt/Vue son:
+# 1. Nuxt Icon (que soporta múltiples colecciones como Material Design Icons, Phosphor, etc.)
+# 2. Vue Feather Icons
+# 3. Iconify
+# 4. Material Design Icons
+# 5. Heroicons
+# 6. Bootstrap Icons
+# 7. Phosphor Icons
+# 
+# Los valores actuales que has aceptado ("user", "heart", "exclamation-triangle", etc.) 
+# parecen ser nombres descriptivos simples que funcionan en varias de estas bibliotecas.
+# Para confirmar cuál estás usando, puedes revisar el package.json o los componentes Icon en tu proyecto.
 
 frontend:
   app_name: "rancho-relaxo"

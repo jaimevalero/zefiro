@@ -1,0 +1,72 @@
+backend:
+  case:
+    prompt: 'Eres un equipo de análisis arquitectónico de software, debes evaluar
+      sistemas existentes y proponer mejoras estructurales. <case>{case}</case>'
+  nomination:
+    method:
+      type: all
+
+frontend:
+  app_name: Architect Scan
+  download_example_report_link: https://google.com
+  form:
+    description: Proporcione información detallada del sistema a analizar
+    fields:
+    - description: Componentes principales, patrones de diseño y dependencias
+      icon: code
+      label: Descripción Arquitectónica
+      name: architecture_overview
+      required: true
+      type: textarea
+    - description: CPU/memoria promedio, latencia pico, throughput
+      icon: gauge
+      label: Métricas Clave
+      name: performance_metrics
+      required: true
+      type: textarea
+    - description: Componentes legacy, código problemático
+      icon: warning
+      label: Deuda Técnica Conocida
+      name: technical_debt
+      required: false
+      type: textarea
+    - description: Desglose mensual de gastos cloud (opcional)
+      icon: cloud
+      label: Costos Operativos
+      name: cloud_costs
+      required: false
+      type: textarea
+    - description: ISO, AWS Well-Architected, etc.
+      icon: shield-check
+      label: Estándares Requeridos
+      name: compliance_standards
+      required: false
+      type: textarea
+    - description: Incidentes recurrentes o fallos críticos
+      icon: alert
+      label: Problemas Reportados
+      name: current_issues
+      required: false
+      type: textarea
+
+    title: Detalles de la Arquitectura
+  main_info: 'Esta aplicación analiza arquitecturas de software mediante inteligencia
+    artificial especializada. Nuestros agentes incluyen: - Arquitecto de Software
+    Principal - Especialista en Optimización de Rendimiento - Auditor de Deuda Técnica
+    - Experto en Costos Cloud - Consultor de Estándares Industriales - Ingeniero de
+    Simulaciones     '
+  theme:
+    colors:
+      accent: '#48BB78'
+      alert: '#FEEBC8'
+      error: '#F56565'
+      info: '#4299E1'
+      primary: '#2D3748'
+      secondary: '#4A5568'
+      success: '#48BB78'
+      warning: '#ECC94B'
+    dark: false
+
+meta:
+  description: ai-powered software architecture analysis suite
+  name: arch-scan
