@@ -20,7 +20,6 @@ import time  # Import time for sleep
 from src.derived_crew import DerivedCrew
 from src.utils.models import get_model,get_model_name, get_provider,Provider
 
-
 def run_wrapper(crew_name:str, case:str, websocket_callback, session_id:str, user_email="unknown", user_name="unknown"):
     if not case:
         # case = get_case()
@@ -328,6 +327,9 @@ Important: You MUST respond ONLY with a JSON array of agent names, from values {
                 
             # Create mutable copy of configuration
             task_config = config.copy()
+            # if task config context key is None, set it to empty list
+            if task_config.get("context") is None:
+                task_config["context"] = []
             if callback_function:
                 task_config["callback"] = callback_function
             
@@ -488,6 +490,11 @@ Important: You MUST respond ONLY with a JSON array of agent names, from values {
 
 # Example of usage
 if __name__ == "__main__":
+    session_id = "0000"
+    # print current working directory
+    current_dir = os.getcwd()
+    logger.info(f"Current working directory: {current_dir}")
+    a = 0
     # Create a CrewFactory instance
     # crew_name = "alphablocks"
     # case = """Hazme un capitulo de alphablocks donde solo hablen los personajes de alphablock de números impares"""
@@ -600,18 +607,72 @@ Optimizar la recuperación entre entrenamientos
 Adoptar estrategias nutricionales para mejorar rendimiento
 Conseguir su objetivo de tiempo (<2h 40min)
 Mantener el equilibrio entre entrenamiento y vida profesional"""
-    crew =CrewFactory(crew_name,session_id="0000").build_crew_from_config(case)
+
+    crew_name = "zefiro"
+    case = """ 
+    Quiero de generes una IA que me ayude a evaluar la arquitectura de software que tengo en mi trabajo de IT. 
+    Haz especial hincapié en la arquitectura actual, problemas que tiene y como sugerir mejoras para eliminar obstrucciones cuellos de botella, dificultados de mantenimiento, estrategias de costes.
+    """
+    # Disable telemetry by setting the environment variable OTEL_SDK_DISABLED to "true"
+    os.environ["OTEL_SDK_DISABLED"] = "true"
+
+    crew =CrewFactory(crew_name,session_id).build_crew_from_config(case)
     inputs = {
             'case': case,
             'crew_name': crew_name
         }
-    crew.kickoff(inputs)
-    a = 0
+    
+
+    has_error_in_environment = { key: value for key, value in os.environ.items() if "llama" in key.lower() or "llama" in value.lower() }
+    if has_error_in_environment:
+        logger.error(f"Error in environment: {has_error_in_environment}")
+        # load env file from /home/jaimevalero/git/meta-crew/meta_crew_backend/.env:
+        env_file_path = "/home/jaimevalero/git/meta-crew/meta_crew_backend/.env"
+        if os.path.exists(env_file_path):
+            from dotenv import load_dotenv
+            load_dotenv(env_file_path, override=True)
+        logger.info("env patched")
+
+        #raise Exception(f"Error in environment: {has_error_in_environment}")
+
+    try :
+        crew.kickoff(inputs)
+    except Exception as e:
+        logger.exception(f"Error during crew execution: {e}")
+        a = 0
+
+        os.environ.items()
+    
+
+    
     for task in crew.tasks:
         a +=1
         logger.info(f"Task {a}: {task.name}")
         logger.info(task.output.raw)
         logger.info("\n\n")
 
+    # Load the generated yaml files. By aware that the files could contain backtick at the begining of the line ```yaml
+    # the name of the files are agents_created.yaml  config_created.yaml  tasks_created.yaml
+    # and they are in the current working directory
+    # load the files, avoid the backticks at the begining of the line
+    
+
     logger.info(f"Finished crew execution"  )
     logger.info(f"Memory: {crew.memory}")
+
+    try :
+        crew.generate_consolidated_report(session_id)
+    except Exception as e:
+        logger.error(f"Error during crew execution: {e}")
+        
+    
+    try :
+    # Conver to pdf
+        pdf_filename = crew.convert_consolidated_report(session_id)
+        crew.send_consolidated_report(pdf_filename, "", "")
+    except Exception as e:
+        logger.error(f"Error during crew execution: {e}")
+        
+        
+    # Send email
+    

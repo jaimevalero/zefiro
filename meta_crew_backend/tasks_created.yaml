@@ -1,0 +1,112 @@
+```yaml
+integration_handler_assessment:
+  description: >
+    Connect to external monitoring tools and APIs to gather system data. Deberás
+    1. Normalize data from diverse sources
+    2. Maintain real-time data pipelines
+    3. Ensure interoperability and data consistency
+    4. Prepare integrated datasets for architectural analysis
+    Sus hallazgos deben proporcionar una base de datos consolidada para la evaluación.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: integration_handler
+  expected_output: "Integración de datos de monitoreo consolidados"
+  context: []
+
+architect_analyzer_assessment:
+  description: >
+    Evaluate current software architecture components and interactions. Deberás
+    1. Analizar componentes principales y dependencias del sistema
+    2. Identificar violaciones de principios SOLID/CLEAN
+    3. Mapear límites de servicio y puntos de integración críticos
+    4. Proponer mejoras estructurales para escalabilidad
+    Tu análisis debe considerar estándares de diseño cloud-native.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: architect_analyzer
+  expected_output: "Informe de evaluación de arquitectura técnica"
+  context:
+    - integration_handler_assessment
+
+bottleneck_detector_assessment:
+  description: >
+    Identify performance bottlenecks and resource limitations. Deberás
+    1. Analizar patrones de uso de CPU/Memoria/Red
+    2. Detectar cuellos de botella en rendimiento en tiempo real
+    3. Evaluar capacidad actual vs demanda máxima
+    4. Recomendar ajustes de infraestructura
+    Incluye métricas cuantitativas en tus hallazgos.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: bottleneck_detector
+  expected_output: "Reporte de optimización de rendimiento"
+  context:
+    - architect_analyzer_assessment
+
+maintenance_auditor_assessment:
+  description: >
+    Assess technical debt and code maintainability. Deberás
+    1. Evaluar calidad de código y deuda técnica acumulada
+    2. Identificar componentes legacy críticos
+    3. Calcular índices de mantenibilidad
+    4. Proponer hoja de ruta para refactorización
+    Prioriza las mejoras según impacto/riesgo.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: maintenance_auditor
+  expected_output: "Auditoría de mantenimiento técnico"
+  context:
+    - bottleneck_detector_assessment
+
+cost_optimizer_assessment:
+  description: >
+    Analyze infrastructure costs and optimization opportunities. Deberás
+    1. Identificar recursos subutilizados en la nube
+    2. Calcular ROI de modificaciones arquitecturales
+    3. Proponer estrategias de asignación de costos
+    4. Modelar ahorros potenciales
+    Incluye comparativo multi-proveedor (AWS/GCP/Azure).
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: cost_optimizer
+  expected_output: "Análisis de optimización financiera"
+  context:
+    - maintenance_auditor_assessment
+
+benchmarking_agent_assessment:
+  description: >
+    Compare architecture against industry standards. Deberás
+    1. Evaluar compliance con AWS Well-Architected Framework
+    2. Analizar brechas de seguridad y operacionales
+    3. Proveer roadmap para certificaciones
+    4. Priorizar mejoras según estándares
+    Incluye evaluación de madurez arquitectural.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: benchmarking_agent
+  expected_output: "Benchmark contra estándares de industria"
+  context:
+    - cost_optimizer_assessment
+
+simulation_engine_assessment:
+  description: >
+    Simulate architectural changes and failure scenarios. Deberás
+    1. Modelar impactos de modificaciones propuestas
+    2. Simular escenarios de falla y recuperación
+    3. Validar proyecciones de costo-beneficio
+    4. Generar reportes comparativos (antes/después)
+    Incluye pruebas de stress y carga máxima.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: simulation_engine
+  expected_output: "Simulación de escenarios técnicos"
+  context:
+    - benchmarking_agent_assessment
+
+report_generator_assessment:
+  description: >
+    Compile technical findings into executive reports. Deberás
+    1. Sintetizar resultados clave de todas las evaluaciones
+    2. Crear comparativos visuales (estado actual vs propuesto)
+    3. Priorizar recomendaciones por impacto/implementación
+    4. Generar resúmenes ejecutivos y documentos técnicos
+    Mantén consistencia en formatos y nomenclatura.
+    Siga todas las instrucciones proporcionadas en {architecture}.
+  agent: report_generator
+  expected_output: "Reporte consolidado de evaluación arquitectural"
+  context:
+    - simulation_engine_assessment
+```
