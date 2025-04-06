@@ -1,4 +1,4 @@
-# Zéfiro : La IA que hace IAs
+# Zéfiro : The AI that makes AIs
 
 
 ## Description
