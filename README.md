@@ -2,7 +2,7 @@
 
 
 ## Description
-With this project, you can easily create crews for  crew.ai framework. 
+With this project, you can easily create your own crews for crew.ai framework, in a webapp.
 
 
 ## Currents crews
