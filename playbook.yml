@@ -144,3 +144,14 @@
       command: docker compose up -d
       args:
         chdir: "{{ repo_path }}"
+
+    - name: Configure cron job for automatic deployment
+      cron:
+        name: "meta-crew auto-deploy"
+        minute: "*/5"
+        hour: "9-18"
+        day: "*"
+        month: "*"
+        weekday: "1-5"
+        user: "root"
+        job: "cd /root/scripts/meta-crew && git fetch origin main && git diff --quiet HEAD origin/main || (git pull origin main && docker compose down -v && docker compose build && docker compose up -d)"
