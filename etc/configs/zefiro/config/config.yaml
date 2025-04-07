@@ -12,99 +12,99 @@
 # Para confirmar cuál estás usando, puedes revisar el package.json o los componentes Icon en tu proyecto.
 
 frontend:
-  app_name: "rancho-relaxo"
+  app_name: "zefiro"
   main_info: >
-    Esta aplicación genera asistencia personalizada para personas que enfrentan problemas de salud mental cotidiana. Los expertos incluyen:
-    Evaluador de Síntomas, Filtro de Crisis, Generador de Recursos, Curador de Tiempo Libre y Tracker de Progreso.
+    Esta aplicación genera nuevas IAs de agentes o crew. Ejecutar esta aplicación te añadira una nueva crew en el desplegable de arriba a la derecha.
 
   download_example_report_link: "https://github.com/jaimevalero/zefiro/raw/main/meta-crew-frontend/static/examples/rancho-relax.md"
   # Nueva configuración de tema
   theme:
     dark: false
     colors:
-      primary: "#4CAF50"    # Verde, simboliza salud y bienestar
-      secondary: "#8BC34A"  # Azul claro, tranquilidad
-      accent: "#03A9F4"     # Verde claro, frescura
-      info: "#2196F3"
-      warning: "#FF9800"
-      error: "#F44336"
-      alert: "#FGFGFG"
-      success: "#4CAF50"
+      primary: "#673AB7"    # Púrpura, simboliza creatividad e innovación
+      secondary: "#3F51B5"  # Azul profundo, confianza y profesionalismo
+      accent: "#FFC107"     # Amarillo, energía y enfoque
+      info: "#2196F3"       # Azul claro, claridad y comunicación
+      warning: "#FF9800"    # Naranja, atención y dinamismo
+      error: "#F44336"      # Rojo, errores y alertas
+      alert: "#FFEB3B"      # Amarillo claro, advertencias suaves
+      success: "#4CAF50"    # Verde, logros y éxito
   # Definición flexible de formularios
   form:
-    # Formulario para evaluación de bienestar psicológico
-    title: "Información del Usuario"
-    description: "Por favor complete la siguiente información para una evaluación personalizada"
+    title: "Información para Crear tu Nueva Crew"
+    description: "Por favor proporciona los detalles para crear tu crew de IA especializada"
     fields:
-      - name: "personal_data"
-        label: "Datos Personales"
-        description: "Edad, ocupación, situación familiar, etc."
+      - name: "crew_purpose"
+        label: "Propósito de la Crew"
+        description: "¿Qué quieres que haga tu crew de IA? Describe el objetivo principal y las tareas clave."
         type: "textarea"
         required: true
-        icon: "user"
-        
-      - name: "emotional_state"
-        label: "Estado Emocional"
-        description: "Describa cómo se ha sentido emocionalmente en las últimas semanas"
+        icon: "target"
+
+      - name: "domain_industry"
+        label: "Dominio o Industria"
+        description: "¿En qué sector, industria o área de conocimiento se aplicará esta crew?"
         type: "textarea"
         required: true
-        icon: "heart"
-        
-      - name: "current_challenges"
-        label: "Desafíos Actuales"
-        description: "Describa las situaciones o problemas que están afectando su bienestar emocional"
+        icon: "briefcase"
+
+      - name: "target_users"
+        label: "Usuarios Finales"
+        description: "¿Quiénes utilizarán esta crew? Describe su perfil y necesidades específicas."
         type: "textarea"
         required: true
-        icon: "alert-circle"
-        
-      - name: "stress_triggers"
-        label: "Desencadenantes de Estrés"
-        description: "Identifique situaciones o factores que le generan estrés o ansiedad"
-        type: "textarea"
-        required: true
-        icon: "bolt"
-        
-      - name: "coping_strategies"
-        label: "Estrategias de Afrontamiento"
-        description: "Describa qué hace actualmente para manejar situaciones difíciles"
-        type: "textarea"
-        required: false
-        icon: "shield"
-        
-      - name: "sleep_patterns"
-        label: "Patrones de Sueño"
-        description: "Describa su calidad de sueño y hábitos relacionados"
-        type: "textarea"
-        required: false
-        icon: "bed"
-        
-      - name: "social_connections"
-        label: "Conexiones Sociales"
-        description: "Describa su red de apoyo y relaciones sociales"
-        type: "textarea"
-        required: false
         icon: "users"
         
-      - name: "daily_routine"
-        label: "Rutina Diaria"
-        description: "Describa brevemente su rutina diaria incluyendo trabajo, descanso y ocio"
-        type: "textarea"
-        required: false
-        icon: "calendar"
-        
-      - name: "previous_interventions"
-        label: "Intervenciones Previas"
-        description: "Describa cualquier tratamiento o intervención previa para su bienestar emocional"
-        type: "textarea"
-        required: false
-        icon: "history"
-        
-      - name: "wellbeing_goals"
-        label: "Objetivos de Bienestar"
-        description: "¿Qué espera lograr para mejorar su bienestar emocional?"
+      - name: "human_agents"
+        label: "Agentes Humanos Equivalentes"
+        description: "¿Qué roles o especialistas humanos resolverían normalmente este tipo de problemas?"
         type: "textarea"
         required: true
-        icon: "bullseye"
+        icon: "doctor"
+        
+                
+      - name: "problem_description"
+        label: "Problemas y Dudas Típicas"
+        description: "Describe los problemas y dudas específicas que quieres que resuelva la tecnología."
+        type: "textarea"
+        required: true
+        icon: "help-circle"
+                
+      - name: "expected_output"
+        label: "Resultados Esperados"
+        description: "¿Qué tipo de resultados o entregables debe proporcionar la crew? (informes, recomendaciones, etc.)"
+        type: "textarea"
+        required: true
+        icon: "star"
+
+
+      - name: "workflow_description"
+        label: "Flujo de Trabajo"
+        description: "Si tienes idea, describe cómo imaginas que debería ser el proceso de trabajo de la crew."
+        type: "textarea"
+        required: false
+        icon: "arrow-right"
+        
+      - name: "technical_requirements"
+        label: "Requisitos Técnicos"
+        description: "¿Existen requisitos técnicos específicos o restricciones que la crew deba considerar?"
+        type: "textarea"
+        required: false
+        icon: "ruler"
+        
+      - name: "existing_solutions"
+        label: "Soluciones Existentes"
+        description: "¿Conoces soluciones o enfoques existentes para este problema? ¿Qué te gusta o no te gusta de ellos?"
+        type: "textarea"
+        required: false
+        icon: "lightbulb"
+        
+      - name: "additional_info"
+        label: "Información Adicional"
+        description: "Cualquier otra información relevante para la creación de tu crew."
+        type: "textarea"
+        required: false
+        icon: "plus-circle"
 
 backend:
   case:

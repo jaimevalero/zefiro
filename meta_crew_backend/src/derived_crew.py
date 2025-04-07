@@ -145,9 +145,10 @@ class DerivedCrew(Crew):
         report_content += "# Informe generado mediante inteligencia artificial.\n\n"
         report_content += "## Este informe no constituye un diagnóstico médico, ni una prueba de cribado válida. \n\n"
         report_content += "---\n\n"
-
-        contenido_final = report_content
-        
+        # Add the initial case at the start of the report
+        report_content_initial = f"# Initial case: \n\n{self.case}\n\n"
+        report_content_initial += "Fin del caso inicial\n\n---\n\n"  # Add end of initial case
+        contenido_final = report_content_initial + report_content        
         
         if session_id:
             markdown_filename = f"logs/{session_id}_report.md"
