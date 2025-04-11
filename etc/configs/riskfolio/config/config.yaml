@@ -1,0 +1,85 @@
+backend:
+  case:
+    prompt: 'Eres un equipo de expertos financieros que analiza perfiles de inversión
+      y genera recomendaciones personalizadas.  <case>{case}</case>'
+  nomination:
+    method:
+      type: all
+
+frontend:
+  app_name: Financial Profiler Suite
+  download_example_report_link: https://www.google.com
+  form:
+    title: "Perfil de Inversor"
+    description: "Complete su información financiera para análisis personalizado"
+    fields:
+      - name: "personal_data"
+        label: "Datos Personales"
+        description: "Edad, situación familiar, profesión"
+        type: "textarea"
+        required: true
+        icon: "user"
+
+      - name: "financial_status"
+        label: "Situación Financiera"
+        description: "Ingresos anuales, ahorros, deudas"
+        type: "textarea"
+        required: true
+        icon: "wallet"
+
+      - name: "investment_horizon"
+        label: "Horizonte Temporal"
+        description: "Años previstos para la inversión"
+        type: "textarea"
+        required: true
+        icon: "calendar"
+
+      - name: "risk_tolerance"
+        label: "Tolerancia al Riesgo"
+        description: "Escala del 1 (conservador) al 7 (agresivo)"
+        type: "textarea"
+        required: true
+        icon: "balance-scale"
+
+      - name: "current_portfolio"
+        label: "Inversiones Actuales"
+        description: "Detalle de activos financieros actuales"
+        type: "textarea"
+        required: false
+        icon: "chart-line"
+
+      - name: "tax_situation"
+        label: "Situación Fiscal"
+        description: "Tramo IRPF y fiscalidad especial"
+        type: "textarea"
+        required: false
+        icon: "percent"
+
+  main_info: >
+    Esta aplicación analiza tu perfil de riesgo y genera recomendaciones de inversión personalizadas.
+    Nuestro equipo incluye:
+    - Financial Risk Profiler
+    - Analista de Fondos Indexados
+    - Experto en Plataformas Broker
+    - Especialista Fiscal Español
+    - Generador de Guías Personalizadas
+
+  theme:
+    dark: false
+    colors:
+      primary: "#2A5C8F"
+      secondary: "#28A745"
+      accent: "#6F42C1"
+      info: "#17A2B8"
+      warning: "#FFC107"
+      error: "#DC3545"
+      alert: "#FFECB3"
+      success: "#28A745"
+
+meta:
+  description: "tu asesor financiero cognitivo"
+  name: "riskfolio"
+
+
+
+  
