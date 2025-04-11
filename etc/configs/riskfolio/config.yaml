@@ -1,0 +1,72 @@
+backend:
+  case:
+    prompt: 'Eres un equipo de expertos financieros que analiza perfiles de inversión
+      y genera recomendaciones personalizadas.  <case>{case}</case>
+
+      '
+  nomination:
+    method:
+      type: all
+frontend:
+  app_name: Financial Profiler Suite
+  download_example_report_link: https://www.google.com
+  form:
+    description: Complete su información financiera para análisis personalizado
+    fields:
+    - description: Edad, situación familiar, profesión
+      icon: user
+      label: Datos Personales
+      name: personal_data
+      required: true
+      type: textarea
+    - description: Ingresos anuales, ahorros, deudas
+      icon: wallet
+      label: Situación Financiera
+      name: financial_status
+      required: true
+      type: textarea
+    - description: Años previstos para la inversión
+      icon: calendar
+      label: Horizonte Temporal
+      name: investment_horizon
+      required: true
+      type: textarea
+    - description: Escala del 1 (conservador) al 7 (agresivo)
+      icon: balance-scale
+      label: Tolerancia al Riesgo
+      name: risk_tolerance
+      required: true
+      type: textarea
+    - description: Detalle de activos financieros actuales
+      icon: chart-line
+      label: Inversiones Actuales
+      name: current_portfolio
+      required: false
+      type: textarea
+    - description: Tramo IRPF y fiscalidad especial
+      icon: percent
+      label: Situación Fiscal
+      name: tax_situation
+      required: false
+      type: textarea
+    title: Perfil de Inversor
+  main_info: 'Esta aplicación analiza tu perfil de riesgo y genera recomendaciones
+    de inversión personalizadas. Nuestro equipo incluye: - Financial Risk Profiler
+    - Analista de Fondos Indexados - Experto en Plataformas Broker - Especialista
+    Fiscal Español - Generador de Guías Personalizadas
+
+    '
+  theme:
+    colors:
+      accent: '#6F42C1'
+      alert: '#FFECB3'
+      error: '#DC3545'
+      info: '#17A2B8'
+      primary: '#2A5C8F'
+      secondary: '#28A745'
+      success: '#28A745'
+      warning: '#FFC107'
+    dark: false
+meta:
+  description: tu asesor financiero cognitivo
+  name: riskfolio

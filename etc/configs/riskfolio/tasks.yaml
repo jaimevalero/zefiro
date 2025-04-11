@@ -1,0 +1,55 @@
+broker_advisor_assessment:
+  agent: broker_advisor
+  context:
+  - investment_analyst_assessment
+  description: 'Evaluar plataformas de inversión recomendadas. 1. Comparar comisiones
+    de operación y custodia 2. Analizar herramientas de seguimiento fiscal 3. Verificar
+    certificación CNMV y seguros 4. Evaluar soporte en español y UX móvil Priorizar
+    brokers con demo interactiva para nuevos usuarios.
+
+    '
+  expected_output: Ranking de brokers con análisis comparativo
+financial_profiler_assessment:
+  agent: financial_profiler
+  context: []
+  description: 'Evaluar perfil de riesgo mediante cuestionario dinámico. 1. Analizar
+    edad, ingresos y horizonte temporal 2. Clasificar tolerancia al riesgo en escala
+    1-7 3. Validar consistencia de datos financieros básicos 4. Identificar objetivos
+    de inversión prioritarios Todos los análisis deben considerar parámetros regulatorios
+    ESMA.
+
+    '
+  expected_output: Informe detallado del perfil de riesgo del usuario
+investment_analyst_assessment:
+  agent: investment_analyst
+  context:
+  - financial_profiler_assessment
+  description: 'Seleccionar productos indexados adecuados. 1. Filtrar ETFs con TER
+    ≤0.5% 2. Aplicar criterios de diversificación geográfica 3. Priorizar fondos accumulating
+    para reinversión 4. Verificar historial de replicación del índice Incluir relación
+    riesgo/rendimiento para cada opción.
+
+    '
+  expected_output: Catálogo personalizado de ETFs y fondos indexados
+report_orchestrator_assessment:
+  agent: report_orchestrator
+  context:
+  - tax_consultant_assessment
+  description: 'Generar guía final integrada para principiantes. 1. Combinar recomendaciones
+    técnicas en lenguaje sencillo 2. Crear roadmap de pasos para primera inversión
+    3. Incluir capturas de ejemplo en plataforma seleccionada 4. Adjuntar resumen
+    ejecutivo imprimible Verificar coherencia entre todas las secciones.
+
+    '
+  expected_output: Documento completo con guía práctica ilustrada
+tax_consultant_assessment:
+  agent: tax_consultant
+  context:
+  - broker_advisor_assessment
+  description: 'Calcular implicaciones fiscales según normativa española. 1. Modelar
+    retención de dividendos (19%) 2. Simular plusvalías para diferentes horizontes
+    3. Incluir beneficios fiscales para planes pensiones 4. Generar checklist declaración
+    Renta Adaptar ejemplos a modelo 100 formato simplificado.
+
+    '
+  expected_output: Guía fiscal detallada con escenarios prácticos
