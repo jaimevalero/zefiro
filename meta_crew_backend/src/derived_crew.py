@@ -138,7 +138,7 @@ class DerivedCrew(Crew):
                 report_content += "---\n\n"
             except Exception as e:
                 logger.error(f"Error generating report: {e}")
-        report_content = report_content.replace("```markdown","").replace("```","")
+        #report_content = report_content.replace("```markdown","").replace("```","")
                 
         # añade en markdown un informe de que el reporte se ha generado con IA
         # y que no constituye un diagnóstico médico, ni una prueba de cribado válida.

@@ -67,14 +67,14 @@ frontend:
   theme:
     dark: false
     colors:
-      primary: "#2A5C8F"
-      secondary: "#28A745"
-      accent: "#6F42C1"
-      info: "#17A2B8"
-      warning: "#FFC107"
-      error: "#DC3545"
-      alert: "#FFECB3"
-      success: "#28A745"
+      primary: "#003F6D"      # Azul más oscuro - transmite mayor confianza y estabilidad
+      secondary: "#1E7D46"    # Verde más profesional - representa crecimiento financiero
+      accent: "#D4AF37"       # Dorado - asociado con riqueza e inversión
+      info: "#17A2B8"         # Se mantiene el azul turquesa para información
+      warning: "#FFC107"      # Se mantiene el amarillo para advertencias
+      error: "#DC3545"        # Se mantiene el rojo para errores
+      alert: "#FFE0B2"        # Se mantiene el amarillo claro para alertas
+      success: "#28A745"      # Se mantiene el verde para éxito
 
 meta:
   description: "tu asesor financiero cognitivo"
@@ -82,4 +82,4 @@ meta:
 
 
 
-  
+

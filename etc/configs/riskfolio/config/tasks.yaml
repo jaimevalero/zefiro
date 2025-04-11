@@ -17,15 +17,17 @@ investment_analyst_assessment:
   description: 'Seleccionar productos indexados adecuados. 1. Filtrar ETFs con TER
     ≤0.5% 2. Aplicar criterios de diversificación geográfica 3. Priorizar fondos accumulating
     para reinversión 4. Verificar historial de replicación del índice Incluir relación
-    riesgo/rendimiento para cada opción.
+    riesgo/rendimiento para cada opción. Considerar otros productos financieros.
 
     '
   expected_output: Catálogo personalizado de ETFs y fondos indexados
 
 
+
 broker_advisor_assessment:
   agent: broker_advisor
   context:
+  - financial_profiler_assessment
   - investment_analyst_assessment
   description: 'Evaluar plataformas de inversión recomendadas. 1. Comparar comisiones
     de operación y custodia 2. Analizar herramientas de seguimiento fiscal 3. Verificar
@@ -35,10 +37,29 @@ broker_advisor_assessment:
     '
   expected_output: Ranking de brokers con análisis comparativo
 
+
+multi_asset_selector_assessment:
+  agent: multi_asset_selector
+  context:
+  - financial_profiler_assessment
+  - investment_analyst_assessment
+  description: >
+    Evaluar productos de inversión complementarios a los ETFs, según perfil de riesgo. 
+    1. Analizar idoneidad de acciones individuales (dividendos estables, blue-chip, bajo beta)
+    2. Identificar bonos soberanos/corporativos adecuados según duración y rating crediticio
+    3. Proponer REITs o fondos inmobiliarios no cotizados si el horizonte lo permite
+    4. Evaluar productos garantizados o estructurados para perfiles conservadores
+    5. Excluir productos con opacidad, liquidez baja o comisiones excesivas
+    Considerar normativa MiFID II sobre idoneidad del producto al perfil.
+  expected_output: Recomendación de productos multiactivo no indexados, con justificación de compatibilidad según perfil
+
+
 tax_consultant_assessment:
   agent: tax_consultant
   context:
   - broker_advisor_assessment
+  - investment_analyst_assessment
+  - multi_asset_selector_assessment
   description: 'Calcular implicaciones fiscales según normativa española. 1. Modelar
     retención de dividendos (19%) 2. Simular plusvalías para diferentes horizontes
     3. Incluir beneficios fiscales para planes pensiones 4. Generar checklist declaración
@@ -51,7 +72,11 @@ tax_consultant_assessment:
 report_orchestrator_assessment:
   agent: report_orchestrator
   context:
+  - financial_profiler_assessment
+  - investment_analyst_assessment  
   - tax_consultant_assessment
+  - broker_advisor_assessment
+  - multi_asset_selector_assessment
   description: 'Generar guía final integrada para principiantes. 1. Combinar recomendaciones
     técnicas en lenguaje sencillo 2. Crear roadmap de pasos para primera inversión
     3. Incluir capturas de ejemplo en plataforma seleccionada 4. Adjuntar resumen
@@ -59,3 +84,5 @@ report_orchestrator_assessment:
 
     '
   expected_output: Documento completo con guía práctica ilustrada
+
+
