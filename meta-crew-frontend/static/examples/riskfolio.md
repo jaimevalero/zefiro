@@ -126,8 +126,8 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 
 ---
 
-**A. Fondo de Emergencia (22.500EUR)**  
-1. **Cuenta Remunerada Trade Republic**  
+## A. Fondo de Emergencia (22.500EUR)
+### 1. **Cuenta Remunerada Trade Republic
    - Rentabilidad: 4% TAE garantizado  
    - Liquidez: Inmediata  
    - Garantia: Hasta 100.000EUR por titular  
@@ -135,10 +135,10 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 
 ---
 
-**B. Fondo Educativo - Horizonte 6 anos (35.000EUR objetivo)**  
+## B. Fondo Educativo - Horizonte 6 anos (35.000EUR objetivo)
 *Asignacion 40/60 Renta Variable/Renta Fija*  
 
-**1. Renta Variable ESG Global (40% - 14.000EUR)**  
+#### 1. Renta Variable ESG Global (40% - 14.000EUR)
 - **Vanguard ESG Global All Cap UCITS ETF (V3AA)**  
   - TER: 0.24%  
   - Replicacion: Fisica total  
@@ -149,7 +149,7 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
     > Distribucion geografica: 60% EE.UU., 20% Europa, 12% Asia  
   - Sharpe Ratio: 0.82 (vs MSCI World 0.75)  
 
-**2. Renta Fija Verde (60% - 21.000EUR)**  
+#### 2. Renta Fija Verde (60% - 21.000EUR)
 - **Lyxor Green Bond UCITS ETF (CLIM)**  
   - TER: 0.25%  
   - Duracion: 6.2 anos  
@@ -161,10 +161,10 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 
 ---
 
-**C. Complemento Jubilacion - Horizonte 25+ anos (45.000EUR inicial)**  
+## C. Complemento Jubilacion - Horizonte 25+ anos (45.000EUR inicial)
 *Asignacion 60/30/10 RV/RF/Alternativos*  
 
-**1. Renta Variable Global ESG (60% - 27.000EUR)**  
+### 1. Renta Variable Global ESG (60% - 27.000EUR)
 - **iShares MSCI World ESG Enhanced UCITS ETF (DXZE)**  
   - TER: 0.20%  
   - Replicacion: Optimizada  
@@ -174,7 +174,7 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
     > Exposicion emergentes via ADRs (15%)  
   - Rentabilidad anualizada: 7.2% (2018-2023)  
 
-**2. Renta Fija Sostenible (30% - 13.500EUR)**  
+#### 2. Renta Fija Sostenible (30% - 13.500EUR)
 - **Amundi Global Green Bond UCITS ETF (AGRH)**  
   - TER: 0.18%  
   - Duracion: 7.5 anos  
@@ -182,7 +182,7 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
   - Certificaciones: Climate Bonds Initiative  
   - Distribucion: 60% energias renovables, 25% transporte limpio  
 
-**3. Alternativos ESG (10% - 4.500EUR)**  
+#### 3. Alternativos ESG (10% - 4.500EUR)
 - **Xtrackers Global Infrastructure ESG UCITS ETF (XGIG)**  
   - TER: 0.30%  
   - Exposicion: 80% utilities renovables, 20% transporte sostenible  
@@ -191,43 +191,43 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 
 ---
 
-**D. Estrategia para Cartera Actual (1.870EUR)**  
-1. **Plan de Venta Progresiva:**  
+## D. Estrategia para Cartera Actual (1.870EUR)
+#### 1. Plan de Venta Progresiva:
    - 2024: Vender 4.800EUR (limite exencion fiscal) -> 5.6% comision  
    - Destino: Amundi MSCI Europe ESG Leaders UCITS ETF (ESGE, TER 0.18%)  
 
-2. **Donacion Filantropica:**  
+#### 2. **Donacion Filantropica:
    - Opcion: Transferir 2.000EUR en acciones a ONG ambiental (deduccion 35% en IRPF)  
 
 ---
 
-**E. Productos Complementarios**  
-1. **Plan de Pensiones BBVA Futuro Sostenible**  
+## E. Productos Complementarios
+#### 1. Plan de Pensiones BBVA Futuro Sostenible
    - TER: 0.45%  
    - Aportacion maxima deducible: 1.500EUR/ano  
    - Composicion: 70% bonos verdes, 30% equity ESG  
 
-2. **Seguro de Ahorro MAPFRE Inversion Sostenible**  
+#### 2. Seguro de Ahorro MAPFRE Inversion Sostenible
    - Garantia: 102% capital a vencimiento (6 anos)  
    - Participacion beneficios: 40% en indices ESG  
    - Fiscalidad: Exencion tras 5 anos  
 
 ---
 
-**F. Control de Riesgos**  
-1. **Monitoreo Hipoteca:**  
+## F. Control de Riesgos
+#### 1. Monitoreo Hipoteca:
    - Seguimiento trimestral Euribor  
    - Simulador escenarios:  
      > Euribor 4% -> Aumento cuota 56% -> Reduccion temporal aportaciones  
 
-2. **Rebalanceo Automatico:**  
+### 2. Rebalanceo Automatico:
    - Frecuencia: Semestral  
    - Banda de tolerancia: +-5% por activo  
    - Metodo: Vendiendo ganancias (priorizando fiscalidad)  
 
 ---
 
-**G. Comparativa Costes Totales**  
+## G. Comparativa Costes Totales
 | Concepto              | Coste Anual Estimado |
 |-----------------------|----------------------|
 | ETFs (0.20% medio)    | 150EUR                 |
