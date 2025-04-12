@@ -8,7 +8,8 @@ backend:
 
 frontend:
   app_name: Financial Profiler Suite
-  download_example_report_link: https://www.google.com
+  download_example_report_link: https://github.com/jaimevalero/zefiro/blob/main/meta-crew-frontend/static/examples/riskfolio.md
+
   form:
     title: "Perfil de Inversor"
     description: "Complete su información financiera para análisis personalizado"
@@ -39,7 +40,7 @@ frontend:
         description: "Escala del 1 (conservador) al 7 (agresivo)"
         type: "textarea"
         required: true
-        icon: "balance-scale"
+        icon: "sliders"
 
       - name: "current_portfolio"
         label: "Inversiones Actuales"
@@ -63,7 +64,7 @@ frontend:
     - Experto en Plataformas de Inversión
     - Especialista en Activos No Indexados
     - Especialista Fiscal Español
-    - Orquestador de Contenido Accesible
+    - Experto en comunicaciones Financieras
 
   theme:
     dark: false
