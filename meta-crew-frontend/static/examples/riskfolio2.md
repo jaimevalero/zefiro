@@ -35,7 +35,7 @@ Fin del caso inicial
 ---
 
 **1. Analisis Demografico y Financiero**  
-- **Edat:** 42 anos (perspectiva inversion a largo plazo)  
+- **Edad:** 42 anos (perspectiva inversion a largo plazo)  
 - **Horizonte Temporal Dual:**  
   - Corto-Medio Plazo (6 anos): Fondo educativo universitario  
   - Largo Plazo (25+ anos): Complemento jubilacion  
