@@ -21,9 +21,7 @@ Ana esta particularmente interesada en inversiones sostenibles (ESG) y quiere en
 Ademas, tanto Ana como Miguel tienen planes de pensiones individuales a traves de sus empleadores, con aportaciones mensuales modestas, pero no han realizado nunca un analisis integral de su situacion financiera ni tienen una estrategia clara sobre como optimizar sus inversiones considerando su situacion hipotecaria.
 
 
-
-
-Fin del caso inicial
+# Fin del caso inicial
 
 ---
 
