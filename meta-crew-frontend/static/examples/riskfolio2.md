@@ -55,7 +55,7 @@ Ademas, tanto Ana como Miguel tienen planes de pensiones individuales a traves d
   - Ratio deuda/ingresos: 1.85 (180.000EUR deuda vs 97.000EUR ingresos) -> Exposicion a subidas del Euribor  
 - **Actitud ante el Riesgo:**  
   - Declarada como conservadora-moderada  
-  - Historial inversor: Carterea accionaria no estrategica (2.6% de la herencia recibida), comportamiento "compra y mantiene"  
+  - Historial inversor: Cartera accionaria no estrategica (2.6% de la herencia recibida), comportamiento "compra y mantiene"  
   - Umbral de volatilidad: Maximo aceptable estimado en -12% a corto plazo  
 - **Coherencia Datos:**  
   - Contradiccion detectada entre cartera actual (100% rentavariable) y perfil declarado -> Requiere rebalanceo  
@@ -78,7 +78,7 @@ Ademas, tanto Ana como Miguel tienen planes de pensiones individuales a traves d
 
 ---
 
-**4. Analisis Cartere Actual y Recomendaciones**  
+**4. Analisis Cartera Actual y Recomendaciones**  
 - **Posiciones Actuales:**  
   - 100% exposicion single-stock Espana (Inditex 56%, Iberdrolag 13%, Santander 31%)  
   - Volatilidad historica: +35% vs Ibex-35 ultimos 3 anos  
