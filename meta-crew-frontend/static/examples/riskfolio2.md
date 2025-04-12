@@ -1,6 +1,6 @@
 # Initial case: 
+## Caso ficticio de ejemplo: Ana Garcia
 
-**Personal Data:**  Caso de ejemplo: Ana Garcia
 Ana es una profesora de secundaria de 42 anos que vive en Madrid con su esposo Miguel, un ingeniero de 45 anos. Juntos tienen una hipoteca de 180.000EUR a 25 anos, con una cuota mensual de 750EUR y un tipo de interes variable del Euribor +0.9%. Les quedan 18 anos para finalizar el pago de su piso valorado actualmente en 320.000EUR.
 Ana acaba de recibir una herencia de 75.000EUR de su tia y quiere comenzar a invertir de manera mas seria. Actualmente posee una cartera modesta de acciones que adquirio hace tres anos, consistente en:
 
