@@ -147,7 +147,7 @@ class DerivedCrew(Crew):
         report_content += "---\n\n"
         # Add the initial case at the start of the report
         report_content_initial = f"# Initial case: \n\n{self.case}\n\n"
-        report_content_initial += "Fin del caso inicial\n\n---\n\n"  # Add end of initial case
+        report_content_initial += "# Fin del caso inicial\n\n---\n\n"  # Add end of initial case
         contenido_final = report_content_initial + report_content        
         
         if session_id:
