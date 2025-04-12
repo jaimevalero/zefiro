@@ -6,7 +6,7 @@ financial_profiler_assessment:
     1-7 3. Validar consistencia de datos financieros básicos 4. Identificar objetivos
     de inversión prioritarios Todos los análisis deben considerar parámetros regulatorios
     ESMA.
-
+    Para el case <case>{case}</case>
     '
   expected_output: Informe detallado del perfil de riesgo del usuario
 
@@ -18,7 +18,7 @@ investment_analyst_assessment:
     ≤0.5% 2. Aplicar criterios de diversificación geográfica 3. Priorizar fondos accumulating
     para reinversión 4. Verificar historial de replicación del índice Incluir relación
     riesgo/rendimiento para cada opción. Considerar otros productos financieros.
-
+    Para el case <case>{case}</case>
     '
   expected_output: Catálogo personalizado de ETFs y fondos indexados
 
@@ -33,7 +33,7 @@ broker_advisor_assessment:
     de operación y custodia 2. Analizar herramientas de seguimiento fiscal 3. Verificar
     certificación CNMV y seguros 4. Evaluar soporte en español y UX móvil Priorizar
     brokers con demo interactiva para nuevos usuarios.
-
+    Para el case <case>{case}</case>
     '
   expected_output: Ranking de brokers con análisis comparativo
 
@@ -51,6 +51,7 @@ multi_asset_selector_assessment:
     4. Evaluar productos garantizados o estructurados para perfiles conservadores
     5. Excluir productos con opacidad, liquidez baja o comisiones excesivas
     Considerar normativa MiFID II sobre idoneidad del producto al perfil.
+    Para el case <case>{case}</case>
   expected_output: Recomendación de productos multiactivo no indexados, con justificación de compatibilidad según perfil
 
 
@@ -64,7 +65,7 @@ tax_consultant_assessment:
     retención de dividendos (19%) 2. Simular plusvalías para diferentes horizontes
     3. Incluir beneficios fiscales para planes pensiones 4. Generar checklist declaración
     Renta Adaptar ejemplos a modelo 100 formato simplificado.
-
+    Para el case <case>{case}</case>
     '
   expected_output: Guía fiscal detallada con escenarios prácticos
 
@@ -81,7 +82,7 @@ report_orchestrator_assessment:
     técnicas en lenguaje sencillo 2. Crear roadmap de pasos para primera inversión
     3. Incluir capturas de ejemplo en plataforma seleccionada 4. Adjuntar resumen
     ejecutivo imprimible Verificar coherencia entre todas las secciones.
-
+    Para el case <case>{case}</case>
     '
   expected_output: Documento completo con guía práctica ilustrada
 

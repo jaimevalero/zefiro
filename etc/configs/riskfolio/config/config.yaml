@@ -58,11 +58,12 @@ frontend:
   main_info: >
     Esta aplicación analiza tu perfil de riesgo y genera recomendaciones de inversión personalizadas.
     Nuestro equipo incluye:
-    - Financial Risk Profiler
-    - Analista de Fondos Indexados
-    - Experto en Plataformas Broker
+    - Especialista en Perfiles de Inversión
+    - Analista de Productos Indexados
+    - Experto en Plataformas de Inversión
+    - Especialista en Activos No Indexados
     - Especialista Fiscal Español
-    - Generador de Guías Personalizadas
+    - Orquestador de Contenido Accesible
 
   theme:
     dark: false
