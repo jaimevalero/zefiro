@@ -248,7 +248,7 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 
 ---
 
-**#1 MyInvestor**  
+## **1 MyInvestor**  
 - **Comisiones:**  
   - Operacion ETFs: 8EUR-15EUR/trade (dependiendo bolsa)  
   - Fondos: 0% compra/venta  
@@ -266,7 +266,9 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 - **Demo:** Cuenta simulada con 50.000EUR virtuales  
 - **Ventaja ESG:** 152 ETFs ESG disponibles, filtros por criterios SFDR  
 
-**#2 Openbank**  
+
+## **2 Openbank**  
+
 - **Comisiones:**  
   - ETFs: 0.25% (min. 10EUR)  
   - Fondos propios: 0%  
@@ -282,7 +284,10 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 - **Demo:** Simulador de carteras con historico 10 anos  
 - **ESG:** 83 fondos Articulo 9 disponibles  
 
-**#3 inbestMe**  
+
+
+## **3 inbestMe**  
+
 - **Comisiones:**  
   - Gestion: 0.45%-0.75% anual  
   - Custodia: Incluida  
@@ -298,7 +303,9 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 - **Demo:** Cartera demo de 100.000EUR con estrategias ESG preconfiguradas  
 - **ESG:** Portafolios 100% alineados con Pacto Climatico Madrid  
 
-**#4 Interactive Brokers (IBKR)**  
+
+## **4 Interactive Brokers (IBKR)**  
+
 - **Comisiones:**  
   - ETFs USA: 0.35EUR/trade  
   - ETF Europa: 1.25EUR/trade  
@@ -314,7 +321,10 @@ Ana Garcia requiere una estrategia centrada en preservar capital mientras aprove
 - **Demo:** Cuenta paper trading ilimitada  
 - **ESG:** 1.200+ ETFs sostenibles vaccion  
 
-**#5 Indexa Capital**  
+
+## **5 Indexa Capital**  
+
+
 - **Comisiones:**  
   - Gestion: 0.40%-0.70% anual  
   - Custodia: Incluida  
