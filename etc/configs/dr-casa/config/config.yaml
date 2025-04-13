@@ -95,24 +95,5 @@ frontend:
         required: false
         icon: "users"
 
-    # # Puedes definir otros formularios específicos
-    # pediatric_form:
-    #   title: "Información Pediátrica"
-    #   description: "Por favor complete la información del paciente pediátrico"
-    #   fields:
-    #     - name: "child_data"
-    #       label: "Datos del Niño"
-    #       description: "Edad, peso, altura, etc."
-    #       type: "textarea"
-    #       required: true
-    #       icon: "child"
 
-    #     - name: "development"
-    #       label: "Desarrollo"
-    #       description: "Hitos del desarrollo"
-    #       type: "textarea"
-    #       required: true
-    #       icon: "baby"
-
-    #     # ...otros campos específicos para pediatría
 
