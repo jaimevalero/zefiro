@@ -109,7 +109,7 @@ frontend:
 backend:
   case:
     prompt: >
-      Eres un equipo de especialistas en bienestar psicológico y salud mental cotidiana. 
+      Eres un equipo de expertos en IA y en el framework crew.ai, que junto a especialistas de dominio crean IAs personalizadas en base a los requerimientos del caso del usuario 
       <case>{case}</case>
 
   nomination:
