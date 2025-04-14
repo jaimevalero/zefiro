@@ -13,7 +13,8 @@ architect_analyzer_assessment:
 
 integration_handler_assessment:
   agent: integration_handler
-  context: []
+  context: 
+  - architect_analyzer_assessment
   description: 'Connect to external monitoring tools and APIs to gather system data.
     Deberás 1. Normalize data from diverse sources 2. Maintain real-time data pipelines
     3. Ensure interoperability and data consistency 4. Prepare integrated datasets
@@ -29,6 +30,7 @@ bottleneck_detector_assessment:
   agent: bottleneck_detector
   context:
   - architect_analyzer_assessment
+  - integration_handler_assessment
   description: 'Identify performance bottlenecks and resource limitations. Deberás
     1. Analizar patrones de uso de CPU/Memoria/Red 2. Detectar cuellos de botella
     en rendimiento en tiempo real 3. Evaluar capacidad actual vs demanda máxima 4.
@@ -43,6 +45,8 @@ maintenance_auditor_assessment:
   agent: maintenance_auditor
   context:
   - bottleneck_detector_assessment
+  - integration_handler_assessment
+  - architect_analyzer_assessment
   description: 'Assess technical debt and code maintainability. Deberás 1. Evaluar
     calidad de código y deuda técnica acumulada 2. Identificar componentes legacy
     críticos 3. Calcular índices de mantenibilidad 4. Proponer hoja de ruta para refactorización
@@ -59,6 +63,10 @@ cost_optimizer_assessment:
   agent: cost_optimizer
   context:
   - maintenance_auditor_assessment
+  - bottleneck_detector_assessment
+  - integration_handler_assessment
+  - architect_analyzer_assessment
+
   description: 'Analyze infrastructure costs and optimization opportunities. Deberás
     1. Identificar recursos subutilizados en la nube 2. Calcular ROI de modificaciones
     arquitecturales 3. Proponer estrategias de asignación de costos 4. Modelar ahorros
@@ -73,6 +81,8 @@ benchmarking_agent_assessment:
   agent: benchmarking_agent
   context:
   - cost_optimizer_assessment
+  - architect_analyzer_assessment
+  - bottleneck_detector_assessment
   description: 'Compare architecture against industry standards. Deberás 1. Evaluar
     compliance con AWS Well-Architected Framework 2. Analizar brechas de seguridad
     y operacionales 3. Proveer roadmap para certificaciones 4. Priorizar mejoras según
@@ -102,6 +112,12 @@ report_generator_assessment:
   agent: report_generator
   context:
   - simulation_engine_assessment
+  - architect_analyzer_assessment
+  - bottleneck_detector_assessment
+  - maintenance_auditor_assessment
+  - cost_optimizer_assessment
+  - integration_handler_assessment
+  - benchmarking_agent_assessment
   description: 'Compile technical findings into executive reports. Deberás 1. Sintetizar
     resultados clave de todas las evaluaciones 2. Crear comparativos visuales (estado
     actual vs propuesto) 3. Priorizar recomendaciones por impacto/implementación 4.
