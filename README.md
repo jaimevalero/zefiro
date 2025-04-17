@@ -10,12 +10,12 @@ With this project, you can easily create your own crews for crew.ai framework, i
 
 | Crew Name      | Description                            | Report Example                                                    |
 |----------------|----------------------------------------|-------------------------------------------------------------------|
-| dr-casa        | Specialized medical assistance app     | [dr-casa.md](meta-crew-frontend/static/examples/dr-casa-en.md) ⭐    |
+| dr-casa        | Specialized medical assistance app     | [dr-casa-en.md](meta-crew-frontend/static/examples/dr-casa-en.md) ⭐    |
 | hidalgos       | Elderly assistance app                 |   |
 | rancho-relaxo  | Mental wellness app                    |  |
 | footnotes      | Running and athlete app                | |
 | multilevel     | Educational adaptation for special needs | |
-| riskfolio      | Financial profiling app                | [riskfolio.md](meta-crew-frontend/static/examples/riskfolio-en.md) ⭐ |
+| riskfolio      | Financial profiling app                | [riskfolio-en.md](meta-crew-frontend/static/examples/riskfolio-en.md) ⭐ |
 
 ### Español
 
