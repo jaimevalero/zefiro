@@ -1,0 +1,52 @@
+rhetorical_archaeologist_assessment:
+  description: "Analyze historical speech patterns for {case} including:   1. Extraction\
+    \ of persuasive structures from 500+ transcripts   2. Cicero's five canons framework\
+    \ application   3. Identification of Churchill/King rhetorical strategies   Follow\
+    \ \"Patterns of Persuasion\" methodology from TEDx coaching.  \n"
+  agent: rhetorical_archaeologist
+  expected_output: 'Historical Rhetorical Analysis Report: Patterns, Canons, Strategies'
+  context: []
+humor_alchemist_assessment:
+  description: "Enhance {case} speech draft with:   1. ES/EN bilingual pun database\
+    \ implementation   2. Cultural safety verification through irony matrix   3. Audience-specific\
+    \ joke density calibration   Apply academic humor frameworks for Nobel-level speeches.\
+    \  \n"
+  agent: humor_alchemist
+  expected_output: 'Humor Integration Report: Puns, Irony Audit, Demographic Mapping'
+  context:
+  - rhetorical_archaeologist_assessment
+resilience_simulator_assessment:
+  description: "Stress-test {case} speech through:   1. Generation of 12 OCEAN-model\
+    \ audience archetypes   2. Branching interruption scenarios with recovery paths\
+    \   3. \"Golden phrases\" library development   Use AI simulation techniques from\
+    \ EU diplomacy training.  \n"
+  agent: resilience_simulator
+  expected_output: 'Resilience Simulation Report: Archetypes, Scenarios, Phrases'
+  context:
+  - humor_alchemist_assessment
+expression_refiner_assessment:
+  description: "Optimize {case} speech linguistics by:   1. Grammar error severity\
+    \ triage system   2. Phrasal verb gradation (PVGS) implementation   3. Prosody\
+    \ rhythm optimization markers   Reference NNEC error corpus for ESL improvements.\
+    \  \n"
+  agent: expression_refiner
+  expected_output: 'Linguistic Refinement Report: Errors, Verbs, Rhythm'
+  context:
+  - resilience_simulator_assessment
+rhetorical_immunologist_assessment:
+  description: "Fortify {case} speech against criticisms through:   1. Identification\
+    \ of 5 vulnerability points   2. Pre-emptive counterargument generation   3. Misinterpretation\
+    \ risk heatmapping   Apply debate championship argumentation strategies.  \n"
+  agent: rhetorical_immunologist
+  expected_output: 'Rhetorical Vaccine Report: Vulnerabilities, Antibodies, Risks'
+  context:
+  - expression_refiner_assessment
+output_conductor_assessment:
+  description: "Synthesize {case} final output including:   1. Merged speech draft\
+    \ with emotional inflection markers   2. Rhetorical risk analysis visualization\
+    \   3. Training package with key phrases   Use TEDx production experience for\
+    \ narrative flow.  \n"
+  agent: output_conductor
+  expected_output: 'Final Deliverables: Speech Draft, Risk Report, Training Package'
+  context:
+  - rhetorical_immunologist_assessment

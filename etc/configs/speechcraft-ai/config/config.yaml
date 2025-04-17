@@ -1,0 +1,113 @@
+backend:
+  case:
+    prompt: 'Eres un equipo multidisciplinar de oratoria avanzada que creará discursos
+      altamente efectivos combinando: - Arqueología retórica histórica - Inyección
+      de humor culturalmente adaptado - Simulación de resistencia del público - Refinamiento
+      lingüístico profesional - Inmunización contra críticas <case>{case}</case>
+
+      '
+  nomination:
+    method:
+      type: all
+frontend:
+  app_name: Oratory Mastermind
+  download_example_report_link: https://google.com
+  form:
+    description: Complete los detalles de su intervención
+    fields:
+    - description: Persuadir, inspirar, informar, motivar, etc.
+      icon: crosshairs
+      label: Objetivo Principal
+      name: speech_purpose
+      options:
+      - Persuasión política
+      - Discurso motivacional
+      - Presentación académica
+      - Ceremonia pública
+      - Negociación empresarial
+      required: true
+      type: dropdown
+    - description: Edad aproximada, formación, contexto cultural
+      icon: users
+      label: Audiencia Objetivo
+      name: target_audience
+      required: true
+      type: textarea
+    - description: Incluya su borrador actual o ideas principales
+      icon: file-alt
+      label: Borrador Actual
+      name: draft_content
+      required: true
+      type: textarea
+    - description: 'Ej: Churchill, King, Estilo académico, etc.'
+      icon: history
+      label: Estilos Retóricos Preferidos
+      name: rhetorical_preferences
+      options:
+      - Ciceroniano
+      - Shakesperiano
+      - Moderno directo
+      - Poético metafórico
+      required: false
+      type: checklist
+    - description: 'Tipos de humor a incluir (ej: ironía fina, juegos de palabras)'
+      icon: grin
+      label: Perfil de Humor
+      name: humor_profile
+      options:
+      - Ironía
+      - Parodia suave
+      - Referencias culturales
+      - Juegos de palabras
+      - Anécdotas personales
+      required: false
+      type: multiselect
+    - description: Posibles objeciones o puntos sensibles en la audiencia
+      icon: exclamation-triangle
+      label: Riesgos Potenciales
+      name: risk_factors
+      required: false
+      type: textarea
+    - description: Requerimientos de complejidad del lenguaje
+      icon: language
+      label: Nivel Lingüístico
+      labels:
+      - Básico
+      - Intermedio
+      - Avanzado
+      - Académico
+      - Literario
+      max: 5
+      min: 1
+      name: language_level
+      required: true
+      type: slider
+    - description: Duración, formato, restricciones técnicas
+      icon: stopwatch
+      label: Restricciones de Entrega
+      name: delivery_constraints
+      required: false
+      type: textarea
+    title: Perfil del Discurso
+  main_info: 'Sistema experto para crear discursos persuasivos mediante: - Rhetorical
+    Archaeologist: Analiza patrones históricos de discursos emblemáticos - Humor Alchemist:
+    Inyecta humor culturalmente relevante - Resilience Simulator: Anticipa objeciones
+    y prepara respuestas - Expression Refiner: Optimiza el lenguaje y ritmo - Rhetorical
+    Immunologist: Fortalece argumentos contra críticas - Output Conductor: Sintetiza
+    todo en el discurso final
+
+    '
+  theme:
+    colors:
+      accent: '#B38B6D'
+      alert: '#E4D4C8'
+      error: '#852F2F'
+      info: '#4A6C6F'
+      primary: '#2B3A55'
+      secondary: '#3F704D'
+      success: '#5B8C5A'
+      warning: '#C45B34'
+    dark: true
+meta:
+  description: AI-powered persuasive speech optimization platform
+  name: speechcraft-ai
