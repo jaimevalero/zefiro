@@ -8,6 +8,7 @@ from loguru import logger
 from typing import Dict, List, Optional, Union, Any, Callable
 from pathlib import Path
 from filelock import FileLock  # Import FileLock
+from collections import OrderedDict
 
 from crewai import Agent, Crew, Task
 from loguru import logger
@@ -250,6 +251,42 @@ class DerivedCrew(Crew):
     def create_crew_config(self):
 
 
+        def load_yaml_with_backtick_handling(filename: str) -> OrderedDict:
+            """
+            Read a file, remove triple-backticks if present, then parse as YAML while preserving the order of keys.
+
+            - The Pragmatic Programmer: Be consistent and predictable.
+            - Clean Code: Keep functions focused and clear.
+            - Fluent Python: Use Python's built-in tools effectively.
+            """
+            try:
+                # Define a custom loader to ensure OrderedDict is used
+                class OrderedLoader(yaml.SafeLoader):
+                    pass
+
+                def construct_ordered_mapping(loader, node):
+                    loader.flatten_mapping(node)
+                    return OrderedDict(loader.construct_pairs(node))
+
+                OrderedLoader.add_constructor(
+                    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+                    construct_ordered_mapping,
+                )
+
+                # Read the file content
+                with open(filename, "r", encoding="utf-8") as f:
+                    content = f.read()
+
+                # Remove possible code fences
+                content = content.replace("```yaml", "").replace("```", "").strip()
+
+                # Load the YAML content with the custom loader
+                return yaml.load(content, Loader=OrderedLoader)
+
+            except Exception as e:
+                logger.error(f"Error loading YAML from {filename}: {e}")
+                return OrderedDict()
+
         def load_yaml_with_backtick_handling(filename: str):
             """
             Read a file, remove triple-backticks if present, then parse as YAML.
@@ -260,6 +297,8 @@ class DerivedCrew(Crew):
                 # Remove possible code fences
                 content = content.replace("```yaml", "").replace("```", "").strip()
                 return yaml.safe_load(content)
+            
+            
             except Exception as e:
                 logger.error(f"Error loading YAML from {filename}: {e}")
                 return None
@@ -306,7 +345,7 @@ class DerivedCrew(Crew):
 
         codename = config_data.get("meta",{}).get("name", "default_codename")
         description = config_data.get("meta",{}).get("description", "default_description")
-        target_dir = f"./etc/configs/{codename}"
+        target_dir = f"./etc/configs/{codename}/config"
         os.makedirs(target_dir, exist_ok=True)
 
         final_agents_path = os.path.join(target_dir, "agents.yaml")
