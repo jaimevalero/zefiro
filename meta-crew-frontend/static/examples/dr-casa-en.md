@@ -1,4 +1,4 @@
-# Fictitious Clinical Case: Joaquín Gutiérrez
+# Fictional Clinical Case: Joaquín Gutiérrez
 
 ## Patient Information
 Joaquín Gutiérrez is a 42-year-old male who is married and works as a secondary school teacher. He stands at 178 cm tall and weighs 84 kg. His blood pressure in the clinic is recorded at 145/90 mmHg, with a heart rate of 78 beats per minute. He does not smoke but consumes alcohol occasionally (2-3 beers on weekends). He engages in light physical activity by walking for 20 minutes daily to commute to work.

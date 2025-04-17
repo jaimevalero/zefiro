@@ -55,9 +55,9 @@ agents_designer_assessment:
         Valorar la funcionalidad y necesidades específicas del anciano
         Proponer plan de cuidados personalizado
       backstory: Geriatra con 16 años de experiencia en atención a pacientes mayores y medicina geriátrica. Eminencia en su campo y ponente en charlas de como comunicar con personas mayores. Ha trabajado en hospitales y clínicas geriátricas, desarrollando un enfoque centrado en el paciente.
-      context: Evaluación geriátrica del caso (case)
+      context: "Evaluación geriátrica del caso (case)"
     </ejemplo_de_diseño_de_un_agente>
-    En el yaml de salida que generes, para indicar el caso original que estas basando, aunque en el ejemplo pondra (case), lo tiene que generar cambiando los caracteres paréntesis por llaves.
+    En el yaml de salida que generes, para indicar el caso original que estas basando, aunque en el ejemplo pondra (case), lo tiene que generar cambiando los caracteres paréntesis por llaves. 
   output_file: agents_created.yaml
   agent: agents_designer
   expected_output: "Diseño de arquitectura de agentes con perfiles cognitivos"

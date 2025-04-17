@@ -5,16 +5,28 @@
 With this project, you can easily create your own crews for crew.ai framework, in a webapp.
 
 
-## Currents crews
+## Current crews 
+(spanish translation below)
 
-| Crew Name      | Crew Description                                                                                           | Caption                       | Report Example                                                                 |
-|----------------|------------------------------------------------------------------------------------------------------------|-------------------------------|------------------------------------------------------------------------------|
-| dr-casa        | App para asistencia médica especializada [agentes](etc/configs/dr-casa/config/agents.yaml) [tareas](etc/configs/dr-casa/config/tasks.yaml)     | Specialized medical assistance app | [dr-casa.md](meta-crew-frontend/static/examples/dr-casa.md) ⭐                |
-| hidalgos       | App para asistencia a personas de la tercera edad [agentes](etc/configs/hidalgos/config/agents.yaml) [tareas](etc/configs/hidalgos/config/tasks.yaml) | Elderly assistance app       | [hidalgos.md](meta-crew-frontend/static/examples/hidalgos.md) ⭐              |
-| rancho-relaxo  | App para bienestar mental y emocional [agentes](etc/configs/rancho-relaxo/config/agents.yaml) [tareas](etc/configs/rancho-relaxo/config/tasks.yaml) | Mental wellness app          | [rancho-relax.md](meta-crew-frontend/static/examples/rancho-relax.md) ⭐      |
-| footnotes      | App para corredores y atletas [agentes](etc/configs/footnotes/config/agents.yaml) [tareas](etc/configs/footnotes/config/tasks.yaml)             | Running and athlete app      | [footnotes.md](meta-crew-frontend/static/examples/footnotes.md) ⭐            |
-| multilevel     | App para adaptar examenes y lecciones a alumnos con necesidades específicas especiales ( dislexia, espectro autista,deficit de atención, ...) [agentes](etc/configs/multilevel/config/agents.yaml) [tareas](etc/configs/multilevel/config/tasks.yaml)     |   | [multilevel.md](meta-crew-frontend/static/examples/multilevel.md) ⭐            |
-| riskfolio      | App para análisis de perfiles financieros e inversión personalizada [agentes](etc/configs/riskfolio/config/agents.yaml) [tareas](etc/configs/riskfolio/config/tasks.yaml) | Financial profiling app      | [riskfolio.md](meta-crew-frontend/static/examples/riskfolio.md) ⭐            |
+| Crew Name      | Description                            | Report Example                                                    |
+|----------------|----------------------------------------|-------------------------------------------------------------------|
+| dr-casa        | Specialized medical assistance app     | [dr-casa.md](meta-crew-frontend/static/examples/dr-casa-en.md) ⭐    |
+| hidalgos       | Elderly assistance app                 |   |
+| rancho-relaxo  | Mental wellness app                    |  |
+| footnotes      | Running and athlete app                | |
+| multilevel     | Educational adaptation for special needs | |
+| riskfolio      | Financial profiling app                | [riskfolio.md](meta-crew-frontend/static/examples/riskfolio-en.md) ⭐ |
+
+### Español
+
+| Nombre de Crew | Descripción                                                                                            | Ejemplo de Informe                                               |
+|----------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| dr-casa        | App para asistencia médica especializada [agentes](etc/configs/dr-casa/config/agents.yaml) [tareas](etc/configs/dr-casa/config/tasks.yaml)     | [dr-casa.md](meta-crew-frontend/static/examples/dr-casa.md) ⭐    |
+| hidalgos       | App para asistencia a personas de la tercera edad [agentes](etc/configs/hidalgos/config/agents.yaml) [tareas](etc/configs/hidalgos/config/tasks.yaml) | [hidalgos.md](meta-crew-frontend/static/examples/hidalgos.md) ⭐  |
+| rancho-relaxo  | App para bienestar mental y emocional [agentes](etc/configs/rancho-relaxo/config/agents.yaml) [tareas](etc/configs/rancho-relaxo/config/tasks.yaml) | [rancho-relax.md](meta-crew-frontend/static/examples/rancho-relax.md) ⭐ |
+| footnotes      | App para corredores y atletas [agentes](etc/configs/footnotes/config/agents.yaml) [tareas](etc/configs/footnotes/config/tasks.yaml)             | [footnotes.md](meta-crew-frontend/static/examples/footnotes.md) ⭐ |
+| multilevel     | App para adaptar examenes y lecciones a alumnos con necesidades específicas especiales (dislexia, espectro autista, deficit de atención, ...) [agentes](etc/configs/multilevel/config/agents.yaml) [tareas](etc/configs/multilevel/config/tasks.yaml) | [multilevel.md](meta-crew-frontend/static/examples/multilevel.md) ⭐ |
+| riskfolio      | App para análisis de perfiles financieros e inversión personalizada [agentes](etc/configs/riskfolio/config/agents.yaml) [tareas](etc/configs/riskfolio/config/tasks.yaml) | [riskfolio.md](meta-crew-frontend/static/examples/riskfolio.md) ⭐ |
 
 ## Example Directory Structure
 
