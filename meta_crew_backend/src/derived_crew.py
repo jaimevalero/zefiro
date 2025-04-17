@@ -122,10 +122,6 @@ class DerivedCrew(Crew):
 
 
 
-
-
-
-
         for i,task in enumerate(self.tasks):
             try :
                 if task.name:
@@ -287,21 +283,7 @@ class DerivedCrew(Crew):
                 logger.error(f"Error loading YAML from {filename}: {e}")
                 return OrderedDict()
 
-        def load_yaml_with_backtick_handling(filename: str):
-            """
-            Read a file, remove triple-backticks if present, then parse as YAML.
-            """
-            try:
-                with open(filename, "r") as f:
-                    content = f.read()
-                # Remove possible code fences
-                content = content.replace("```yaml", "").replace("```", "").strip()
-                return yaml.safe_load(content)
-            
-            
-            except Exception as e:
-                logger.error(f"Error loading YAML from {filename}: {e}")
-                return None
+
 
         def transform_data(data):
             """
@@ -352,20 +334,52 @@ class DerivedCrew(Crew):
         final_config_path = os.path.join(target_dir, "config.yaml")
         final_tasks_path = os.path.join(target_dir, "tasks.yaml")
 
-        def save_yaml(data, path):
+        def save_yaml(data, path, keys_sorted=False):
             """
-            Save YAML data to a file, ensuring proper handling of special characters.
+            Save YAML data to a file, ensuring proper handling of special characters and key ordering.
             
-            - Fluent Python: Use libraries effectively.
-            - Clean Code: Keep functions focused and clear.
+            
+            Args:
+                data: The data structure to save (typically an OrderedDict)
+                path: Path where to save the YAML file
+                keys_sorted: Whether to enforce a specific key order
             """
-            with open(path, "w", encoding="utf-8") as f:
-                yaml.safe_dump(data, f, allow_unicode=True)  # Ensure special characters are saved correctly
+            try:
+                if keys_sorted:
+                    # Save OrderedDict to yaml file, preserving key order
+                    # Define a custom representer for OrderedDict to maintain key order
+                    # Following Fluent Python's advice on extending libraries effectively
+                    def represent_ordereddict(dumper, data):
+                        """Custom representer for OrderedDict to maintain key ordering in YAML output."""
+                        return dumper.represent_mapping('tag:yaml.org,2002:map', data.items())
+                    
+                    for key in data.keys():
+                        if not "{case}" in data[key].get("description",""): 
+                            data[key]["description"] = data[key]["description"] + "Para el case <case>{case}</case>"                    
+                    # Register the OrderedDict representer with PyYAML
+                    yaml.add_representer(OrderedDict, represent_ordereddict)
+                    
+                    # Write the YAML data preserving order
+                    with open(path, "w", encoding="utf-8") as f:
+                        yaml.dump(data, f, allow_unicode=True, default_flow_style=False)
+                    
+                    logger.debug(f"Saved YAML to {path} with key ordering preserved")
+            
+                else:
+                    data_unordered = json.loads(json.dumps(data))
+                    with open(path, "w", encoding="utf-8") as f:
+                        yaml.safe_dump(data_unordered, f, allow_unicode=True)  # Ensure special characters are saved correctly
+
+                    logger.debug(f"Saved YAML to {path} with default ordering")
+            except Exception as e:
+                logger.error(f"Error saving YAML to {path}: {e}")
+                import traceback
+                logger.error(f"Traceback: {traceback.format_exc()}")
 
         try:
             save_yaml(agents_data, final_agents_path)
             save_yaml(config_data, final_config_path)
-            save_yaml(tasks_data, final_tasks_path)
+            save_yaml(tasks_data, final_tasks_path,keys_sorted=True)
             logger.info(f"Config crew created at: {target_dir}")
         except Exception as e:
             logger.error(f"Error saving YAML files to {target_dir}: {e}")
