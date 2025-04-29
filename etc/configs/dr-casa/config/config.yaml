@@ -14,9 +14,9 @@ backend:
       prompt: >
         You have to select which AI agents, will resolve the case of the bottom.
         - The agents selected will be the ones that will resolve the case.
-        - Escoge hasta 8 especialistas, pero pueden ser menos.
+        - Choose between 3 to 9 agents.
         - The agents will be selected in the order you choose them (This is important because the stdout is passed from one to anoher).
-        - Siempre añade el agente dietista, como segundo agente.
+        - As second agent, always choose the dietista agent.
         - You MUST respond only with an array of the agents name, nothing else ( The response will be converted into an JSON array of strings).
         Response Example: [ "general_practitioner", "dietista","neurologist" ,"patient_care" ]
         <case>{case}</case>
@@ -24,11 +24,6 @@ backend:
     always_first_agent: general_practitioner
     always_last_agent: patient_care
 
-  source_of_truth:
-  - name: "book name"
-    description: "Use of the book"
-    file:
-        src: files/crons/delete-duplicates-dcip_jenkins_builds.sql
 
 frontend:
   app_name: "Dr. Casa"
