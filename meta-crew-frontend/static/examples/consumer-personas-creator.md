@@ -15,7 +15,9 @@
 
 ---
 
-# 0 Informe: Informe De Muestreo Demografico: - Resumen De Restricciones Aplicadas Y Tamano De Muestra N. - Tabla De Distribucion Sintetica Generada Por Variable Clave. - Resultado De La Prueba Chi-Cuadrado Y Conclusiones De Ajuste. - Dataset En Formato Estructurado De N Registros Con Campos Del Esquema Base "Demografico". - Notas Metodologicas Sobre Correlaciones Aplicadas Y Tratamiento De La Regla 80/20.
+# 0 Informe: Informe De Muestreo Demografico: 
+
+- Resumen De Restricciones Aplicadas Y Tamano De Muestra N. - Tabla De Distribucion Sintetica Generada Por Variable Clave. - Resultado De La Prueba Chi-Cuadrado Y Conclusiones De Ajuste. - Dataset En Formato Estructurado De N Registros Con Campos Del Esquema Base "Demografico". - Notas Metodologicas Sobre Correlaciones Aplicadas Y Tratamiento De La Regla 80/20.
 
 
 Informe de Muestreo Demografico
