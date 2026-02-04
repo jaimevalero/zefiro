@@ -1,0 +1,130 @@
+demographic_sampler_assessment:
+  description: 'Genera un conjunto de N registros demográficos sintéticos para el
+    {case}, ajustados a las restricciones del usuario (ej: "hombres 25-35, estudios
+    medios+"). Deberás: 1. Interpretar y aplicar las restricciones demográficas de
+    entrada. 2. Generar variables demográficas sintéticas (sexo, edad, estado civil,
+    nivel de estudios, ocupación, ubicación, económico) que reflejen distribuciones
+    realistas y correlacionadas (INE/EPA). 3. Aplicar la regla de variabilidad no
+    uniforme si procede (sesgar hacia "habituales" para productos de consumo masivo).
+    4. Validar las distribuciones generadas contra datos de referencia oficiales utilizando
+    la prueba chi-cuadrado de bondad de ajuste. 5. Asegurar la representatividad estadística
+    del conjunto para el segmento objetivo. Tu informe final debe presentar el dataset
+    demográfico y el resultado de la validación estadística. Sigue todas las instrucciones
+    proporcionadas en {case}.
+
+    '
+  agent: demographic_sampler
+  expected_output: 'Informe de Muestreo Demográfico: - Resumen de restricciones aplicadas
+    y tamaño de muestra N. - Tabla de distribución sintética generada por variable
+    clave. - Resultado de la prueba chi-cuadrado y conclusiones de ajuste. - Dataset
+    en formato estructurado de N registros con campos del esquema base "demografico".
+    - Notas metodológicas sobre correlaciones aplicadas y tratamiento de la regla
+    80/20.
+
+    '
+  context: []
+psychometric_profiler_assessment:
+  description: 'Deriva perfiles psicométricos completos para cada una de las N personas
+    generadas en el {case}. Deberás: 1. Ingresar el dataset demográfico generado por
+    el DemographicSampler. 2. Aplicar matrices de correlación validadas científicamente
+    entre variables demográficas y rasgos OCEAN. 3. Calcular puntuaciones en rasgos
+    OCEAN (Apertura, Responsabilidad, Extraversión, Amabilidad, Neuroticismo) y sus
+    facetas, mapeando cada rasgo a un percentil poblacional. 4. Derivar valores Schwartz
+    (Autotrascendencia, Conservación, Apertura al Cambio, Autoestimación) a partir
+    del perfil OCEAN y datos demográficos. 5. Estimar niveles de sesgos cognitivos
+    (Aversión a la pérdida, Efecto Anclaje, Heurística de Disponibilidad) basándose
+    en el perfil. 6. Asegurar coherencia interna y correlaciones esperadas entre rasgos.
+    Tu perfil psicométrico debe ser consistente con la demografía y válido para simulaciones
+    conductuales. Sigue todas las instrucciones proporcionadas en {case}.
+
+    '
+  agent: psychometric_profiler
+  expected_output: 'Informe de Perfilación Psicométrica: - Resumen metodológico: correlaciones
+    aplicadas y fuentes. - Tabla de percentiles OCEAN por persona (N filas). - Distribución
+    de valores Schwartz y sesgos cognitivos en la muestra. - Análisis de coherencia
+    cruzada entre rasgos (ej. correlación Neuroticismo-Aversión a la Pérdida). - Dataset
+    enriquecido que añade el esquema "psicometrico" a cada registro de persona.
+
+    '
+  context:
+  - demographic_sampler_assessment
+category_context_assessment:
+  description: 'Construye un contexto detallado y realista de categoría de producto
+    para cada persona en el {case}. Deberás: 1. Ingresar el dataset enriquecido con
+    datos demográficos y psicométricos. 2. Tomar la descripción del producto/categoría
+    a estudiar proporcionada por el usuario. 3. Aplicar reglas de negocio específicas
+    (ej. Neuroticismo alto + Bajo ingreso = barrera "precio_percibido_alto": true).
+    4. Modelar conocimiento, involucramiento (cognitivo/afectivo), comportamiento
+    actual (frecuencia, gasto, canal, motivo), lealtad a marca y barreras percibidas.
+    5. Aplicar la variabilidad no uniforme (regla 80/20) ajustando la proporción de
+    "habituales" vs. "ocasionales". 6. Incorporar el "efecto modo": añadir campo ''desviacion_declarada_vs_real''
+    ajustable por categoría (ej. higiene íntima = alto sesgo social). 7. Definir si
+    la persona es "susceptible a priming" o "contrarian" basándose en su perfil psicométrico.
+    El contexto debe ser plausible y útil para simular respuestas a cuestionarios
+    de mercado. Sigue todas las instrucciones proporcionadas en {case}.
+
+    '
+  agent: category_context
+  expected_output: 'Informe de Contexto de Categoría: - Resumen de reglas de negocio
+    aplicadas y ajustes (80/20, efecto modo). - Tabla de distribución de comportamientos
+    clave (frecuencia_consumo, nivel_conocimiento). - Análisis de barreras identificadas
+    por perfil. - Dataset enriquecido que añade el esquema "contexto_categoria", "estilo_decision",
+    "ecosistema_social" y campos "trampas_cognitivas" y "desviacion_declarada_vs_real"
+    a cada registro.
+
+    '
+  context:
+  - psychometric_profiler_assessment
+narrative_generator_assessment:
+  description: 'Genera una mini-biografía coherente y rica (2-3 párrafos) para cada
+    persona en el {case}, integrando todos sus atributos. Deberás: 1. Ingresar el
+    dataset completo con datos demográficos, psicométricos y de contexto de categoría.
+    2. Tejer una narrativa biográfica que incluya hitos vitales relevantes (alineados
+    con edad, ocupación, estado civil), creencias core (derivadas de valores y rasgos
+    de personalidad), y anclas de experiencia con productos (relacionadas con contexto
+    de categoría). 3. Describir el estilo de decisión en términos narrativos, reflejando
+    el tipo (maximizador, satisficedor, etc.) y fuentes de información. 4. Describir
+    el ecosistema social (rol, grupos de referencia, presión normativa) de manera
+    natural. 5. Asegurar coherencia absoluta entre la biografía y los datos estructurados
+    subyacentes. La biografía dotará a la persona de una "memoria" consistente para
+    respuestas en simulaciones de estudios de mercado. Sigue todas las instrucciones
+    proporcionadas en {case}.
+
+    '
+  agent: narrative_generator
+  expected_output: 'Informe de Generación Narrativa: - Metodología narrativa aplicada:
+    cómo se mapearon atributos a elementos de historia. - Ejemplo de 2-3 biografías
+    generadas (texto completo). - Checklist de coherencia validada para cada persona
+    (hitos vs. edad, creencias vs. valores, etc.). - Dataset final enriquecido que
+    añade el esquema "biografia_minima" (texto narrativo) y consolida todos los campos
+    estructurados en cada registro de persona.
+
+    '
+  context:
+  - category_context_assessment
+validation_agent_assessment:
+  description: 'Realiza la validación final del dataset completo de N personas sintéticas
+    generadas para el {case}. Deberás: 1. Ingresar el dataset final consolidado del
+    NarrativeGenerator. 2. Ejecutar chequeos de coherencia lógica interna para cada
+    persona (ej. estilo ''maximizador'' debe tener tiempo_busqueda_previa > ''minutos'';
+    alto nivel educativo debe correlacionar con campo de estudios adecuado). 3. Verificar
+    consistencia entre todos los componentes (demográfico, psicométrico, contextual,
+    narrativo). 4. Evaluar la representatividad estadística del conjunto total frente
+    a las restricciones demográficas objetivo (distribuciones globales). 5. Identificar
+    y reportar cualquier anomalía o incongruencia detectada. 6. Generar un dictamen
+    final sobre la calidad y usabilidad del dataset para simulaciones de estudios
+    de mercado. Tu validación garantiza la fiabilidad del output del sistema. Sigue
+    todas las instrucciones proporcionadas en {case}.
+
+    '
+  agent: validation_agent
+  expected_output: 'Informe de Validación Final: - Resumen de chequeos ejecutados
+    y criterios de coherencia. - Matriz de inconsistencias detectadas (persona ID,
+    tipo de error, severidad). - Análisis de representatividad muestral: comparación
+    de distribuciones sintéticas vs. objetivo. - Dictamen final: APTO / NO APTO con
+    justificación. - Dataset validado y corregido (si aplica), listo para entrega
+    como el output esperado del sistema.
+
+    '
+  context:
+  - narrative_generator_assessment

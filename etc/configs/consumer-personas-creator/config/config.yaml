@@ -1,0 +1,141 @@
+backend:
+  case:
+    prompt: 'Eres una crew de expertos en investigación de mercado y psicología del
+      consumidor, especializada en crear personas sintéticas altamente realistas y
+      estadísticamente representativas. Tu objetivo es generar un conjunto de N perfiles
+      completos que cumplan las restricciones demográficas especificadas por el usuario,
+      integrando datos demográficos, perfiles psicométricos (OCEAN), contexto de categoría
+      de producto, y una biografía narrativa coherente para cada persona. Todo debe
+      estar validado estadísticamente y con coherencia interna.
+
+      '
+  nomination:
+    method:
+      type: all
+frontend:
+  app_name: Consumer Personas Creator
+  download_example_report_link: https://www.google.com
+  form:
+    description: Complete los siguientes campos para definir las restricciones demográficas
+      y parámetros de generación. Toda la información necesaria debe proporcionarse
+      aquí.
+    fields:
+    - description: Describa la población objetivo para la que debe ser representativa
+        la muestra (ej. 'Población española 18-65 años', 'Mujeres urbanas 25-40 años
+        con estudios superiores')
+      icon: target
+      label: Población Objetivo
+      name: target_population
+      required: true
+      type: textarea
+    - default: 20
+      description: 'Número de personas sintéticas a generar (recomendado: entre 10
+        y 100 para análisis cualitativo-detallado)'
+      icon: users
+      label: Tamaño de Muestra (N)
+      max: 200
+      min: 5
+      name: sample_size
+      required: true
+      type: number
+    - description: Especifique cualquier restricción adicional para las variables
+        demográficas (ej. 'Distribución 60% mujeres, 40% hombres', '70% con estudios
+        universitarios', 'Renta media concentrada en percentiles 40-70')
+      icon: filter
+      label: Restricciones Demográficas Específicas
+      name: demographic_constraints
+      required: false
+      type: textarea
+    - description: Describa el producto, servicio o categoría que será el contexto
+        de análisis de comportamiento del consumidor (ej. 'Servicios de streaming
+        de video', 'Automóvil eléctrico', 'Aplicaciones de salud mental')
+      icon: shopping-bag
+      label: Categoría de Producto/Servicio
+      name: product_category
+      required: true
+      type: textarea
+    - description: Si dispone de matrices de correlación específicas entre variables
+        demográficas y rasgos de personalidad para aplicar, descríbalas brevemente.
+        De lo contrario, se aplicarán matrices validadas científicamente por defecto.
+      icon: correlation
+      label: Matrices de Correlación Referencia
+      name: correlation_matrices
+      required: false
+      type: textarea
+    - description: Especifique si hay rasgos de personalidad o dimensiones psicológicas
+        particulares en las que enfocarse (ej. 'Alto neuroticismo relacionado con
+        preocupación por precio', 'Apertura a la experiencia para innovación')
+      icon: brain
+      label: Enfoque Psicométrico
+      name: psychometric_focus
+      required: false
+      type: textarea
+    - description: Defina reglas de negocio o lógicas específicas a aplicar (ej. 'Neuroticismo
+        alto + ingreso bajo = alta sensibilidad al precio', 'Conscientiousness alto
+        = mayor planificación de compra')
+      icon: rules
+      label: Reglas de Negocio Específicas
+      name: business_rules
+      required: false
+      type: textarea
+    - default: '2'
+      description: 'Especifique el nivel de detalle deseado en las biografías (1:
+        básico, 2: medio con hitos vitales, 3: rico con ecosistema social y anclas
+        de experiencia)'
+      icon: book-open
+      label: Profundidad Narrativa
+      name: narrative_depth
+      options:
+      - label: Básico (atributos principales)
+        value: '1'
+      - label: Medio (incluye hitos vitales)
+        value: '2'
+      - label: Rico (ecosistema social completo)
+        value: '3'
+      required: true
+      type: select
+    - default: rigorous
+      description: Seleccione el rigor estadístico para la validación de representatividad
+        muestral
+      icon: check-circle
+      label: Nivel de Validación Estadística
+      name: validation_level
+      options:
+      - label: Estándar (pruebas chi-cuadrado básicas)
+        value: standard
+      - label: Rigoroso (validación múltiple con percentiles)
+        value: rigorous
+      - label: Estricto (auditoría completa de coherencia)
+        value: strict
+      required: true
+      type: select
+    title: Configuración de la Generación de Personas Sintéticas
+  main_info: 'Esta aplicación genera personas sintéticas altamente realistas para
+    investigación de mercado y desarrollo de productos. Los perfiles incluyen datos
+    demográficos estadísticamente válidos, rasgos de personalidad (modelo OCEAN),
+    comportamiento de consumo específico por categoría, y una biografía narrativa
+    coherente.
+
+    Los expertos de la crew incluyen: - Experto en Muestreo Demográfico: Garantiza
+    representatividad estadística usando datos oficiales (INE/EPA) - Psicometrista:
+    Deriva perfiles de personalidad completos (OCEAN, valores Schwartz, sesgos cognitivos)
+    - Especialista en Comportamiento del Consumidor: Modela conocimiento, involucramiento
+    y barreras de compra - Generador Narrativo: Crea biografías coherentes integrando
+    todos los atributos - Validador de Coherencia: Chequea consistencia lógica y representatividad
+    muestral
+
+    '
+  theme:
+    colors:
+      accent: '#F57C00'
+      alert: '#FFF3E0'
+      error: '#C62828'
+      info: '#0277BD'
+      primary: '#4A148C'
+      secondary: '#00838F'
+      success: '#2E7D32'
+      warning: '#FF8F00'
+    dark: false
+meta:
+  description: tu generador de personas sintéticas para investigación de mercado
+  name: consumer-personas-creator
