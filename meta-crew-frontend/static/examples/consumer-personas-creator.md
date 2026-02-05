@@ -90,7 +90,8 @@ Informe de Muestreo Demografico
 
 ---
 
-# 1 Informe: Informe De Perfilacion Psicometrica: - Resumen Metodologico: Correlaciones Aplicadas Y Fuentes. - Tabla De Percentiles Ocean Por Persona (N Filas). - Distribucion De Valores Schwartz Y Sesgos Cognitivos En La Muestra. - Analisis De Coherencia Cruzada Entre Rasgos (Ej. Correlacion Neuroticismo-Aversion A La Perdida). - Dataset Enriquecido Que Anade El Esquema "Psicometrico" A Cada Registro De Persona.
+# 1 Informe: Informe De Perfilacion Psicometrica: 
+- Resumen Metodologico: Correlaciones Aplicadas Y Fuentes. - Tabla De Percentiles Ocean Por Persona (N Filas). - Distribucion De Valores Schwartz Y Sesgos Cognitivos En La Muestra. - Analisis De Coherencia Cruzada Entre Rasgos (Ej. Correlacion Neuroticismo-Aversion A La Perdida). - Dataset Enriquecido Que Anade El Esquema "Psicometrico" A Cada Registro De Persona.
 
 
 # **Informe de Perfilacion Psicometrica**
@@ -168,7 +169,11 @@ La muestra muestra patrones de correlacion internamente consistentes y coherente
 
 ---
 
-# 2 Informe: Informe De Contexto De Categoria: - Resumen De Reglas De Negocio Aplicadas Y Ajustes (80/20, Efecto Modo). - Tabla De Distribucion De Comportamientos Clave (Frecuencia Consumo, Nivel Conocimiento). - Analisis De Barreras Identificadas Por Perfil. - Dataset Enriquecido Que Anade El Esquema "Contexto Categoria", "Estilo Decision", "Ecosistema Social" Y Campos "Trampas Cognitivas" Y "Desviacion Declarada Vs Real" A Cada Registro.
+# 2 Informe: Informe De Contexto De Categoria: 
+- Resumen De Reglas De Negocio Aplicadas Y Ajustes (80/20, Efecto Modo).
+- Tabla De Distribucion De Comportamientos Clave (Frecuencia Consumo, Nivel Conocimiento).
+- Analisis De Barreras Identificadas Por Perfil.
+- Dataset Enriquecido Que Anade El Esquema "Contexto Categoria", "Estilo Decision", "Ecosistema Social" Y Campos "Trampas Cognitivas" Y "Desviacion Declarada Vs Real" A Cada Registro.
 
 
 # **Informe de Contexto de Categoria: Masters en Educacion a Distancia**
@@ -261,7 +266,11 @@ Victor es el pensador profundo. Analiza la posibilidad de hacer un master (aunqu
 
 ---
 
-# 3 Informe: Informe De Generacion Narrativa: - Metodologia Narrativa Aplicada: Como Se Mapearon Atributos A Elementos De Historia. - Ejemplo De 2-3 Biografias Generadas (Texto Completo). - Checklist De Coherencia Validada Para Cada Persona (Hitos Vs. Edad, Creencias Vs. Valores, Etc.). - Dataset Final Enriquecido Que Anade El Esquema "Biografia Minima" (Texto Narrativo) Y Consolida Todos Los Campos Estructurados En Cada Registro De Persona.
+# 3 Informe: Informe De Generacion Narrativa: 
+- Metodologia Narrativa Aplicada: Como Se Mapearon Atributos A Elementos De Historia.
+- Ejemplo De 2-3 Biografias Generadas (Texto Completo).
+- Checklist De Coherencia Validada Para Cada Persona (Hitos Vs. Edad, Creencias Vs. Valores, Etc.).
+- Dataset Final Enriquecido Que Anade El Esquema "Biografia Minima" (Texto Narrativo) Y Consolida Todos Los Campos Estructurados En Cada Registro De Persona.
 
 
 # **Informe de Generacion Narrativa: Personas Sinteticas para Masters en Educacion a Distancia (Espana, 25-35 anos)**
